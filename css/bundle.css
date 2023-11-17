@@ -6820,7 +6820,9 @@ footer {
       .block-shared-hero-video-container .vimeo-iframe-wrapper {
         margin-top: 0;
         width: 100%;
-        padding: 56.25% 0 0 0; } }
+        padding: 56.25% 0 0 0;
+      }
+       }
     .block-shared-hero-video-container .vimeo-iframe-wrapper iframe {
       position: absolute;
       top: 0;
