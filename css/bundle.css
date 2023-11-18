@@ -6853,7 +6853,7 @@ footer {
       font-size: calc(1.625rem + 4.5vw); }
       @media (min-width: 992px) {
         .block-shared-hero-video-container .block-shared-hero-video-content .block_hero-header h1, .block-shared-hero-video-container .block-shared-hero-video-content .block_hero-header .h1, .block-shared-hero-video-container .block-shared-hero-video-content .block_hero-header h2, .block-shared-hero-video-container .block-shared-hero-video-content .block_hero-header .h2 {
-          font-size: clamp(3.5rem, calc(1.36207rem + 3.44828vw), 5.5rem); } }
+          font-size: clamp(3.5rem, calc(0.36207rem + 3.44828vw), 5.5rem); } }
     .block-shared-hero-video-container .block-shared-hero-video-content .block_hero-subheading {
       position: relative;
       padding-left: 2rem; }
