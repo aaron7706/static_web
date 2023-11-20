@@ -62,23 +62,36 @@
       padding: 0 !important;
     }
 
-    
+    #skip a {
+    display: block;
+    position: absolute;
+    left: -999px;
+    top: -999px;
+    }
+
+#skip a:focus {
+    left: 0;
+    top: 0;
+    padding: 3px;
+    background: #ffc;
+    border:1px solid #990000;
+    }
 
     .block_cards_slider-wrapper .swiper-slide .flip-card-wrapper .flip-card .card {
-  background: transparent;
-  position: absolute;
-  width: 100%;
-  height: 62% !important;
-  border: 4px solid transparent;
-  /* border-radius: 1.5rem; */
-  overflow: hidden;
-  -webkit-perspective: 0;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translate3d(0, 0, 0);
-  visibility: visible;
-  backface-visibility: hidden;
-  margin-top: 90px;
-} 
+      background: transparent;
+      position: absolute;
+      width: 100%;
+      height: 62% !important;
+      border: 4px solid transparent;
+      /* border-radius: 1.5rem; */
+      overflow: hidden;
+      -webkit-perspective: 0;
+      -webkit-backface-visibility: hidden;
+      -webkit-transform: translate3d(0, 0, 0);
+      visibility: visible;
+      backface-visibility: hidden;
+      margin-top: 90px;
+    }
   </style>
   <link rel="stylesheet" id="wp-block-library-css" href="css/style.min.css" media="all">
   <!-- <style id="classic-theme-styles-inline-css">
@@ -626,7 +639,9 @@
 </head>
 
 <body class="home page-template-default page page-id-8 page-www.aristocrat.com no-js">
-
+  <div id="skip">
+    <a href="courses/html-css/navigation/skip-navigation#content">Skip Content</a>
+</div>
   <div id="page-load"></div>
 
   <div class="site-wrap">
@@ -640,7 +655,7 @@
         <div class="logo-wrapper">
           <a href="/index.html" class="site-logo">
             <img src="images/logo VRNL.webp" style=" width: 126px;
-            height: 40px;">
+            height: 40px;" alt="VRNL logo">
           </a>
         </div>
 
@@ -657,10 +672,11 @@
                 <ul id="primary-menu" class="menu">
                   <li id="menu-item-20" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20"><a
                       href="index.html">Home</a></li>
-                      <li id="menu-item-20" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20"><a
-                        href="about.html">About Us</a></li>
+                  <li id="menu-item-20" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20"><a
+                      href="about.html">About Us</a></li>
                   <li id="menu-item-519" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-519">
-                    <a href="why.html">Why Vrnl</a></li>
+                    <a href="why.html">Why Vrnl</a>
+                  </li>
                   <li id="menu-item-19" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19"><a
                       href="serv.html">Services</a></li>
 
@@ -694,27 +710,27 @@
 
 
 
-            <div class="vimeo-iframe-wrapper d-lg-none"
+              <div class="vimeo-iframe-wrapper d-lg-none"
                 style="background: url('https://i.vimeocdn.com/video/1299883076-8e6e37af476c5594d10981d0e3e7e5dd96e31320e5bd4b979');background-size:cover;">
 
                 <iframe src="https://player.vimeo.com/video/642515820?background=1" frameborder="0"
                   allow="autoplay; fullscreen" allowfullscreen="" title="Digital Page Banner Mobile.mov"></iframe>
 
-              </div> 
-              
+              </div>
+
               <!-- /.vimeo-iframe-wrapper mobile -->
 
 
 
 
-             <div class="vimeo-iframe-wrapper d-none d-lg-block"
+              <div class="vimeo-iframe-wrapper d-none d-lg-block"
                 style="background: url('https://i.vimeocdn.com/video/1299876899-6b5c871bafa517d231db915ab78a55f0ac281524c7d2ceecb');background-size:cover;">
 
                 <iframe src="https://player.vimeo.com/video/641796551?background=1" frameborder="0"
                   allow="autoplay; fullscreen" allowfullscreen="" title="Home Page Hero Game 1 Desktop.mp4"></iframe>
 
-              </div> 
-              
+              </div>
+
               <!-- /.vimeo-iframe-wrapper desktop -->
 
 
@@ -739,10 +755,10 @@
                       <div class="content-layout-item block_hero-subheading d-none d-lg-block"><!--d-none d-lg-block-->
 
                         <span style="background:#a6fbe8!important;"></span>
-                        <h4>We are the market leader in providing premium and high quality White Label Betting Exchange,
-                          Betfair API Provider, Fancy Odds API, Online Live Casino API, Bookmaker Odds API, Premium
-                          Fancy Odds API, Live Streaming API, Horse Racing Odds API and Greyhound Racing Odds API. We
-                          are the most trusted Betfair API Provider.</h4>
+                        <h4>We provide you with a best White Label Betting Exchange solution that is ready to use and
+                          represents your brand or company. The betting exchange whitelabel solution is perfect for
+                          betting exchanges operators looking for high quality servers, great design and ready to use
+                          product.</h4>
 
                       </div>
 
@@ -750,10 +766,9 @@
 
                       <div class="d-none d-lg-block">
 
-                        <a class="btn btn-secondary mt-5 swiper-no-swiping"
-                          href="contact-us.html" target="_self">
+                        <a class="btn btn-secondary mt-5 swiper-no-swiping" href="contact-us.html" target="_self">
 
-                         CONTACT US
+                          CONTACT US
                         </a>
 
                       </div>
@@ -775,8 +790,7 @@
 
               <div class="d-lg-none block-hero-btn">
 
-                <a class="btn btn-secondary swiper-no-swiping" href="contact-us.html"
-                  target="_self">
+                <a class="btn btn-secondary swiper-no-swiping" href="contact-us.html" target="_self">
 
                   CONTACT US
                 </a>
@@ -794,27 +808,27 @@
 
 
 
-               <div class="vimeo-iframe-wrapper d-lg-none"
+              <div class="vimeo-iframe-wrapper d-lg-none"
                 style="background: url('https://i.vimeocdn.com/video/1292337575-6467240b18e61759a4264acdb78bdd829d9838639885c7bc2');background-size:cover;">
 
                 <iframe src="https://player.vimeo.com/video/641797307?background=1" frameborder="0"
                   allow="autoplay; fullscreen" allowfullscreen="" title="Home Page Hero Game 2 Mobile.mp4"></iframe>
 
-              </div> 
-              
+              </div>
+
               <!-- /.vimeo-iframe-wrapper mobile -->
 
 
 
 
-             <div class="vimeo-iframe-wrapper d-none d-lg-block"
+              <div class="vimeo-iframe-wrapper d-none d-lg-block"
                 style="background: url('https://i.vimeocdn.com/video/1291014607-cee9c8cee68c96282e9627e1f92ac1301113d667dde5da1f3');background-size:cover;">
 
                 <iframe src="https://player.vimeo.com/video/641796619?background=1" frameborder="0"
                   allow="autoplay; fullscreen" allowfullscreen="" title="Home Page Hero Game 2 Desktop.mp4"></iframe>
 
               </div>
-              
+
               <!-- /.vimeo-iframe-wrapper desktop -->
 
 
@@ -849,8 +863,7 @@
 
                       <div class="d-none d-lg-block">
 
-                        <a class="btn btn-secondary mt-5 swiper-no-swiping"
-                          href="contact-us.html" target="_self">
+                        <a class="btn btn-secondary mt-5 swiper-no-swiping" href="contact-us.html" target="_self">
 
                           CONTACT US
                         </a>
@@ -874,8 +887,7 @@
 
               <div class="d-lg-none block-hero-btn">
 
-                <a class="btn btn-secondary swiper-no-swiping" href="contact-us.html"
-                  target="_self">
+                <a class="btn btn-secondary swiper-no-swiping" href="contact-us.html" target="_self">
 
                   CONTACT US
                 </a>
@@ -893,28 +905,28 @@
 
 
 
-            <div class="vimeo-iframe-wrapper d-lg-none"
+              <div class="vimeo-iframe-wrapper d-lg-none"
                 style="background: url('https://i.vimeocdn.com/video/1292337938-51e8aee1d46d98f706194391b5edc197e1299932074d2e5f7');background-size:cover;">
 
                 <iframe src="https://player.vimeo.com/video/641797281?background=1" frameborder="0"
                   allow="autoplay; fullscreen" allowfullscreen=""
                   title="Home Page Hero Game 3 Mobile Frame.mp4"></iframe>
 
-              </div> 
-              
+              </div>
+
               <!-- /.vimeo-iframe-wrapper mobile -->
 
 
 
 
-               <div class="vimeo-iframe-wrapper d-none d-lg-block"
+              <div class="vimeo-iframe-wrapper d-none d-lg-block"
                 style="background: url('https://i.vimeocdn.com/video/1291662485-1d3f74c0efee75a8b03d3ab6ecc3c457cebea1fd01e83adfd');background-size:cover;">
 
                 <iframe src="https://player.vimeo.com/video/641796658?background=1" frameborder="0"
                   allow="autoplay; fullscreen" allowfullscreen="" title="Home Page Hero Game 3 Desktop.mp4"></iframe>
 
-              </div> 
-              
+              </div>
+
               <!-- /.vimeo-iframe-wrapper desktop -->
 
 
@@ -949,8 +961,7 @@
 
                       <div class="d-none d-lg-block">
 
-                        <a class="btn btn-secondary mt-5 swiper-no-swiping"
-                          href="contact-us.html" target="_blank">
+                        <a class="btn btn-secondary mt-5 swiper-no-swiping" href="contact-us.html" target="_blank">
 
                           CONTACT US
                         </a>
@@ -974,8 +985,7 @@
 
               <div class="d-lg-none block-hero-btn">
 
-                <a class="btn btn-secondary swiper-no-swiping" href="contact-us.html"
-                  target="_blank">
+                <a class="btn btn-secondary swiper-no-swiping" href="contact-us.html" target="_blank">
 
                   CONTACT US
                 </a>
@@ -2130,8 +2140,7 @@
 
 
 
-                              <a class="btn btn-secondary card-btn"
-                                href="/why.html" target="_self">
+                              <a class="btn btn-secondary card-btn" href="/why.html" target="_self">
                                 READ MORE </a>
 
 
@@ -2576,8 +2585,7 @@
 
 
 
-                              <a class="btn btn-secondary card-btn"
-                                href="/why.html" target="_self">
+                              <a class="btn btn-secondary card-btn" href="/why.html" target="_self">
                                 READ MORE </a>
 
 
@@ -8705,95 +8713,123 @@
   <footer class="bg-primary text-white">
 
     <h3 class="visually-hidden">Site Footer</h3>
-    
+
     <div class="container-lg">
-  
+
       <div class="row justify-content-between">
-        
+
         <div class="col-12 col-lg-4 d-none d-lg-block lead">
-          
-          <p>At VRNL, we redefine the gaming experience. As your trusted partner, we deliver cutting-edge solutions, from sports betting white-label platforms to seamless APIs and captivating casinos. Elevate your brand with VRNL and stay ahead in the game</p>
-          
-        </div>			
-  
-        <div class="col-12 col-lg-6">				
-  
-          <div class="row justify-content-between g-0">
-  
-            <div class="footer-mb-nav col-12 col-lg-5 mb-3">
-  
-              <div class="d-lg-none pb-2">
-                <a class="h3 text-white" data-bs-toggle="collapse" href="#collapseMenu1" role="button" aria-expanded="false" aria-controls="collapseMenu1">
-                  Company							</a>
-              </div>
-              
-              <div class="collapse d-lg-block pb-3" id="collapseMenu1">
-                
-                <h4 class="h5 d-none d-lg-block">						
-                  Company						
-                </h4>
-  
-                <div class="menu-company-container"><ul id="footer-menu-1" class="menu list-unstyled mb-0"><li id="menu-item-407" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-407"><a href="/about.html">About</a></li>
-  <li id="menu-item-152" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-152"><a href="/why.html">Why vrnl</a></li>
-  <li id="menu-item-1133" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1133"><a target="_blank" rel="noopener" href="/serv.html">Services</a></li>
-  <!-- <li id="menu-item-153" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-153"><a href="https://www.aristocrat.com/news/">Latest News</a></li>
-  <li id="menu-item-154" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-154"><a href="https://www.aristocrat.com/resources/">Resources</a></li> -->
-  </ul></div>						</div>
-  
-            </div>
-  
-            <div class="footer-mb-nav col-12 col-lg-5 mb-3">
-  
-              <div class="d-lg-none pb-2">
-                <a class="h3 text-white" data-bs-toggle="collapse" href="#collapseMenu2" role="button" aria-expanded="false" aria-controls="collapseMenu2">
-                  Terms and Policies							</a>
-              </div>
-              
-              <div class="collapse d-lg-block pb-3" id="collapseMenu2">
-                
-                <h4 class="h5 d-none d-lg-block">						
-                  Terms and Policies						
-                </h4>
-  
-                <div class="menu-terms-and-policies-container"><ul id="footer-menu-2" class="menu list-unstyled mb-0">
-  
-  <li id="menu-item-170" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-170"><a href="/privacy.html" target="_blank">Privacy Policy</a></li>
-  <li id="menu-item-171" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-171"><a href="/contact-us.html">Contact Us</a></li>
-  </ul></div>						</div>
-            </div>
-  
-            <div class="col-1 mt-3">
-            
-              <a class="linkedin" href="https://www.instagram.com/vrnl_exchange/" title="Instagram" data-title="LinkedIn" target="_blank" rel="noopener">
-                <img class="social-icon" src="images/icons8-instagram-64.png" >       
-                          </a>			
-                <a class="linkedin" href="https://api.whatsapp.com/send/?phone=%2B918268808222&text&type=phone_number&app_absent=0" title="whatsapp" data-title="LinkedIn" target="_blank" rel="noopener">
-                     
-                  <img class="social-icon" src="images/icons8-whatsapp-64.png"></a>		
-                  
-                  <a class="linkedin" href="skype:live:9960f32f776599a2?chat" title="Skype" data-title="LinkedIn" target="_blank" rel="noopener">
-                     
-                    <img class="social-icon" src="images/icons8-skype-64.png"></a>	
-                    
-                    <a class="linkedin" href="https://www.facebook.com/people/Jack-Harris/pfbid0vKsLt67ZisBmJQeSTrbhmuQZ9pYBdAUn3xGSoNJMqphcDUWmyuyCfYbpi4EdMDvkl/" title="Facebook" data-title="LinkedIn" target="_blank" rel="noopener">
-                     
-                      <img class="social-icon" src="images/icons8-facebook-64.png"></a>
-                      
-  
-            </div>					
-  
-          </div><!-- /.row -->	
-  
+
+          <p>At VRNL, we redefine the gaming experience. As your trusted partner, we deliver cutting-edge solutions,
+            from sports betting white-label platforms to seamless APIs and captivating casinos. Elevate your brand with
+            VRNL and stay ahead in the game</p>
+
         </div>
-        
-      </div><!-- /.row -->		
-      
+
+        <div class="col-12 col-lg-6">
+
+          <div class="row justify-content-between g-0">
+
+            <div class="footer-mb-nav col-12 col-lg-5 mb-3">
+
+              <div class="d-lg-none pb-2">
+                <a class="h3 text-white" data-bs-toggle="collapse" href="#collapseMenu1" role="button"
+                  aria-expanded="false" aria-controls="collapseMenu1">
+                  Company </a>
+              </div>
+
+              <div class="collapse d-lg-block pb-3" id="collapseMenu1">
+
+                <h4 class="h5 d-none d-lg-block">
+                  Company
+                </h4>
+
+                <div class="menu-company-container">
+                  <ul id="footer-menu-1" class="menu list-unstyled mb-0">
+                    <li id="menu-item-407"
+                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-407"><a
+                        href="about.html">About</a></li>
+                    <li id="menu-item-152"
+                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-152"><a
+                        href="why.html">Why vrnl</a></li>
+                    <li id="menu-item-1133"
+                      class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1133"><a target="_blank"
+                        rel="noopener" href="serv.html">Services</a></li>
+                    <!-- <li id="menu-item-153" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-153"><a href="https://www.aristocrat.com/news/">Latest News</a></li>
+  <li id="menu-item-154" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-154"><a href="https://www.aristocrat.com/resources/">Resources</a></li> -->
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="footer-mb-nav col-12 col-lg-5 mb-3">
+
+              <div class="d-lg-none pb-2">
+                <a class="h3 text-white" data-bs-toggle="collapse" href="#collapseMenu2" role="button"
+                  aria-expanded="false" aria-controls="collapseMenu2">
+                  Terms and Policies </a>
+              </div>
+
+              <div class="collapse d-lg-block pb-3" id="collapseMenu2">
+
+                <h4 class="h5 d-none d-lg-block">
+                  Terms and Policies
+                </h4>
+
+                <div class="menu-terms-and-policies-container">
+                  <ul id="footer-menu-2" class="menu list-unstyled mb-0">
+
+                    <li id="menu-item-170"
+                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-170"><a
+                        href="privacy.html" target="_blank">Privacy Policy</a></li>
+                    <li id="menu-item-171"
+                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-171"><a
+                        href="contact-us.html">Contact Us</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-1 mt-3">
+
+              <a class="linkedin" href="https://www.instagram.com/vrnl_exchange/" title="Instagram"
+                data-title="LinkedIn" target="_blank" rel="noopener">
+                <img class="social-icon" alt="Instagram" src="images/icons8-instagram-64.png">
+              </a>
+              <a class="linkedin"
+                href="https://api.whatsapp.com/send/?phone=%2B918268808222&text&type=phone_number&app_absent=0"
+                title="whatsapp" data-title="LinkedIn" target="_blank" rel="noopener">
+
+                <img class="social-icon" alt="whatsapp" src="images/icons8-whatsapp-64.png"></a>
+
+              <a class="linkedin" href="skype:live:9960f32f776599a2?chat" title="Skype" data-title="LinkedIn"
+                target="_blank" rel="noopener">
+
+                <img class="social-icon" alt="Skype" src="images/icons8-skype-64.png"></a>
+
+              <a class="linkedin"
+                href="https://www.facebook.com/people/Jack-Harris/pfbid0vKsLt67ZisBmJQeSTrbhmuQZ9pYBdAUn3xGSoNJMqphcDUWmyuyCfYbpi4EdMDvkl/"
+                title="Facebook" data-title="LinkedIn" target="_blank" rel="noopener">
+
+                <img class="social-icon" alt="Facebook" src="images/icons8-facebook-64.png"></a>
+
+
+            </div>
+
+          </div><!-- /.row -->
+
+        </div>
+
+      </div><!-- /.row -->
+
       <div class="site-info mt-5 small">
-        vrnl.net 2023 All Rights Reserved		
+        <a href="https://vrnl.net/#/" target="_blank"><span style="color: white;">vrnl.net</span></a>
+        2023 All Rights Reserved
       </div><!-- /.site-info -->
-  
+
     </div><!-- /.container-lg -->
-        
+
   </footer>
 
 
@@ -8843,7 +8879,7 @@
   </script>
   <script src="js/bundle.js" id="theme-script-js"></script>
   <script id="moove_gdpr_frontend-js-extra">
-    var moove_frontend_gdpr_scripts = { "ajaxurl": "https:\/\/www.aristocrat.com\/wp-admin\/admin-ajax.php", "post_id": "8", "plugin_dir": "https:\/\/s25652.pcdn.co\/wp-content\/plugins\/gdpr-cookie-compliance", "show_icons": "all", "is_page": "1", "ajax_cookie_removal": "false", "strict_init": "1", "enabled_default": { "third_party": 0, "advanced": 0 }, "geo_location": "false", "force_reload": "false", "is_single": "", "hide_save_btn": "false", "current_user": "0", "cookie_expiration": "365", "script_delay": "2000", "close_btn_action": "1", "close_btn_rdr": "", "scripts_defined": "{\"cache\":true,\"header\":\"\",\"body\":\"\",\"footer\":\"\",\"thirdparty\":{\"header\":\"\",\"body\":\"\",\"footer\":\"\"},\"advanced\":{\"header\":\"<!-- Google Tag Manager -->\\r\\n<script data-gdpr>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\\r\\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\\r\\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\\r\\n'https:\\\/\\\/www.googletagmanager.com\\\/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\\r\\n})(window,document,'script','dataLayer','GTM-5L4FKXL');<\\\/script>\\r\\n<!-- End Google Tag Manager -->\\r\\n\\r\\n<script data-gdpr type='text\\\/javascript'>\\r\\npiAId = '1025621';\\r\\npiCId = '58037';\\r\\npiHostname = 'info.aristocrat.com';\\r\\n\\r\\n(function() {\\r\\n\\tfunction async_load(){\\r\\n\\t\\tvar s = document.createElement('script'); s.type = 'text\\\/javascript';\\r\\n\\t\\ts.src = ('https:' == document.location.protocol ? 'https:\\\/\\\/' : 'http:\\\/\\\/') + piHostname + '\\\/pd.js';\\r\\n\\t\\tvar c = document.getElementsByTagName('script')[0]; c.parentNode.insertBefore(s, c);\\r\\n\\t}\\r\\n\\tif(window.attachEvent) { window.attachEvent('onload', async_load); }\\r\\n\\telse { window.addEventListener('load', async_load, false); }\\r\\n})();\\r\\n<\\\/script>\",\"body\":\"<!-- Google Tag Manager (noscript) -->\\r\\n<noscript><iframe src=\\\"https:\\\/\\\/www.googletagmanager.com\\\/ns.html?id=GTM-5L4FKXL\\\"\\r\\nheight=\\\"0\\\" width=\\\"0\\\" style=\\\"display:none;visibility:hidden\\\"><\\\/iframe><\\\/noscript>\\r\\n<!-- End Google Tag Manager (noscript) -->\",\"footer\":\"\"}}" ,"gdpr_scor" :"true" ,"wp_lang" :" "};
+    var moove_frontend_gdpr_scripts = { "ajaxurl": "https:\/\/www.aristocrat.com\/wp-admin\/admin-ajax.php", "post_id": "8", "plugin_dir": "https:\/\/s25652.pcdn.co\/wp-content\/plugins\/gdpr-cookie-compliance", "show_icons": "all", "is_page": "1", "ajax_cookie_removal": "false", "strict_init": "1", "enabled_default": { "third_party": 0, "advanced": 0 }, "geo_location": "false", "force_reload": "false", "is_single": "", "hide_save_btn": "false", "current_user": "0", "cookie_expiration": "365", "script_delay": "2000", "close_btn_action": "1", "close_btn_rdr": "", "scripts_defined": "{\"cache\":true,\"header\":\"\",\"body\":\"\",\"footer\":\"\",\"thirdparty\":{\"header\":\"\",\"body\":\"\",\"footer\":\"\"},\"advanced\":{\"header\":\"<!-- Google Tag Manager -->\\r\\n<script data-gdpr>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\\r\\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\\r\\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\\r\\n'https:\\\/\\\/www.googletagmanager.com\\\/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\\r\\n})(window,document,'script','dataLayer','GTM-5L4FKXL');<\\\/script>\\r\\n<!-- End Google Tag Manager -->\\r\\n\\r\\n<script data-gdpr type='text\\\/javascript'>\\r\\npiAId = '1025621';\\r\\npiCId = '58037';\\r\\npiHostname = 'info.aristocrat.com';\\r\\n\\r\\n(function() {\\r\\n\\tfunction async_load(){\\r\\n\\t\\tvar s = document.createElement('script'); s.type = 'text\\\/javascript';\\r\\n\\t\\ts.src = ('https:' == document.location.protocol ? 'https:\\\/\\\/' : 'http:\\\/\\\/') + piHostname + '\\\/pd.js';\\r\\n\\t\\tvar c = document.getElementsByTagName('script')[0]; c.parentNode.insertBefore(s, c);\\r\\n\\t}\\r\\n\\tif(window.attachEvent) { window.attachEvent('onload', async_load); }\\r\\n\\telse { window.addEventListener('load', async_load, false); }\\r\\n})();\\r\\n<\\\/script>\",\"body\":\"<!-- Google Tag Manager (noscript) -->\\r\\n<noscript><iframe src=\\\"https:\\\/\\\/www.googletagmanager.com\\\/ns.html?id=GTM-5L4FKXL\\\"\\r\\nheight=\\\"0\\\" width=\\\"0\\\" style=\\\"display:none;visibility:hidden\\\"><\\\/iframe><\\\/noscript>\\r\\n<!-- End Google Tag Manager (noscript) -->\",\"footer\":\"\"}}  ,"gdpr_scor  :"true  ,"wp_lang  :"  "};
   </script>
   <script src="js/main.js" id="moove_gdpr_frontend-js"></script>
   <script id="moove_gdpr_frontend-js-after">
