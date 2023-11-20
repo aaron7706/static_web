@@ -287,34 +287,34 @@ strong {
 	font-weight: bolder
 }
 .web-image{
-	content: url(../images/img1.png);
+	content: url(../images/img1.webp);
 }
 .web-image1{
-	content: url(../images/img2.png);
+	content: url(../images/img2.webp);
 }
 .web-image2{
-	content: url(../images/img3.png);
+	content: url(../images/img3.webp);
 }
 .web-image3{
-	content: url(../images/img4.png);
+	content: url(../images/img4.webp);
 }
 .web-image4{
-	content: url(../images/img5.png);
+	content: url(../images/img5.webp);
 }
 .web-image5{
-	content: url(../images/img6.png);
+	content: url(../images/img6.webp);
 }
 .web-image6{
-	content: url(../images/img7.png);
+	content: url(../images/img7.webp);
 }
 .web-image7{
-	content: url(../images/img8.png);
+	content: url(../images/img8.webp);
 }
 .web-image8{
-	content: url(../images/img9.png);
+	content: url(../images/img9.webp);
 }
 .web-image9{
-	content: url(../images/img10.png);
+	content: url(../images/img10.webp);
 }
 .block_gallery-wrapper .swiper-slide img {
     width: 100%;
@@ -327,38 +327,39 @@ strong {
 }
 @media (max-width: 768px){
 .web-image{
-content: url(../images/mobileimg1.png);
+content: url(../images/mobileimg1.webp);
 }
 .web-image1{
-	content: url(../images/mobileimg2.png);
+	content: url(../images/mobileimg2.webp);
 }
 .web-image2{
-	content: url(../images/mobileimg3.png);
+	content: url(../images/mobileimg3.webp);
 }
 .web-image3{
-	content: url(../images/mobileimg4.png);
+	content: url(../images/mobileimg4.webp);
 }
 .web-image4{
-	content: url(../images/mobileimg5.png);
+	content: url(../images/mobileimg5.webp);
 }
 .web-image5{
-	content: url(../images/mobileimg6.png);
+	content: url(../images/mobileimg6.webp);
 }
 .web-image6{
-	content: url(../images/mobileimg7.png);
+	content: url(../images/mobileimg7.webp);
 }
 .web-image7{
-	content: url(../images/mobileimg8.png);
+	content: url(../images/mobileimg8.webp);
 }
 .web-image8{
-	content: url(../images/mobileimg9.png);
+	content: url(../images/mobileimg9.webp);
 }
 .web-image9{
-	content: url(../images/mobileimg10.png);
+	content: url(../images/mobileimg10.webp);
 }
 .block_gallery-wrapper .swiper-slide img {
     width: 100%;
     height: auto;
 }
 }
+
 
