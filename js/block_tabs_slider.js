@@ -114,7 +114,7 @@
       el: '.block_tabs_slider-pagination',
       clickable: true,
       renderBullet: function renderBullet(index, className) {
-        console.log(index);
+        // console.log(index);
         return '<span class="' + className + '">' + names[index] + '</span>';
       }
     },
