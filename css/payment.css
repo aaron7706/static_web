@@ -98,15 +98,13 @@ a {
     display: inline;
 }
 .request_btn1 {
-    background-image: url(images/button_bg_blue.png);
-    /* background-color: #0037a4;
-    border: 1px solid #0037A4; */
-    /* border-top-left-radius: 15px;
-    border-bottom-right-radius: 15px; */
+    /* background-image: url(images/button_bg_blue.png);  */
     background-repeat: no-repeat;
     background-size: 100% 100%;
     padding: 12px 35px !important;
     color: #fff;
+    background: #0d6efd;
+    border-radius: 12px;
 }
 .request_btn1:hover {
     color: #fff !important;
