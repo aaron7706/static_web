@@ -196,7 +196,7 @@ section {
     padding: 40px 0px;
 }
 .banner_section {
-    background-image: url('../img/home/background.png');
+    /* background-image: url('../img/home/background.png'); */
     background-position: top center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -298,7 +298,7 @@ section {
     background-repeat: no-repeat;
     background-size: cover;
     padding: 80px 0px;
-    background-image: url(../img/inner_banner_bg.jpg);
+    /* background-image: url(../img/inner_banner_bg.jpg); */
 }
 .banner_img1 img {
     height: 370px;
@@ -411,7 +411,7 @@ section {
     position: relative;
 }
 .app_download_bg_shape {
-    background: rgba(0, 0, 0, 0) url('../img/app_bg.png') no-repeat scroll center center;
+    /* background: rgba(0, 0, 0, 0) url('../img/app_bg.png') no-repeat scroll center center; */
     content: "";
     position: absolute;
     top: 0;
@@ -441,13 +441,13 @@ section {
 .playstore_btn {
     /* border: 1px solid #0037a4;
     background-color: #0037a4; */
-    background-image: url(images/button_bg_blue.png);
+    /* background-image: url(images/button_bg_blue.png); */
     background-size: 100% 100%;
     background-repeat: no-repeat;
     color: #ffffff;
 }
 .mac_btn {
-    background-image: url(images/mac_bg.png);
+    /* background-image: url(images/mac_bg.png); */
     background-size: 100% 100%;
     background-repeat: no-repeat;
     /* border: 1px solid #0037a4;
@@ -522,7 +522,7 @@ section {
     100% { transform: rotate(360deg); }
 }
 .recurring_section {
-    background-image: url('../img/recurring_payment/banner_bg.png');
+    /* background-image: url('../img/recurring_payment/banner_bg.png'); */
     background-repeat: no-repeat;
     /* background-position: center; */
     background-size: 100% 100%;
@@ -546,7 +546,7 @@ section {
 }
 .request_btn, .create_btn {
     /* background-color: #0037A4; */
-    background-image: url('../img/home/button_bg_blue.png');
+    /* background-image: url('../img/home/button_bg_blue.png'); */
     color: #ffffff;
     padding: 13px 15px;
     /* box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1); */
@@ -560,7 +560,7 @@ section {
 }
 .request_demo {
     /* background-color: #FF008A; */
-    background-image: url('../img/home/button_bg_pink.png');
+    /* background-image: url('../img/home/button_bg_pink.png'); */
     font-weight: 500;
     color: #ffffff;
     padding: 13px 15px;
@@ -574,13 +574,13 @@ section {
     color: #ffffff !important;
 }
 .onboarding_div {
-    background-image: url('images/vecter.png');
+    /* background-image: url('images/vecter.png'); */
     background-repeat: no-repeat;
     background-size: 100% 100%;
     padding: 20px 20px 20px 20px;
 }
 .onboarding_div:hover {
-    background-image: url('images/vecter.png');
+    /* background-image: url('images/vecter.png'); */
     background-size: 100% 100%;
 }
 /* .onboarding_div:hover {
@@ -688,12 +688,12 @@ section {
     margin-right: 30px;
     /* border-top-left-radius: 15px;
     border-bottom-right-radius: 15px; */
-    background-image: url(../img/home/button_border_bg.svg);
+    /* background-image: url(../img/home/button_border_bg.svg); */
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
 .product_para_link a:hover, .create_link:hover, .qrcode_btn:hover {
-    background-image: url(../img/home/white_button_bg.svg);
+    /* background-image: url(../img/home/white_button_bg.svg); */
     color: #0037A4;
     padding: 15px 20px;
 }
@@ -785,7 +785,7 @@ section {
     height: 300px;
 }
 .integrate_content_code {
-    background: url('../img/payment_link/Vector-1.png') no-repeat;
+    /* background: url('../img/payment_link/Vector-1.png') no-repeat; */
     background-size: 100% 100%;
     height: 650px;
     position: relative;
@@ -846,7 +846,7 @@ section {
     color: #5a49f8;
 }
 .simplify_divstrip {
-    background-image: url('../img/home/bannerstrip.png');
+    /* background-image: url('../img/home/bannerstrip.png'); */
     background-repeat: no-repeat;
     background-size: 100% 100%;
     position: relative;
@@ -1082,7 +1082,7 @@ section {
 .invoice_banner_section {
     /* padding-bottom: 0px; */
     background-color: #f8f6f6;
-    background-image: url('../img/invoice_payments/banner_bg.png');
+    /* background-image: url('../img/invoice_payments/banner_bg.png'); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center right;
@@ -1182,7 +1182,7 @@ section {
     padding-top: 25px;
 }
 .gatewayfeatures_div {
-    background-image: url('../img/payment_gateway/Subtract.svg');
+    /* background-image: url('../img/payment_gateway/Subtract.svg'); */
     background-repeat: no-repeat;
     background-size: contain;
     padding: 20px 10px 5px 20px;
@@ -1282,7 +1282,7 @@ section {
   }
   
 .integrate_div {
-    background-image: url(images/integrate_vector.png) !important;
+    /* background-image: url(images/integrate_vector.png) !important; */
     background-size: 100% 100%;
     background-repeat: no-repeat;
     /* border: 1px solid #0037A4;
@@ -1451,7 +1451,7 @@ section {
     color: #01FCFE !important;
 }
 .payment_link_features {
-    background-image: url('../img/home/feature_bg_vector.png');
+    /* background-image: url('../img/home/feature_bg_vector.png'); */
     background-repeat: no-repeat;
     /* border: 2px solid #fff; */
     background-size: 100% 100%;
@@ -1522,7 +1522,7 @@ section {
     padding-top: 25px;
 }
 .get_btn, .create_account {
-    background-image: url(../img/home/white_button_bg.svg);
+    /* background-image: url(../img/home/white_button_bg.svg); */
     color: #0037A4;
     padding: 22px 10px;
     background-repeat: no-repeat;
@@ -1567,7 +1567,7 @@ section {
     border-bottom-right-radius: 30px; */
     /* margin-left: 50px;
     margin-right: 50px; */
-    background-image: url(../img/contact_bg.png);
+    /* background-image: url(../img/contact_bg.png); */
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -1604,7 +1604,7 @@ section {
     color: #0037A4;
 }
 .contact_div_form .submit_btn {
-    background-image: url(../img/contact_button_bg.svg);
+    /* background-image: url(../img/contact_button_bg.svg); */
     /* background-color: #0037a4;
     border: 1px solid #0037A4; */
     /* border-top-left-radius: 15px;
@@ -1753,7 +1753,7 @@ section {
     border-bottom-right-radius: 25px; */
     text-transform: uppercase;
     font-weight: 500;
-    background-image: url(../img/home/button_bg1.svg);
+    /* background-image: url(../img/home/button_bg1.svg); */
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -1974,15 +1974,15 @@ section {
     margin-right: auto;
 }
 .process_bar ul li:nth-child(1):before {
-    background: url('../img/payment_link/create.svg') no-repeat;
+    /* background: url('../img/payment_link/create.svg') no-repeat; */
     background-position: center;
 }
 .process_bar ul li:nth-child(2):before {
-    background: url('../img/payment_link/share.svg') no-repeat;
+    /* background: url('../img/payment_link/share.svg') no-repeat; */
     background-position: center;
 }
 .process_bar ul li:nth-child(3):before {
-    background: url('../img/payment_link/paid.svg') no-repeat;
+    /* background: url('../img/payment_link/paid.svg') no-repeat; */
     background-position: center;
 }
 .process_bar ul li:first-child:after {
@@ -1993,7 +1993,7 @@ section {
     padding-top: 20px;
 }
 .vpos_create_invoice {
-    background-image: url(../img/vpos_bg.svg);
+    /* background-image: url(../img/vpos_bg.svg); */
     background-size: 100% 100%;
     background-repeat: no-repeat;
     /* box-shadow: 1px 4px 16px rgba(0, 0, 0, 0.1); */
@@ -2116,19 +2116,19 @@ section {
     cursor: pointer;
 }
 .vpos_payg_singup_section1 .process_bar ul li:nth-child(1):before {
-    background: url('../img/vpos/fee.svg') no-repeat;
+    /* background: url('../img/vpos/fee.svg') no-repeat; */
     background-position: center;
 }
 .vpos_payg_singup_section1 .process_bar ul li:nth-child(2):before {
-    background: url('../img/vpos/accept.svg') no-repeat;
+    /* background: url('../img/vpos/accept.svg') no-repeat; */
     background-position: center;
 }
 .vpos_payg_singup_section1 .process_bar ul li:nth-child(2):before {
-    background: url('../img/vpos/boarding.svg') no-repeat;
+    /* background: url('../img/vpos/boarding.svg') no-repeat; */
     background-position: center;
 }
 .vpos_payg_singup_section1 .process_bar ul li:nth-child(4):before {
-    background: url('../img/vpos/signup.svg') no-repeat;
+    /* background: url('../img/vpos/signup.svg') no-repeat; */
     background-position: center;
 }
 .vpos_features {
@@ -2184,7 +2184,7 @@ section {
 }
 .request_form {
     padding: 5px 25px 20px 25px;
-    background-image: url(../img/home/popup_bg.svg);
+    /* background-image: url(../img/home/popup_bg.svg); */
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -2211,7 +2211,7 @@ section {
     border: none !important;
     color: #fff !important;
     padding: 10px 20px !important;
-    background-image: url(../img/home/button_bg.png);
+    /* background-image: url(../img/home/button_bg.png); */
     width: 100%;
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -2402,143 +2402,143 @@ section {
   line-height: 1.8;
 }
 .airline_icon {
-    background-image: url('../img/industries/travel.png');
+    /* background-image: url('../img/industries/travel.png'); */
     background-size: contain;
 }
 .bakery_icon {
-    background-image: url('../img/industries/bakkeries.png');
+    /* background-image: url('../img/industries/bakkeries.png'); */
     background-size: contain;
 }
 .bank_icon {
-    background-image: url('../img/industries/bamks.png');
+    /* background-image: url('../img/industries/bamks.png'); */
     background-size: contain;
 }
 .b2b_icon {
-    background-image: url('../img/industries/b2b.png');
+    /* background-image: url('../img/industries/b2b.png'); */
     background-size: contain;
 }
 .boutique_icon {
-    background-image: url('../img/industries/boutiques.png');
+    /* background-image: url('../img/industries/boutiques.png'); */
     background-size: contain;
 }
 .cabs_icon {
-    background-image: url('../img/industries/cabs.png');
+    /* background-image: url('../img/industries/cabs.png'); */
     background-size: contain;
 }
 .coffee_icon {
-    background-image: url('../img/industries/coffe.png');
+    /* background-image: url('../img/industries/coffe.png'); */
     background-size: contain;
 }
 .diagnostic_icon {
-    background-image: url('../img/industries/diagonsitic-center.png');
+    /* background-image: url('../img/industries/diagonsitic-center.png'); */
     background-size: contain;
 }
 .education_icon {
-    background-image: url('../img/industries/education.png');
+    /* background-image: url('../img/industries/education.png'); */
     background-size: contain;
 }
 .etailing_icon {
-    background-image: url('../img/industries/e-tailing.png');
+    /* background-image: url('../img/industries/e-tailing.png'); */
     background-size: contain;
 }
 .ecommerce_icon {
-    background-image: url('../img/industries/e-commerce.png');
+    /* background-image: url('../img/industries/e-commerce.png'); */
     background-size: contain;
 }
 .fooddelivery_icon {
-    background-image: url('../img/industries/food-delivery.png');
+    /* background-image: url('../img/industries/food-delivery.png'); */
     background-size: contain;
 }
 .finance_icon {
-    background-image: url('../img/industries/finance.png');
+    /* background-image: url('../img/industries/finance.png'); */
     background-size: contain;
 }
 .govt_icon {
-    background-image: url('../img/industries/govt.png');
+    /* background-image: url('../img/industries/govt.png'); */
     background-size: contain;
 }
 .gym_icon {
-    background-image: url('../img/industries/fittines.png');
+    /* background-image: url('../img/industries/fittines.png'); */
     background-size: contain;
 }
 .grocery_icon {
-    background-image: url('../img/industries/supermarket.png');
+    /* background-image: url('../img/industries/supermarket.png'); */
     background-size: contain;
 }
 .hospitality_icon {
-    background-image: url('../img/industries/hospatality.png');
+    /* background-image: url('../img/industries/hospatality.png'); */
     background-size: contain;
 }
 .hotel_icon {
-    background-image: url('../img/industries/hotel.png');
+    /* background-image: url('../img/industries/hotel.png'); */
     background-size: contain;
 }
 .hospital_icon {
-    background-image: url('../img/industries/hosipital.png');
+    /* background-image: url('../img/industries/hosipital.png'); */
     background-size: contain;
 }
 .insurance_icon {
-    background-image: url('../img/industries/insurance.png');
+    /* background-image: url('../img/industries/insurance.png'); */
     background-size: contain;
 }
 .itservice_icon {
-    background-image: url('../img/industries/it-services.png');
+    /* background-image: url('../img/industries/it-services.png'); */
     background-size: contain;
 }
 .membership_icon {
-    background-image: url('../img/industries/membership.png');
+    /* background-image: url('../img/industries/membership.png'); */
     background-size: contain;
 }
 .medical_icon {
-    background-image: url('../img/industries/medical-store.png');
+    /* background-image: url('../img/industries/medical-store.png'); */
     background-size: contain;
 }
 .mutualfunds_icon {
-    background-image: url('../img/industries/mutal-funds.png');
+    /* background-image: url('../img/industries/mutal-funds.png'); */
     background-size: contain;
 }
 .nbfc_icon {
-    background-image: url('../img/industries/nbfc.png');
+    /* background-image: url('../img/industries/nbfc.png'); */
     background-size: contain;
 }
 .ngo_icon {
-    background-image: url('../img/industries/ngos.png');
+    /* background-image: url('../img/industries/ngos.png'); */
     background-size: contain;
 }
 .onlineservice_icon {
-    background-image: url('../img/industries/online-services.png');
+    /* background-image: url('../img/industries/online-services.png'); */
     background-size: contain;
 }
 .restaurant_icon {
-    background-image: url('../img/industries/restaruant.png');
+    /* background-image: url('../img/industries/restaruant.png'); */
     background-size: contain;
 }
 .retail_icon {
-    background-image: url('../img/industries/retail-outlet.png');
+    /* background-image: url('../img/industries/retail-outlet.png'); */
     background-size: contain;
 }
 .shoppingmall_icon {
-    background-image: url('../img/industries/shopping-malls.png');
+    /* background-image: url('../img/industries/shopping-malls.png'); */
     background-size: contain;
 }
 .spa_icon {
-    background-image: url('../img/industries/beauty.png');
+    /* background-image: url('../img/industries/beauty.png'); */
     background-size: contain;
 }
 .midsized_icon {
-    background-image: url('../img/industries/small-bussiness.png');
+    /* background-image: url('../img/industries/small-bussiness.png'); */
     background-size: contain;
 }
 .subscription_icon {
-    background-image: url('../img/industries/subscripition-based.png');
+    /* background-image: url('../img/industries/subscripition-based.png'); */
     background-size: contain;
 }
 .service_icon {
-    background-image: url('../img/industries/proffesional-services.png');
+    /* background-image: url('../img/industries/proffesional-services.png'); */
     background-size: contain;
 }
 .telecom_icon {
-    background-image: url('../img/industries/telecome.png');
+    /* background-image: url('../img/industries/telecome.png'); */
     background-size: contain;
 }
 .industry_feature {
@@ -2744,30 +2744,30 @@ section {
   font-size: 15px;
   line-height: 1.8;
 }
-.widget-area .widget_luvion_posts_thumb .item .thumb .fullimage.bg112 {
+/* .widget-area .widget_luvion_posts_thumb .item .thumb .fullimage.bg112 {
   background-image: url(../../assets/img/blog-image/subscriptions-payments-blog.png);
-}
-.widget-area .widget_luvion_posts_thumb .item .thumb .fullimage.bg113 {
+} */
+/* .widget-area .widget_luvion_posts_thumb .item .thumb .fullimage.bg113 {
   background-image: url(../../assets/img/blog-image/does-omicron-variant-will-impact-the-future-of-fintech-industry.png);
-}
-.widget-area .widget_luvion_posts_thumb .item .thumb .fullimage.bg114 {
+} */
+/* .widget-area .widget_luvion_posts_thumb .item .thumb .fullimage.bg114 {
   background-image: url(../../assets/img/blog-image/updated-upi-transaction-limit-2022.png);
-}
-.widget-area .widget_luvion_posts_thumb .item .thumb .fullimage.bg115 {
+} */
+/* .widget-area .widget_luvion_posts_thumb .item .thumb .fullimage.bg115 {
   background-image: url(../../assets/img/blog-image/how-Start-Ups-Can-Drive-Large-Scale-Organic-Growth.png);
-}
-.widget-area .widget_luvion_posts_thumb .item .thumb .fullimage.bg116 {
+} */
+/* .widget-area .widget_luvion_posts_thumb .item .thumb .fullimage.bg116 {
     background-image: url(../../assets/img/blog-image/challenges-that-dissuade-merchants-using-payment-gateways.png);
-  }
-  .widget-area .widget_luvion_posts_thumb .item .thumb .fullimage.bg117 {
+  } */
+  /* .widget-area .widget_luvion_posts_thumb .item .thumb .fullimage.bg117 {
     background-image: url(../../assets/img/blog-image/artificial-intelligence-the-new-algorithmic-way-to-life.png);
-  }
-  .widget-area .widget_luvion_posts_thumb .item .thumb .fullimage.bg118 {
+  } */
+  /* .widget-area .widget_luvion_posts_thumb .item .thumb .fullimage.bg118 {
     background-image: url(../../assets/img/blog-image/benefits-of-accepting-credit-card-payment.png);
-  }
-  .widget-area .widget_luvion_posts_thumb .item .thumb .fullimage.bg119 {
+  } */
+  /* .widget-area .widget_luvion_posts_thumb .item .thumb .fullimage.bg119 {
     background-image: url(../../assets/img/blog-image/village-adoption-scheme.png);
-  }
+  } */
 .single-blog-post {
     background: #f7fafd;
     position: relative;
@@ -3285,7 +3285,7 @@ section {
 }
 .modal_features ul li:before {
     content: '';
-    background-image: url('../img/home/modal.svg');
+    /* background-image: url('../img/home/modal.svg'); */
     /* background-color: #0037a4; */
     height: 20px;
     width: 20px;
@@ -3543,7 +3543,7 @@ section {
 }
 .robust_api {
     /* background-color: #f5f6fc; */
-    background: url('../img/payout/shapes/bg_shape.svg') no-repeat center bottom;
+    /* background: url('../img/payout/shapes/bg_shape.svg') no-repeat center bottom; */
     background-size: cover;
     width: 100%;
 }
@@ -3552,7 +3552,7 @@ section {
     z-index: 1;
 }
 .inner_container:before {
-    content: url('../img/payout/shapes/shape_3.svg');
+    /* content: url('../img/payout/shapes/shape_3.svg'); */
     position: absolute;
     top: -55px;
     left: -100px;
@@ -4116,7 +4116,7 @@ button.close {
 #load #box {
     width: 100%;
     height: 100%;
-    background-image: url(../img/loading-1.gif);
+    /* background-image: url(../img/loading-1.gif); */
     position: absolute;
     top: 0;
     left: 0;

@@ -90,7 +90,7 @@
 
 @media (min-width: 1200px) and (max-width: 1399.98px) {
   .block_cards_slider-wrapper .swiper-slide .flip-card-wrapper .flip-card .card-copy p {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 }
 

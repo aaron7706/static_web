@@ -312,7 +312,7 @@ strong {
 	content: url(../images/lotusweb_7.webp);
 }
 .web-image8{
-	content: url(../images/lcexchweb_7.webp);
+	content: url(../images/cxwelcome.webp);
 }
 .web-image9{
 	content: url(../images/world777web_7.webp);
@@ -337,7 +337,7 @@ content: url(../images/mobileimg1.webp);
 	content: url(../images/mobileimg3.webp);
 }
 .web-image3{
-	content: url(../images/mobileimg4.webp);
+	content: url(../images/cmobile.png);
 }
 .web-image4{
 	content: url(../images/mobileimg5.webp);
@@ -369,3 +369,71 @@ content: url(../images/mobileimg1.webp);
     margin-left: 275px; */
     
 }
+.block_2columns-wrapper {
+	position: relative; }
+	@media (max-width: 991.98px) {
+	  .block_2columns-wrapper div:first-child {
+		order: 6 !important; } }
+	@media (max-width: 991.98px) {
+	  .block_2columns-wrapper div:last-child {
+		order: -1 !important; } }
+	.block_2columns-wrapper .block_2columns-image {
+	  position: relative; }
+	  .block_2columns-wrapper .block_2columns-image .foreground_image {
+		position: absolute;
+		max-width: 100%;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 2; }
+	.block_2columns-wrapper .block_2columns-content div:first-child {
+	  margin-top: 0 !important; }
+	@media (min-width: 992px) {
+	  .block_2columns-wrapper .block_2columns-content div:last-child {
+		margin-bottom: 0 !important; } }
+
+
+		:root {
+			--swiper-theme-color: #ff512e; }
+		  
+		  .block_hero_slider-wrapper .swiper-pagination-bullets {
+			bottom: 6rem; }
+			.block_hero_slider-wrapper .swiper-pagination-bullets .swiper-pagination-bullet {
+			  width: 15px;
+			  height: 15px; }
+		  
+		  .block_hero_slider-wrapper .swiper-progress-bar {
+			position: absolute;
+			width: 100%;
+			display: block;
+			z-index: 1;
+			bottom: 0; }
+			.block_hero_slider-wrapper .swiper-progress-bar .slide_progress-bar {
+			  position: absolute;
+			  height: 4px;
+			  background: transparent;
+			  width: auto;
+			  clear: both;
+			  opacity: 0;
+			  bottom: 0;
+			  left: 0;
+			  right: 0; }
+			  .block_hero_slider-wrapper .swiper-progress-bar .slide_progress-bar:after {
+				position: absolute;
+				top: 0;
+				left: 0;
+				background: #ff512e;
+				height: 100%;
+				width: 0;
+				content: ""; }
+			.block_hero_slider-wrapper .swiper-progress-bar.active .slide_progress-bar {
+			  opacity: 1; }
+			.block_hero_slider-wrapper .swiper-progress-bar.animate .slide_progress-bar:after {
+			  transition: width linear;
+			  transition-delay: unset;
+			  width: 100%;
+			  transition-duration: 5s; }
+		  
+		  
+  
+  

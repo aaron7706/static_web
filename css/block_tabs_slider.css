@@ -34,8 +34,9 @@
           display: inline-block;
           border-radius: 40px;
           padding: .75rem 2rem .5rem;
-          background: rgba(255, 255, 255, 0.2);
-          margin-bottom: 1.25rem; }
+          /* background: rgba(255, 255, 255, 0.2); */
+          background: (211 212 213 / 20%);
+          margin-bottom: 1.25rem; } 
         .block_tabs_slider-wrapper .block_tabs_slider .swiper-wrapper .swiper-slide .swiper-slide-content .header {
           margin-bottom: 1rem; }
           @media (min-width: 992px) {
