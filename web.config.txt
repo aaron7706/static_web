@@ -1,17 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- the root web configuration file -->
 <configuration>
-  <system.webServer>
-    <staticContent>
-      <clientCache cacheControlMode="UseExpires" httpExpires="Thu, 01 Jan 2026 00:00:00 GMT" />
-    </staticContent>
-    <httpProtocol>
-      <customHeaders>
-        <add name="Cache-Control" value="public" />
-      </customHeaders>
-    </httpProtocol>
-  </system.webServer>
-  <system.web>
-    <compilation tempDirectory="C:\Inetpub\vhosts\vrnlexchange.net\tmp" />
-  </system.web>
+   <!-- ... other configurations ... -->
+
+   <system.webServer>
+      <urlCompression doStaticCompression="true" doDynamicCompression="true" dynamicCompressionBeforeCache="true" />
+      <httpCompression>
+         <staticTypes>
+            <add mimeType="text/css" enabled="true" />
+            <add mimeType="text/javascript" enabled="true" />
+            <add mimeType="text/html" enabled="true" />
+            <!-- Add more MIME types as needed -->
+         </staticTypes>
+         <dynamicTypes>
+            <add mimeType="text/css" enabled="true" />
+            <add mimeType="text/javascript" enabled="true" />
+            <add mimeType="text/html" enabled="true" />
+            <!-- Add more MIME types as needed -->
+         </dynamicTypes>
+      </httpCompression>
+   </system.webServer>
+
+   <!-- ... other configurations ... -->
 </configuration>
