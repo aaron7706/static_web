@@ -3,8 +3,8 @@
   position: relative; }
   @media (min-width: 992px) {
     .block_tabs_slider-wrapper .block_tabs_slider {
-      padding-top: 5rem;
-      margin-top: 2rem; } }
+      padding-top: 15rem;
+      margin-top: 0rem; } }
   .block_tabs_slider-wrapper .block_tabs_slider .swiper-wrapper {
     z-index: 0; }
     .block_tabs_slider-wrapper .block_tabs_slider .swiper-wrapper .swiper-slide {
@@ -34,7 +34,6 @@
           display: inline-block;
           border-radius: 40px;
           padding: .75rem 2rem .5rem;
-          /* background: rgba(255, 255, 255, 0.2); */
           background: (211 212 213 / 20%);
           margin-bottom: 1.25rem; } 
         .block_tabs_slider-wrapper .block_tabs_slider .swiper-wrapper .swiper-slide .swiper-slide-content .header {
@@ -79,7 +78,6 @@
         @media (min-width: 992px) {
           .block_tabs_slider-wrapper .block_tabs_slider .swiper-wrapper .swiper-slide.slide-has-background-image .slide-media-image img {
             max-width: 50%; } }
-
 .block_tabs_slider-wrapper .swiper-pagination {
   top: 0rem;
   bottom: inherit;
@@ -88,7 +86,6 @@
   @media (min-width: 1200px) {
     .block_tabs_slider-wrapper .swiper-pagination {
       padding: 0 8rem; } }
-
 .block_tabs_slider-wrapper .swiper-pagination-bullet {
   font-family: "Baloo Thambi 2", cursive;
   font-weight: 700;
@@ -106,7 +103,6 @@
   .block_tabs_slider-wrapper .swiper-pagination-bullet.swiper-pagination-bullet-active {
     z-index: 0;
     background: transparent; }
-
 .block_tabs_slider-wrapper .swiper-navigation-wrapper {
   padding: 1.5rem 0;
   position: absolute;
@@ -139,11 +135,9 @@
         height: 28px; }
       .block_tabs_slider-wrapper .swiper-navigation-wrapper .swiper-navigation .swiper-circle .swiper-button-prev:after, .block_tabs_slider-wrapper .swiper-navigation-wrapper .swiper-navigation .swiper-circle .swiper-button-next:after {
         display: none; }
-
 .block_tabs_slider-wrapper .swiper-circle-next .circle {
   stroke-dasharray: 260;
   stroke-dashoffset: 260; }
-
 .block_tabs_slider-wrapper .swiper-circle-next.animate .circle {
   transition: all linear;
   transition-delay: unset;

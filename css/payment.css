@@ -14,9 +14,6 @@ p {
 body {
     width: 100%;
 }
-/* .wrapper {
-    overflow-x: hidden;
-} */
 .myheader {
     background-color: black;
     height: 75px;
@@ -34,9 +31,6 @@ a {
     width: 100%;
     z-index: 7;
 }
-/* .logo_div a img {
-    padding-top: 10px;
-} */
 .top_header {
     background-color: #0037A4;
     padding: 5px 0px;
@@ -132,9 +126,6 @@ a {
 .sign_in_btn:hover {
     background-color: #FF008A !important;
 }
-/* .payment_solution_section .onboarding_div:hover {
-    background-image: url(../img/home/hover_vector1.svg) !important;
-} */
 .sign_in_btn {
     background-color: #FF008A;
     color: #fff !important;
@@ -263,29 +254,6 @@ section {
     color: #5a49f8;
     font-weight: 600;
 }
-/* .banner_title p a {
-    padding: 13px 20px;
-    font-size: 16px;
-    transform: rotate(-180deg);
-    border-top-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-} 8/
-/* .banner_title p a:hover {
-    color: #fff;
-    text-decoration: none;
-} */
-/* .banner_title1 p a {
-    padding: 13px 30px;
-    font-size: 16px;
-    transform: rotate(-180deg);
-    border-top-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-} */
-/* .banner_title1 p a:hover {
-    color: #fff;
-    text-decoration: none;
-} */
-
 .create_account_para a {
     padding: 25px 20px !important;
 }
@@ -352,27 +320,12 @@ section {
     z-index: -1;
 }
 .banner_section1 {
-   
-    /* background-image: url('../img/payment_gateway/banner_bg.png');
-    background-repeat: no-repeat;
-    background-size: 100%;
-    padding-bottom: 0px !important; */
     background-color: #f9fdfd;
     z-index: 1;
     padding-top: 60px;
     padding-bottom: 60px;
     overflow: hidden;
 }
-/* .banner_section1:after {
-    content: '';
-    width: 100%;
-    position: absolute;
-    height: 55%;
-    background: url('../img/payment_gateway/background_bg.svg') no-repeat;
-    background-size: 100%;
-    top: 33.5vh;
-    z-index: -1;
-} */
 .banner_section1 .banner_img img {
     margin-top: -45px;
 }
@@ -385,8 +338,6 @@ section {
     background-repeat: no-repeat;
     /* background-position: center; */
     background-size: cover;
-    /* animation: spin 5s infinite; */
-    /* box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1); */
 }
 .map_illustration {
     background-image: url('../img/payment_link/map.png');
@@ -411,7 +362,6 @@ section {
     position: relative;
 }
 .app_download_bg_shape {
-    /* background: rgba(0, 0, 0, 0) url('../img/app_bg.png') no-repeat scroll center center; */
     content: "";
     position: absolute;
     top: 0;
@@ -432,26 +382,15 @@ section {
 .download_app_para a {
     vertical-align: middle;
     padding: 15px 25px;
-    /* border: 1px solid #0037A4; */
-    /* border-top-left-radius: 20px;
-    border-bottom-right-radius: 20px; */
-    /* background-color: #0037A4; */
-    /* color: #fff; */
 }
 .playstore_btn {
-    /* border: 1px solid #0037a4;
-    background-color: #0037a4; */
-    /* background-image: url(images/button_bg_blue.png); */
     background-size: 100% 100%;
     background-repeat: no-repeat;
     color: #ffffff;
 }
 .mac_btn {
-    /* background-image: url(images/mac_bg.png); */
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    /* border: 1px solid #0037a4;
-    background-color: transparent; */
     color: #0037a4 !important;
 }
 .mac_btn:hover {
@@ -468,16 +407,6 @@ section {
     border-bottom-right-radius: 30px !important;
     border-top-left-radius: 30px !important;
 }
-/* .accordion-button::after {
-    background-image: url("../img/minus.svg");
-    transform: scale(.7) !important;
-}
-  .accordion-button:not(.collapsed)::after {
-    background-image: url("../img/plus.svg");
-}
-.accordion-button.collapsed::after {
-    background-image: url("../img/minus.svg");
-} */
 .accordion-button.collapsed {
     color: #01FCFE;
     background-color: #0037a4;
@@ -487,9 +416,6 @@ section {
 .accordion-button {
     cursor: pointer;
     background: #f7f8f9;
-}
-.accordion-collapse {
-    /* background-color: #0037a4; */
 }
 .accordion-collapse p {
     color: black;
@@ -527,7 +453,6 @@ section {
     /* background-position: center; */
     background-size: 100% 100%;
     padding-bottom: 0px;
-    
 }
 .illustration1 {
     position: absolute;
@@ -545,8 +470,6 @@ section {
     100% { transform: translateY(-10px); }
 }
 .request_btn, .create_btn {
-    /* background-color: #0037A4; */
-    /* background-image: url('../img/home/button_bg_blue.png'); */
     color: #ffffff;
     padding: 13px 15px;
     /* box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1); */
@@ -555,12 +478,8 @@ section {
     font-weight: 500;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    /* border-top-left-radius: 20px;
-    border-bottom-right-radius: 20px; */
 }
 .request_demo {
-    /* background-color: #FF008A; */
-    /* background-image: url('../img/home/button_bg_pink.png'); */
     font-weight: 500;
     color: #ffffff;
     padding: 13px 15px;
@@ -574,19 +493,13 @@ section {
     color: #ffffff !important;
 }
 .onboarding_div {
-    /* background-image: url('images/vecter.png'); */
     background-repeat: no-repeat;
     background-size: 100% 100%;
     padding: 20px 20px 20px 20px;
 }
 .onboarding_div:hover {
-    /* background-image: url('images/vecter.png'); */
     background-size: 100% 100%;
 }
-/* .onboarding_div:hover {
-    background-image: none;
-    border: 0.6px solid #000;
-} */
 .onboarding_div1 h4 {
     font-size: 38px;
     font-weight: 600;
@@ -619,11 +532,7 @@ section {
 .p-70 {
     padding: 20px 0px;
 }
-/* .fast_onboarding_section .onboarding_div {
-    height: 192px;
-} */
 .product_section {
-    /* background-color: #0037A4; */
     background-color: #0037a4;
 }
 .section_title {
@@ -650,9 +559,6 @@ section {
     color: #fff;
     padding-top: 20px;
 }
-/* .processing_tabs_content img {
-    height: 350px;
-}  */
 .product_div_content h4 {
     padding-top: 50px;
     font-size: 28px;
@@ -680,8 +586,6 @@ section {
     vertical-align: middle;
 }
 .product_para_link a, .create_link, .qrcode_btn {
-    /* background-color: transparent;
-    border: 1px solid #01FCFE; */
     color: #fff;
     padding: 15px 20px;
     vertical-align: middle;
@@ -758,18 +662,6 @@ section {
     font-weight: normal;
     line-height: 1.7;
 }
-/* .integrate_section {
-    background-image: url('../img/home/Vector14.png');
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    background-size: cover;
-} */
-/* .integrate_section1 {
-    background-image: url('../img/home/Vector14.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-} */
 .recurring_section1 {
     background-color: rgba(240, 247, 255, 1);
     padding-top: 100px;
@@ -1399,8 +1291,6 @@ section {
 .ready_div_content p a {
     margin-left: 165px;
     color: #0037A4;
-    /* float: right; */
-    /* margin-right: 45px; */
 }
 .integration_section {
     background-color: #F4F5F5;
@@ -1430,7 +1320,6 @@ section {
 .paymentlink_features {
     background-color: #0037a4;
     padding-bottom: 0px;
-    /* height: 585px; */
 }
 .paymentlink_title {
     color: #ffffff;
@@ -1916,25 +1805,6 @@ section {
     z-index: 2;
     animation: revealCircle 5s linear infinite forwards;
 }
-/* @keyframes drawRightLine {
-    0% {
-      transform: scaleX(0);
-    }
-    50% {
-      transform: scaleX(0.5);
-    }
-    100% {
-      transform: scaleX(1);
-    }
-} */
-/* @keyframes revealCircle {
-    to {
-      transform: rotate(180deg);
-    }
-  }  */
-/* .process_bar ul li:before:active {
-    border: 1px solid #0037a4;
-} */
 .process_bar ul li:nth-child(2):after {
     content: '';
     position: absolute;
@@ -1966,7 +1836,6 @@ section {
     transform-origin: 10% 10% 0px;
 }
 .process_bar ul li.process_activeLink:before, .process_bar ul li.process_activeLink:after {
-    /* background-color: 0037A4 !important; */
     border: 1px solid #0037A4;
 }
 .payg_signup_img img {
@@ -1974,15 +1843,12 @@ section {
     margin-right: auto;
 }
 .process_bar ul li:nth-child(1):before {
-    /* background: url('../img/payment_link/create.svg') no-repeat; */
     background-position: center;
 }
 .process_bar ul li:nth-child(2):before {
-    /* background: url('../img/payment_link/share.svg') no-repeat; */
     background-position: center;
 }
 .process_bar ul li:nth-child(3):before {
-    /* background: url('../img/payment_link/paid.svg') no-repeat; */
     background-position: center;
 }
 .process_bar ul li:first-child:after {
@@ -2022,14 +1888,6 @@ section {
     padding: 0px 5px;
     font-weight: normal;
 }
-/* .submit_btn {
-    padding: 10px 25px;
-    background-color: #0037a4;
-    color: #fff;
-    border: 1px solid #0037a4;
-    border-top-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-} */
 .virtual_credit_section {
     background-color: #f5f6fc;
 }
@@ -2090,14 +1948,6 @@ section {
     z-index: 1;
     color: #0037A4;
 }
-/* .vpos_industries_li li:before {
-    content: '';
-    width: 15px;
-    height: 15px;
-    background: #01FCFE;
-    position: absolute;
-    border-radius: 50%;
-} */
 .vpos_features1 {
     background-color: #0037A4;
     height: 580px;
@@ -2105,9 +1955,6 @@ section {
 .vpos_process_section1 {
     padding-top: 150px;
 }
-/* .vpos_payg_singup_section1 {
-    background-color: #F0F7FF;
-} */
 .vpos_payg_singup_section1 .process_steps li {
     width: 25% !important;
     cursor: pointer;
@@ -2136,10 +1983,6 @@ section {
     padding-bottom: 0px;
     /* height: 630px; */
 }
-/* .modal_register [type="button"]:not(:disabled), [type="reset"]:not(:disabled), [type="submit"]:not(:disabled), button:not(:disabled) {
-    border: none;
-    background-color: transparent;
-} */
 .modal_register .modal-header {
     border-bottom: navajowhite;
 }
@@ -2155,16 +1998,6 @@ section {
     left: 0;
     width: 100%;
 }
-/* .create_div {
-    float: left;
-} */
-/* @keyframes slide {
-    0%   {left: 0%; right: 0%;}
-    25%  {left: 200px; top: 0px;}  
-    50%  {left: 0px; top: 0px;}
-    75%  {left: 200px; top: 0px;}
-    100%  {left: 0px; top: 0px;}
-} */
 .how_payg_works_content {
     background-image: url('../img/payment_gateway/vector.svg');
     background-repeat: no-repeat;
@@ -2311,39 +2144,9 @@ section {
     text-align: center;
     padding-bottom: 15px;
 }
-/* .features_img img {
-    animation: mover1 1s infinite alternate;
-}
-@keyframes mover1 {
-    0% { transform: translateY(0); }
-    25% { transform: translateX(0); }
-    75% { transform: translateX(10px); }
-    100% { transform: translateY(-10px); }
-} */
 .recurring_features {
     height: 480px;
 }
-/* .industries_div {
-    padding: 10px 10px;
-    box-shadow: 1px 4px 16px rgba(0, 0, 0, 0.1);
-    border: 1px solid #eaeaea;
-    height: 190px;
-}
-.industries_div .col-lg-6:nth-child(1) {
-    padding-right: 5px;
-}
-.industries_div .col-lg-6:nth-child(2) {
-    padding-left: 5px;
-   
-}
-.industries_content h5 {
-    font-size: 18px;
-    color: #0037a4;
-    font-weight: 600;
-}
-.industries_content a:hover {
-    text-decoration: none;
-} */
 .payment_gateway_coloum {
     background-color: #fff;
     margin: 16px;
@@ -2744,30 +2547,6 @@ section {
   font-size: 15px;
   line-height: 1.8;
 }
-/* .widget-area .widget_luvion_posts_thumb .item .thumb .fullimage.bg112 {
-  background-image: url(../../assets/img/blog-image/subscriptions-payments-blog.png);
-} */
-/* .widget-area .widget_luvion_posts_thumb .item .thumb .fullimage.bg113 {
-  background-image: url(../../assets/img/blog-image/does-omicron-variant-will-impact-the-future-of-fintech-industry.png);
-} */
-/* .widget-area .widget_luvion_posts_thumb .item .thumb .fullimage.bg114 {
-  background-image: url(../../assets/img/blog-image/updated-upi-transaction-limit-2022.png);
-} */
-/* .widget-area .widget_luvion_posts_thumb .item .thumb .fullimage.bg115 {
-  background-image: url(../../assets/img/blog-image/how-Start-Ups-Can-Drive-Large-Scale-Organic-Growth.png);
-} */
-/* .widget-area .widget_luvion_posts_thumb .item .thumb .fullimage.bg116 {
-    background-image: url(../../assets/img/blog-image/challenges-that-dissuade-merchants-using-payment-gateways.png);
-  } */
-  /* .widget-area .widget_luvion_posts_thumb .item .thumb .fullimage.bg117 {
-    background-image: url(../../assets/img/blog-image/artificial-intelligence-the-new-algorithmic-way-to-life.png);
-  } */
-  /* .widget-area .widget_luvion_posts_thumb .item .thumb .fullimage.bg118 {
-    background-image: url(../../assets/img/blog-image/benefits-of-accepting-credit-card-payment.png);
-  } */
-  /* .widget-area .widget_luvion_posts_thumb .item .thumb .fullimage.bg119 {
-    background-image: url(../../assets/img/blog-image/village-adoption-scheme.png);
-  } */
 .single-blog-post {
     background: #f7fafd;
     position: relative;
@@ -3542,8 +3321,6 @@ section {
     padding-top: 45px;
 }
 .robust_api {
-    /* background-color: #f5f6fc; */
-    /* background: url('../img/payout/shapes/bg_shape.svg') no-repeat center bottom; */
     background-size: cover;
     width: 100%;
 }
@@ -3552,7 +3329,6 @@ section {
     z-index: 1;
 }
 .inner_container:before {
-    /* content: url('../img/payout/shapes/shape_3.svg'); */
     position: absolute;
     top: -55px;
     left: -100px;
@@ -3565,13 +3341,6 @@ section {
     border-top-left-radius: 15px;
     border-bottom-right-radius: 15px;
 }
-/* .inner_container:after {
-    content: url('../img/payout/shapes/shape_4.svg');
-    position: absolute;
-    bottom: -80px;
-    right: -165px;
-    z-index: -1;
-} */
 .payout_features {
     background-color: #0037A4;
 }
@@ -3642,22 +3411,6 @@ section {
     width: 20px;
     display: inline;
 }
-/* .process_bar_steps ul {
-    display: flex;
-}
-.payment_content {
-    display: block;
-}
-.link_process {
-    float: left;
-    list-style: none;
-    width: 33.33%;
-}
-.process_icon_link {
-    padding: 25px 20px;
-    border: 1px solid #eaeaea;
-    border-radius: 50%;
-} */
 .request_form h3 {
     font-size: 30px;
     font-weight: 600;
@@ -4308,18 +4061,6 @@ select.form-control{
 .hover_icon {
     display: none;
 }
-/* .tooltip-inner {
-    max-width: 600px;
-    padding: 0.25rem 0.5rem;
-    font-size: 13px;
-    line-height: 16px;
-    border: 0.68px solid #0037A4;
-    color: #000000;
-    text-align: center;
-    background: #F1FAFF !important;
-    border-radius: 23.8068px !important;
-    border: 1px solid ;
-} */
 .tooltip {
     position: relative;
     display: inline-block;
@@ -4431,17 +4172,12 @@ a{
         font-family: 'Mulish', sans-serif;
     }
 }
-
-
 .clients {
     border-radius: 5px;
     box-shadow: 0 0rem 3rem rgba(0, 0, 0, .175);
     margin-top: 10px;
     background-image: url(images/texture.webp);
-    /* background-image: url(https://img.freepik.com/free-vector/elegant-white-wallpaper-with-golden-details_23-2149095007.jpg?w=2000); */
-    /* background-image: url(https://static.vecteezy.com/system/resources/thumbnails/004/242/510/small/abstract-wave-trendy-geometric-abstract-background-with-white-and-blue-gradient-vector.jpg); */
     background-size: cover;
-    /* background: #bcbcbc; */
     padding: 0px 0;
     text-align: center;
 }

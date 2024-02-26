@@ -2,7 +2,6 @@
   .block_talent_cards_slider-wrapper .block_talent_cards_slider-container-lg {
     padding-left: 0;
     padding-right: 0; } }
-
 .block_talent_cards_slider-wrapper .block_talent_cards_slider-container-lg .block_talent_cards_slider {
   position: relative; }
   .block_talent_cards_slider-wrapper .block_talent_cards_slider-container-lg .block_talent_cards_slider .swiper-slide {
@@ -94,7 +93,6 @@
           transform: translateX(18%); }
         .block_talent_cards_slider-wrapper .block_talent_cards_slider-container-lg .block_talent_cards_slider .swiper-slide.swiper-slide-next {
           transform: translateX(0); } }
-
 .block_talent_cards_slider-wrapper .swiper-button-prev, .block_talent_cards_slider-wrapper .swiper-button-next {
   top: 65% !important;
   margin-top: 0; }
@@ -114,23 +112,17 @@
   @media (min-width: 1200px) {
     .block_talent_cards_slider-wrapper .swiper-button-prev svg, .block_talent_cards_slider-wrapper .swiper-button-next svg {
       height: 7.5rem; } }
-
 .block_talent_cards_slider-wrapper .swiper-button-prev {
   transform: translate(-150%, -50%) !important; }
-
 .block_talent_cards_slider-wrapper .swiper-button-next {
   transform: translate(150%, -50%) !important; }
-
 @media (min-width: 992px) {
   .block_talent_cards_slider-wrapper .container-lg {
     padding-left: 3rem;
     padding-right: 3rem; } }
-
 @media (min-width: 1200px) and (max-width: 1489.98px) {
   .block_talent_cards_slider-wrapper .container-lg {
     padding-left: 4.25rem;
     padding-right: 4.25rem; } }
-
 .block_talent_cards_slider-wrapper:not(.darker-theme) svg path:nth-child(2) {
   fill: #072c51 !important; }
-

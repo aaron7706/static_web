@@ -10,8 +10,6 @@
 	border: 0;
 	word-wrap: normal !important;
 }
-
-
 .social-icon{
 	width: 40px;
   height: 40px;
@@ -23,13 +21,11 @@
 	border: 2px solid #00a0d2;
 	/* Blue */
 }
-
 .wpcf7 form.init .wpcf7-response-output,
 .wpcf7 form.resetting .wpcf7-response-output,
 .wpcf7 form.submitting .wpcf7-response-output {
 	display: none;
 }
-
 .wpcf7 form.sent .wpcf7-response-output {
 	border-color: #46b450;
 	/* Green */
@@ -52,7 +48,6 @@
 	border-color: #ffb900;
 	/* Yellow */
 }
-
 .wpcf7-form-control-wrap {
 	position: relative;
 }
@@ -198,13 +193,6 @@ p,
 ul {
 	margin-top: 0
 }
-
-/* * {
-	font-family: Poppins !important;
-	font-size: 19px;
-	font-weight: 390
-} */
-
 .home a {
 	font-size: 18px
 }
@@ -216,7 +204,6 @@ ul {
 	margin: 0 auto;
 	/* max-width: 1140px */
 }
-
 @media (max-width:768px) {
 	.privacy_list_2 li strong {
 		font-size: 22px;
@@ -272,7 +259,6 @@ h6 {
 .privacy_list_2 a:hover {
 	color: #030303
 }
-
 ul {
 	display: block;
 	list-style-type: disc;
@@ -282,7 +268,6 @@ ul {
 	margin-inline-end: 0;
 	padding-inline-start: 40px
 }
-
 b,
 strong {
 	font-weight: bolder
@@ -362,12 +347,8 @@ content: url(../images/mobileimg1.webp);
     height: auto;
 }
 }
-
 .paypro{
 	height: 50px;
-	/* margin-top: -90px;
-    margin-left: 275px; */
-    
 }
 .block_2columns-wrapper {
 	position: relative; }
@@ -433,7 +414,3 @@ content: url(../images/mobileimg1.webp);
 			  transition-delay: unset;
 			  width: 100%;
 			  transition-duration: 5s; }
-		  
-		  
-  
-  
