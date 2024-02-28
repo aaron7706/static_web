@@ -905,7 +905,7 @@ rect:focus {
 }
 
 .mb-5 {
-  margin-bottom: 3rem !important;
+  margin-bottom: 0rem !important;
 }
 
 .mb-auto {
@@ -9415,8 +9415,8 @@ body.nav-active {
 
 @media (min-width: 992px) {
   .section {
-    padding-top: 10rem;
-    padding-bottom: 10rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
 }
 
@@ -10299,12 +10299,23 @@ footer ul.menu a:hover {
   .block-shared-hero-video-container .vimeo-iframe-wrapper {
     margin-top: -40vh;
   }
+  .videoo1{
+    margin-top: -33vh;
+    justify-content: center;
+    display: flex;
+  }
 }
 @media (min-width: 992px) {
   .block-shared-hero-video-container .vimeo-iframe-wrapper {
     margin-top: 0;
     width: 100%;
     padding: 56.25% 0 0 0;
+  }
+
+  .videoo{
+    padding: 0 !important;
+    left: 60%;
+    top: 35px !important;
   }
 }
 .block-shared-hero-video-container .vimeo-iframe-wrapper iframe {
@@ -10511,4 +10522,8 @@ footer ul.menu a:hover {
   height: 40px;
   background-image: url('../images/social-icon.webp');
   background-position: 0px 175px;
+}
+
+.v-desk{
+  background: linear-gradient(to right,rgba(7,44,81,1) 0%,rgba(120,108,255,1) 100%);
 }
