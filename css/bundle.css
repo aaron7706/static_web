@@ -10467,4 +10467,48 @@ footer ul.menu a:hover {
   .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
     margin: 0px 2px;
 }
+.instagram_icon {
+  height: 40px;
+  width: 40px;
+  background-image: url('../images/social-icon.webp');
+  background-position: -5px 45px !important;
+}
+.whatsapp_icon {
+  height: 40px;
+  width: 40px;
+  background-image: url('../images/social-icon.webp');
+  background-position: -5px 130px !important;
+}
+.skyup_icon {
+  height: 40px;
+  width: 40px;
+  background-image: url('../images/social-icon.webp');
+  background-position: -5px 90px !important;
+}
+.facebook_icon {
+  height: 40px;
+  width: 40px;
+  background-image: url('../images/social-icon.webp');
+  background-position: -5px 175px !important;
+}
+}
+.instagram_icon{
+  height: 40px;
+  background-image: url('../images/social-icon.webp');
+  background-position: 0px 45px;
+}
+.whatsapp_icon{
+  height: 40px;
+  background-image: url('../images/social-icon.webp');
+  background-position: 0px 130px;
+}
+.skyup_icon{
+  height: 40px;
+  background-image: url('../images/social-icon.webp');
+  background-position: 0px 90px;
+}
+.facebook_icon{
+  height: 40px;
+  background-image: url('../images/social-icon.webp');
+  background-position: 0px 175px;
 }
