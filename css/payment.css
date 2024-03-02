@@ -146,7 +146,6 @@ a {
     position: relative;
     display: inline-block;
 }
-  
 .dropdown-content {
     display: none;
     position: absolute;
@@ -175,11 +174,8 @@ a {
     text-decoration: none;
     display: block;
 }
-  
 .dropdown-content a:hover {background-color: #ddd;}
-  
 .dropdown:hover .dropdown-content {display: block;}
-  
 .dropdown:hover .dropbtn {background-color: #eee;}
   
 section {
@@ -191,7 +187,6 @@ section {
     background-position: top center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-   
 }
 .banner_div {
     padding: 30px 0px 20px 0px;
@@ -266,7 +261,6 @@ section {
     background-repeat: no-repeat;
     background-size: cover;
     padding: 80px 0px;
-    /* background-image: url(../img/inner_banner_bg.jpg); */
 }
 .banner_img1 img {
     height: 370px;
@@ -298,18 +292,13 @@ section {
 .dashboard_layout {
     position: relative;
     right: 70px;
-    
 }
 .create_account_section {
     background: #0037a4;
     padding-bottom: 20px;
 }
-/* .payg_singup_section, .simplify_section {
-    background-color: #f5f6fc;
-} */
 .simplify_section1 {
     overflow: hidden;
-    /* margin-top: 80px; */
 }
 .simplify_section1 svg {
     width: 120%;
@@ -333,10 +322,8 @@ section {
     background-color: #f5f6fc;
 }
 .payment_link_section {
-    /* background-image: url('../img/payment_link/banner1.png'); */
     background-image: url('../img/payment_link/payment_banner.png');
     background-repeat: no-repeat;
-    /* background-position: center; */
     background-size: cover;
 }
 .map_illustration {
@@ -400,9 +387,7 @@ section {
     width: 30px;
     vertical-align: middle;
     padding-right: 10px;
-    
 }
-/* Custom style */
 .demo .accordion-item {
     border-bottom-right-radius: 30px !important;
     border-top-left-radius: 30px !important;
@@ -411,7 +396,6 @@ section {
     color: #01FCFE;
     background-color: #0037a4;
     margin-bottom: 0px;
-    /* border */
 }
 .accordion-button {
     cursor: pointer;
@@ -432,7 +416,6 @@ section {
     color: #01fcfe !important;
 }
 .download_app_para a:hover {
-    /* background-color: #0037a4; */
     color: #ffffff;
     text-decoration: none;
 }
@@ -448,7 +431,6 @@ section {
     100% { transform: rotate(360deg); }
 }
 .recurring_section {
-    /* background-image: url('../img/recurring_payment/banner_bg.png'); */
     background-repeat: no-repeat;
     /* background-position: center; */
     background-size: 100% 100%;
@@ -459,7 +441,6 @@ section {
     bottom: 70px;
     right: 20px;
     animation: mover 1s infinite  alternate;
-
 }
 .paid_instantly_link_recurring {
     background-color: #0037a4;
@@ -590,9 +571,6 @@ section {
     padding: 15px 20px;
     vertical-align: middle;
     margin-right: 30px;
-    /* border-top-left-radius: 15px;
-    border-bottom-right-radius: 15px; */
-    /* background-image: url(../img/home/button_border_bg.svg); */
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -614,12 +592,6 @@ section {
     padding-bottom: 0px;
     font-size: 33px;
 }
-/* .product_para_link a:hover {
-    text-decoration: none;
-    border: 1px solid #0037A4;
-    background-color: #ffffff;
-    color: #0037A4;
-} */
 .product_section1 {
     background: #0037a4;
 }
@@ -677,7 +649,6 @@ section {
     height: 300px;
 }
 .integrate_content_code {
-    /* background: url('../img/payment_link/Vector-1.png') no-repeat; */
     background-size: 100% 100%;
     height: 650px;
     position: relative;
@@ -738,7 +709,6 @@ section {
     color: #5a49f8;
 }
 .simplify_divstrip {
-    /* background-image: url('../img/home/bannerstrip.png'); */
     background-repeat: no-repeat;
     background-size: 100% 100%;
     position: relative;
@@ -848,11 +818,8 @@ section {
 }
 .faqs_div_content .fa {
     float: right;
-    /* background-color: #acacac; */
     font-weight: normal;
     font-size: 12px;
-    /* padding: 4px auto;
-    border-radius: 50%; */
 }
 .card-header {
     border-top-left-radius: 20px !important;
@@ -974,7 +941,6 @@ section {
 .invoice_banner_section {
     /* padding-bottom: 0px; */
     background-color: #f8f6f6;
-    /* background-image: url('../img/invoice_payments/banner_bg.png'); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center right;
@@ -983,20 +949,17 @@ section {
     position: absolute;
     top: 0;
     left: 0;
-    /* z-index: -1; */
 }
 .invoice_shape2 {
     position: absolute;
     bottom: 50px;
     left: 30%;
-    /* z-index: -1; */
     max-width: 100px;
 }
 .invoice_shape3 {
     position: absolute;
     top: 100px;
     right: 40%;
-    /* z-index: -1; */
     max-width: 100px;
 }
 .invoice_shape4 {
@@ -1006,8 +969,6 @@ section {
     height: 100%;
     z-index: -1;
 }
-/* Payment Gateway CSS Starts */
-/* Image Slider */
 .clients_section {
     padding-bottom: 50px;
     padding-top: 50px;
@@ -1023,7 +984,6 @@ section {
   bottom: 0;
   margin: auto;
   overflow: hidden;
-  /* box-shadow: 0 0 15px #888; */
 }
 
 #slider-scroller {
@@ -1041,14 +1001,12 @@ section {
   margin: 20px;
   position: relative;
 }
-
 .slider-item img {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   max-width: 70px;
-  /* max-height: 100px; */
 }
 .payg_div1 {
     width: 280px;
@@ -1063,9 +1021,6 @@ section {
     font-size: 18px;
     font-family: 'Gelion Semi Bold';
 }
-/* .payg_div1 p:nth-child(3) {
-    text-align: justify;
-} */
 .payg_div1 p i {
     color: #5a49f8;
     font-size: 22px;
@@ -1074,7 +1029,6 @@ section {
     padding-top: 25px;
 }
 .gatewayfeatures_div {
-    /* background-image: url('../img/payment_gateway/Subtract.svg'); */
     background-repeat: no-repeat;
     background-size: contain;
     padding: 20px 10px 5px 20px;
@@ -1105,9 +1059,6 @@ section {
     color: #0037A4;
 }
 .mobile_integration {
-    /* border: 1px solid #0037A4;
-    border-top-left-radius: 40px;
-    border-bottom-right-radius: 40px; */
     background-image: url(images/integration_bg.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -1172,14 +1123,9 @@ section {
               transform: translateX(0px);
     }
   }
-  
 .integrate_div {
-    /* background-image: url(images/integrate_vector.png) !important; */
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    /* border: 1px solid #0037A4;
-    border-top-left-radius: 40px;
-    border-bottom-right-radius: 40px; */
     padding-top: 40px;
     padding-bottom: 40px;
     margin-bottom: 25px;
@@ -1340,7 +1286,6 @@ section {
     color: #01FCFE !important;
 }
 .payment_link_features {
-    /* background-image: url('../img/home/feature_bg_vector.png'); */
     background-repeat: no-repeat;
     /* border: 2px solid #fff; */
     background-size: 100% 100%;
@@ -1450,13 +1395,7 @@ section {
     padding: 35px 25px !important;
 }
 .contact_div_form {
-    /* border: 2px solid #eaeaea; */
     padding: 60px 35px;
-    /* border-top-left-radius: 30px;
-    border-bottom-right-radius: 30px; */
-    /* margin-left: 50px;
-    margin-right: 50px; */
-    /* background-image: url(../img/contact_bg.png); */
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -1493,11 +1432,6 @@ section {
     color: #0037A4;
 }
 .contact_div_form .submit_btn {
-    /* background-image: url(../img/contact_button_bg.svg); */
-    /* background-color: #0037a4;
-    border: 1px solid #0037A4; */
-    /* border-top-left-radius: 15px;
-    border-bottom-right-radius: 15px; */
     background-repeat: no-repeat;
     background-size: 100% 100%;
     padding: 12px 35px !important;
@@ -1521,7 +1455,6 @@ section {
 }
 .dots_div {
   padding: 10px 20px;
-  /* background: #000; */
   background: #2f1660;
   box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -1532,16 +1465,13 @@ section {
     display: inline-block;
     background: #ddd;
     margin-right: 0.39063vw;
-
 }
 .var-highlight{
 	color: #fff;
 }
 .string-highlight{
-	/* color: rgba(253, 149, 90, 0.8); */
     color: #F92E6F;
 }
-
 #typewriter{
 	margin: 0;
 	font-size: 15px;
@@ -1567,7 +1497,6 @@ section {
     padding: 25px 30px !important;
     vertical-align: middle;
     margin-right: 35px;
-    
 }
 .dropdown-item:focus, .dropdown-item:hover {
     color: #fff;
@@ -1579,7 +1508,6 @@ section {
     z-index: 3;
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    
 }
 .integrate_vector {
     display: none;
@@ -1627,22 +1555,14 @@ section {
 .payment_solution_section .onboarding_div .onboarding_process_div {
     padding: 0 !important;
 }
-/* .payment_solution_section .onboarding_div img {
-    width: 20px;
-} */
 .developer_para {
     padding-top: 20px;
 }
 .developer_btn {
     padding: 15px 35px;
-    /* background-color: #0037a4; */
-    /* border: 1px solid #0037a4; */
     color: #fff;
-    /* border-top-left-radius: 25px;
-    border-bottom-right-radius: 25px; */
     text-transform: uppercase;
     font-weight: 500;
-    /* background-image: url(../img/home/button_bg1.svg); */
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -1671,7 +1591,6 @@ section {
     width: 100%;
     height: 100%;
     overflow: visible;
-    /* background: #fff url('../img/loading-1.gif') no-repeat center center; */
 }
 .terms_title {
     font-size: 35px;
@@ -1738,8 +1657,6 @@ section {
     background-color: #f5f6fc;
 }
 .qrcode_banner_section {
-    /* background: url(../img/qr_code/banner_bg.png) no-repeat;
-    background-size: 100% 100%; */
     background-color: #fafafa;
 }
 .qrcode_shape1 {
@@ -1777,7 +1694,6 @@ section {
               transform: translateY(0px);
     }
   }
-  
 .qrcode_banner_section .banner_img {
     margin-top: -60px;
 }
@@ -1853,7 +1769,6 @@ section {
 }
 .process_bar ul li:first-child:after {
     content: none;
-    
 }
 .virtual_pos_invoice {
     padding-top: 20px;
@@ -1963,19 +1878,15 @@ section {
     cursor: pointer;
 }
 .vpos_payg_singup_section1 .process_bar ul li:nth-child(1):before {
-    /* background: url('../img/vpos/fee.svg') no-repeat; */
     background-position: center;
 }
 .vpos_payg_singup_section1 .process_bar ul li:nth-child(2):before {
-    /* background: url('../img/vpos/accept.svg') no-repeat; */
     background-position: center;
 }
 .vpos_payg_singup_section1 .process_bar ul li:nth-child(2):before {
-    /* background: url('../img/vpos/boarding.svg') no-repeat; */
     background-position: center;
 }
 .vpos_payg_singup_section1 .process_bar ul li:nth-child(4):before {
-    /* background: url('../img/vpos/signup.svg') no-repeat; */
     background-position: center;
 }
 .vpos_features {
@@ -2005,7 +1916,6 @@ section {
     padding: 20px 10px 7px 20px;
     margin-bottom: 25px;
 }
-
 .how_payg_works_content p i {
     color: #FF008A;
     font-size: 20px;
@@ -2039,8 +1949,6 @@ section {
     display: none;
 }
 .submit_btn {
-    /* background-color: #0037a4 !important;
-    border: 1px solid #0037a4 !important; */
     border: none !important;
     color: #fff !important;
     padding: 10px 20px !important;
@@ -2049,15 +1957,10 @@ section {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     font-family: 'Gelion Regular';
-    /* border-top-left-radius: 15px;
-    border-bottom-right-radius: 15px; */
 }
 .request_modal_button {
     padding-top: 20px;
 }
-/* .modal_register .form-group {
-    padding-bottom: 20px;
-} */
 .whitelabel_features {
     background-color: #0037a4;
     padding-bottom: 0px;
@@ -2081,9 +1984,6 @@ section {
     border-top-left-radius: 35px;
     border-bottom-right-radius: 35px;
     border-bottom: 3px solid #0037A4;
-    /* background-image: url(../img/developer/bg_vector.svg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%; */
 }
 .developer_div h5 {
     padding-top: 15px;
@@ -2205,143 +2105,108 @@ section {
   line-height: 1.8;
 }
 .airline_icon {
-    /* background-image: url('../img/industries/travel.png'); */
     background-size: contain;
 }
 .bakery_icon {
-    /* background-image: url('../img/industries/bakkeries.png'); */
     background-size: contain;
 }
 .bank_icon {
-    /* background-image: url('../img/industries/bamks.png'); */
     background-size: contain;
 }
 .b2b_icon {
-    /* background-image: url('../img/industries/b2b.png'); */
     background-size: contain;
 }
 .boutique_icon {
-    /* background-image: url('../img/industries/boutiques.png'); */
     background-size: contain;
 }
 .cabs_icon {
-    /* background-image: url('../img/industries/cabs.png'); */
     background-size: contain;
 }
 .coffee_icon {
-    /* background-image: url('../img/industries/coffe.png'); */
     background-size: contain;
 }
 .diagnostic_icon {
-    /* background-image: url('../img/industries/diagonsitic-center.png'); */
     background-size: contain;
 }
 .education_icon {
-    /* background-image: url('../img/industries/education.png'); */
     background-size: contain;
 }
 .etailing_icon {
-    /* background-image: url('../img/industries/e-tailing.png'); */
     background-size: contain;
 }
 .ecommerce_icon {
-    /* background-image: url('../img/industries/e-commerce.png'); */
     background-size: contain;
 }
 .fooddelivery_icon {
-    /* background-image: url('../img/industries/food-delivery.png'); */
     background-size: contain;
 }
 .finance_icon {
-    /* background-image: url('../img/industries/finance.png'); */
     background-size: contain;
 }
 .govt_icon {
-    /* background-image: url('../img/industries/govt.png'); */
     background-size: contain;
 }
 .gym_icon {
-    /* background-image: url('../img/industries/fittines.png'); */
     background-size: contain;
 }
 .grocery_icon {
-    /* background-image: url('../img/industries/supermarket.png'); */
     background-size: contain;
 }
 .hospitality_icon {
-    /* background-image: url('../img/industries/hospatality.png'); */
     background-size: contain;
 }
 .hotel_icon {
-    /* background-image: url('../img/industries/hotel.png'); */
     background-size: contain;
 }
 .hospital_icon {
-    /* background-image: url('../img/industries/hosipital.png'); */
     background-size: contain;
 }
 .insurance_icon {
-    /* background-image: url('../img/industries/insurance.png'); */
     background-size: contain;
 }
 .itservice_icon {
-    /* background-image: url('../img/industries/it-services.png'); */
     background-size: contain;
 }
 .membership_icon {
-    /* background-image: url('../img/industries/membership.png'); */
     background-size: contain;
 }
 .medical_icon {
-    /* background-image: url('../img/industries/medical-store.png'); */
     background-size: contain;
 }
 .mutualfunds_icon {
-    /* background-image: url('../img/industries/mutal-funds.png'); */
     background-size: contain;
 }
 .nbfc_icon {
-    /* background-image: url('../img/industries/nbfc.png'); */
     background-size: contain;
 }
 .ngo_icon {
-    /* background-image: url('../img/industries/ngos.png'); */
     background-size: contain;
 }
 .onlineservice_icon {
-    /* background-image: url('../img/industries/online-services.png'); */
     background-size: contain;
 }
 .restaurant_icon {
-    /* background-image: url('../img/industries/restaruant.png'); */
     background-size: contain;
 }
 .retail_icon {
-    /* background-image: url('../img/industries/retail-outlet.png'); */
     background-size: contain;
 }
 .shoppingmall_icon {
-    /* background-image: url('../img/industries/shopping-malls.png'); */
     background-size: contain;
 }
 .spa_icon {
-    /* background-image: url('../img/industries/beauty.png'); */
     background-size: contain;
 }
 .midsized_icon {
-    /* background-image: url('../img/industries/small-bussiness.png'); */
     background-size: contain;
 }
 .subscription_icon {
-    /* background-image: url('../img/industries/subscripition-based.png'); */
     background-size: contain;
 }
 .service_icon {
-    /* background-image: url('../img/industries/proffesional-services.png'); */
     background-size: contain;
 }
 .telecom_icon {
-    /* background-image: url('../img/industries/telecome.png'); */
     background-size: contain;
 }
 .industry_feature {
@@ -3011,7 +2876,6 @@ section {
 .blog-image a img {
     width: 100%;
 }
-
 .widget-area .widget_luvion_posts_thumb .item .info .title a {
     color: #000;
 }
@@ -3033,15 +2897,6 @@ section {
     margin-right: 21px;
     font-weight: 300;
 }
-/* .blog-details .article-content .entry-meta ul li::before {
-    content: '';
-    position: absolute;
-    top: 11px;
-    right: -15px;
-    width: 6px;
-    height: 1px;
-    background: #ee0979;
-} */
 .py-2 img {
     width: 100%;
 }
@@ -3200,9 +3055,6 @@ section {
     padding-bottom: 35px;
     color: #0037a4;
 }
-  /* .banner_img img {
-    width: 100%;
-  } */
 .upi_convenience {
     background-color: #0037a4;
 }
@@ -3291,7 +3143,6 @@ section {
 }
 .why_content ul {
     padding-left: 0px;
-    
 }
 .why_content ul li {
     list-style: none;
@@ -3300,7 +3151,6 @@ section {
     box-shadow: 1px 4px 16px rgba(0, 0, 0, 0.1);
     margin-bottom: 15px;
     height: 60px;
-
 }
 .why_qrcode_img {
     padding-top: 75px;
@@ -3659,7 +3509,6 @@ section {
 }
 .comments-area {
     margin-top: 28px;
-    
 }
 .comments-area .comments-title {
     line-height: initial;
@@ -3675,11 +3524,6 @@ section {
     cursor: pointer;
     border: 1px solid rgba(0, 0, 0, 0.125);
     border-top-left-radius: 20px;
-    /* padding: 15px 10px 15px 10px;
-    border: 1px dotted;
-    border-radius: 12px;
-    font-size: 18px;
-    cursor: pointer; */
 }
 .qpara {
     display: none;
@@ -3713,11 +3557,9 @@ section {
     display: none;
 } 
 @media only screen and (max-width:786px){
-    
     .text1{
         display: block;
-    }
-    
+    }  
 }
 .blog-a {
     color:#00f
@@ -3942,7 +3784,6 @@ button.close {
 .tab_6 ul li {
     list-style: none !important;
 }
-/* Onboarding Process CSS */
 .merchant_onboarding_title h2 {
     font-size: 42px;
     line-height: 50px;
@@ -4088,10 +3929,8 @@ select.form-control{
     font-weight: 300;
     font-size: 13px;
     line-height: 16px;
-
     color: #000000;
   }
-  
   .tooltip .tooltiptext::after {
     content: "";
     position: absolute;
@@ -4103,7 +3942,6 @@ select.form-control{
     border-color: #F1FAFF transparent transparent transparent;
 
   }
-  
   .tooltip:hover .tooltiptext {
     visibility: visible;
   }
@@ -4154,16 +3992,13 @@ select.form-control{
 .mobile_view_dropdown .dropdown:hover .dropbtn {
     color: #0037A4 !important;
 }
-
 .accordion-collapse {
     background-color: transparent;
     color: #000;
 }
-
 a{
     text-decoration: none !important;
 }
-
 @media(max-width:800px){
     p {
         font-weight: normal;
@@ -4181,7 +4016,6 @@ a{
     padding: 0px 0;
     text-align: center;
 }
-
 .clients img {
     max-width: 45%;
     transition: .4s ease-in-out;

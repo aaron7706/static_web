@@ -6272,7 +6272,7 @@ progress {
 
   .col-lg-5 {
     flex: 0 0 auto;
-    width: 41.66667%;
+    width: 44.66667%;
   }
 
   .col-lg-6 {
@@ -6935,7 +6935,7 @@ fieldset:disabled .btn {
 
 .btn-secondary {
   color: #000;
-  background-color: #ff512e;
+  background-color: #ff2b00;
   border-color: #ff512e;
 }
 
@@ -7632,7 +7632,7 @@ fieldset:disabled .btn {
 
 @media (min-width: 1200px) {
   .display-3 {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 }
 
@@ -8703,7 +8703,7 @@ fieldset:disabled .btn {
 }
 
 .swiper-pagination-bullet {
-  width: 20px !important;
+  /* width: 20px !important; */
   height: 20px !important;
   display: inline-block;
   border-radius: 50%;
@@ -8757,7 +8757,7 @@ button.swiper-pagination-bullet {
 }
 
 .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
-  margin: 85px 10px;
+  margin: 40px 10px;
 }
 
 .swiper-container-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
@@ -9135,7 +9135,7 @@ figure+.h6 {
 }
 .btn-secondary:hover,
 .wpcf7 .wpcf7-submit:hover {
-  background: #072c51;
+  background: #000f1e;
   color: white !important;
 }
 .wpcf7 .wpcf7-submit {
@@ -10476,7 +10476,7 @@ footer ul.menu a:hover {
     margin-top: 0px !important;
   }
   .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
-    margin: 0px 2px;
+    margin: 0px 8px;
 }
 .instagram_icon {
   height: 40px;
@@ -10525,5 +10525,5 @@ footer ul.menu a:hover {
 }
 
 .v-desk{
-  background: linear-gradient(to right,rgba(7,44,81,1) 0%,rgba(120,108,255,1) 100%);
+  /* background: linear-gradient(to right,rgba(7,44,81,1) 0%,rgba(120,108,255,1) 100%); */
 }
