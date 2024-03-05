@@ -10295,6 +10295,10 @@ footer ul.menu a:hover {
   padding: 177.78% 0 0 0;
   margin-top: -9vh;
 }
+ .wrapps{
+  padding: 0 !important;
+  margin-top: 0 !important;
+}
 @media (min-width: 768px) {
   .block-shared-hero-video-container .vimeo-iframe-wrapper {
     margin-top: -40vh;
@@ -10316,6 +10320,10 @@ footer ul.menu a:hover {
     padding: 0 !important;
     left: 60%;
     top: 35px !important;
+  }
+  .wrapps{
+    padding: 0 !important;
+    margin-top: 0 !important;
   }
 }
 .block-shared-hero-video-container .vimeo-iframe-wrapper iframe {
