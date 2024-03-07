@@ -1,34 +1,21 @@
-﻿# Nginx configuration file
-
-http {
-    # Enable Gzip compression
-    gzip on;
-    gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
-
-    # Compression level (1-9)
-    gzip_comp_level 6;
-
-    # Minimum file size to compress (in bytes)
-    gzip_min_length 1000;
-
-    # Disable Gzip for certain user agents
-    gzip_disable "MSIE [1-6]\.";
-
-    # Enable Gzip static compression for files with certain extensions
-    gzip_static on;
-
-    # Buffer size for Gzip compression
-    gzip_buffers 16 8k;
-
-    # Set the vary header
-    gzip_vary on;
-
-    # Compression ratio
-    gzip_ratio 0.8;
-
-    # Other Nginx configurations go here...
-
-    server {
-        # Your server configuration goes here...
-    }
-}
+﻿<configuration>
+  <system.webServer>
+    <urlCompression doDynamicCompression="true" doStaticCompression="true" dynamicCompressionBeforeCache="true" />
+    <httpCompression>
+      <staticTypes>
+        <add mimeType="text/*" enabled="true" />
+        <add mimeType="message/*" enabled="true" />
+        <add mimeType="application/javascript" enabled="true" />
+        <add mimeType="application/json" enabled="true" />
+        <add mimeType="*/*" enabled="false" />
+      </staticTypes>
+      <dynamicTypes>
+        <add mimeType="text/*" enabled="true" />
+        <add mimeType="message/*" enabled="true" />
+        <add mimeType="application/javascript" enabled="true" />
+        <add mimeType="application/json" enabled="true" />
+        <add mimeType="*/*" enabled="false" />
+      </dynamicTypes>
+    </httpCompression>
+  </system.webServer>
+</configuration>
