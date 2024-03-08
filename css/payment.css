@@ -315,12 +315,12 @@ section {
     background-color: #f5f6fc;
 }
 .payment_link_section {
-    background-image: url('../img/payment_link/payment_banner.png');
+    /* background-image: url('../img/payment_link/payment_banner.png'); */
     background-repeat: no-repeat;
     background-size: cover;
 }
 .map_illustration {
-    background-image: url('../img/payment_link/map.png');
+    /* background-image: url('../img/payment_link/map.png'); */
     padding: 100px;
     position: absolute;
     background-size: contain;
@@ -518,7 +518,7 @@ section {
     padding-top: 30px;
 }
 .product_div {
-    background-image: url(../img/home/product_vector_integrate.png);
+    /* background-image: url(../img/home/product_vector_integrate.png); */
     background-repeat: no-repeat;
     padding: 40px 0px 0px;
     background-size: 100% 100%;
@@ -721,13 +721,11 @@ section {
 }
 .create_account_btn {
     color: #fff !important;
-    background-image: url(images/ready_button_bg.svg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     padding: 15px 30px;
 }
 .sales_btn {
-    background-image: url(images/ready_button_bg1.svg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     padding: 15px 30px;
@@ -1041,14 +1039,10 @@ section {
     color: #0037A4;
 }
 .mobile_integration {
-    background-image: url(images/integration_bg.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     padding: 40px 55px 30px 55px;
     margin-bottom: 80px;
-}
-.ecommerce_integration {
-    background-image: url(images/integration_bg.png) !important;
 }
 .mobile_integration h3 {
     position: relative;
@@ -1181,13 +1175,11 @@ section {
     text-decoration: none;
 }
 .ready_div_content {
-    background-image: url('../img/payment_gateway/vector.svg');
     background-repeat: no-repeat;
     background-size: contain;
     padding: 27px 10px 5px 20px;
 }
 .address_div {
-    background-image: url('../img/payment_gateway/vector.svg');
     background-repeat: no-repeat;
     background-size: contain;
     padding: 20px 10px 5px 20px;
@@ -1228,7 +1220,6 @@ section {
     vertical-align: middle;
 }
 .how_payg_works {
-    background-image: url('../img/payment_gateway/vector.svg');
     background-repeat: no-repeat;
     background-size: contain;
     padding: 20px 10px 5px 20px;
@@ -1289,8 +1280,6 @@ section {
     display: flex;
 }
 .payout_features ul li {
-    
-    /* padding-top: 5px; */
     list-style: none;
     padding-bottom: 5px;
 }
@@ -1478,7 +1467,6 @@ section {
     background-color: #0037A4;
 }
 .integrate_div_section {
-    background-image: url('../img/payment_link/Vector-14.png');
     margin-top: -350px;
     z-index: 3;
     background-size: 100% 100%;
@@ -1879,7 +1867,7 @@ section {
     width: 100%;
 }
 .how_payg_works_content {
-    background-image: url('../img/payment_gateway/vector.svg');
+    /* background-image: url('../img/payment_gateway/vector.svg'); */
     background-repeat: no-repeat;
     background-size: contain;
     padding: 20px 10px 7px 20px;
@@ -2584,30 +2572,6 @@ section {
     background-size: cover !important;
     background-repeat: no-repeat;
     background-position: center center !important;
-}
-.widget-area .widget_luvion_posts_thumb .item .thumb .fullimage.bg1 {
-    background-image: url(../../assets/img/blog-image/reliable-payouts-for-your-business-needs.png);
-}
-.widget-area .widget_luvion_posts_thumb .item .thumb .fullimage.bg2 {
-    background-image: url(../../assets/img/blog-image/how-to-futue-proof-your-business-for-pandemic.png);
-}
-.widget-area .widget_luvion_posts_thumb .item .thumb .fullimage.bg3 {
-    background-image: url(../../assets/img/blog-image/online-store-jumping.png);
-}
-.fullimage.bg9 {
-    background-image: url(../../assets/img/blog-image/how-to-receive-payment-for-freelance-work.png);
-}
-.widget-area .widget_luvion_posts_thumb .item .thumb .fullimage.bg4 {
-    background-image: url(../../assets/img/blog-image/payment-inti.png);
-}
-.widget-area .widget_luvion_posts_thumb .item .thumb .fullimage.bg5 {
-    background-image: url(../../assets/img/blog-image/settlement.png);
-}
-.widget-area .widget_luvion_posts_thumb .item .thumb .fullimage.bg6 {
-    background-image: url(../../assets/img/blog-image/payment-all-types.png);
-}
-.widget-area .widget_luvion_posts_thumb .item .thumb .fullimage.bg7 {
-    background-image: url(../../assets/img/blog-image/nodal-account.png);
 }
 .widget-area .widget_luvion_posts_thumb .item .info {
     overflow: hidden;
@@ -3673,7 +3637,6 @@ button.close {
 #load #box {
     width: 100%;
     height: 100%;
-    /* background-image: url(../img/loading-1.gif); */
     position: absolute;
     top: 0;
     left: 0;
@@ -3973,7 +3936,6 @@ a{
     border-radius: 5px;
     box-shadow: 0 0rem 3rem rgba(0, 0, 0, .175);
     margin-top: 10px;
-    background-image: url(images/texture.webp);
     background-size: cover;
     padding: 0px 0;
     text-align: center;
