@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,16 +39,20 @@
   .block_widget_cards-wrapper .card-image {
     max-width: 102px !important;
   }
+
   .block_widget_cards-wrapper .card-image1 {
     max-width: 148px !important;
   }
+
   .image-hover:hover .from-left {
     left: 0%;
   }
+
   .from-left {
     top: 0;
     left: -100%;
   }
+
   .image-back {
     position: absolute;
     width: 100%;
@@ -57,38 +62,397 @@
     z-index: 1;
     padding: 10px;
   }
+
   .from-bottom {
     top: 100%;
     left: 0;
   }
+
   .image-hover:hover .from-bottom {
     top: 0%;
   }
+
   .from-right {
     top: 0;
     right: -100%;
   }
+
   .image-hover:hover .from-right {
     right: 0%;
   }
+
   .image-back {
     align-items: center;
     justify-content: center;
     display: flex;
     flex-direction: column;
   }
+
   .image-back h3 {
     text-align: center;
     color: #ffffff;
   }
+
   .col-lg-10 {
     flex: 0 0 auto;
     width: 99.33333% !important;
   }
+
   .block_hero_video-wrapper:not(.has-video-mobile) .block-shared-hero-video-content {
     padding-top: 1rem !important;
   }
 </style>
+<style>
+  .btn-slide {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 16px 36px;
+    font-size: 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-slide:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+
+
+  .hover_text {
+    display: inline-block;
+    text-align: center;
+  }
+
+  .demo_info {
+    display: none;
+  }
+
+
+  /* ===== MODAL BASE ===== */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    overflow: auto;
+  }
+
+  /* ===== MODAL CONTENT ===== */
+  .modal-content {
+    background: #111;
+    color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 12px;
+    width: 95%;
+    max-width: 700px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    position: relative;
+  }
+
+  /* ===== CLOSE BUTTON ===== */
+  .close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    font-size: 48px;
+    z-index: 3;
+    color: #666;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    transition: background 0.3s ease, color 0.3s ease;
+    padding: 0;
+    line-height: 1;
+  }
+
+  .close-btn:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* ===== FORM LAYOUT ===== */
+  .form-title {
+    color: #fff;
+    /* Or any color with good contrast */
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 20px;
+    z-index: 2;
+    position: relative;
+  }
+
+
+  .form-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  /* ===== FORM GROUPS ===== */
+  .form-group {
+    flex: 1 1 45%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-width: 100%;
+  }
+
+  .form-group.full {
+    flex: 1 1 100%;
+  }
+
+  @media (max-width: 768px) {
+    .form-group {
+      flex: 1 1 100%;
+    }
+  }
+
+  /* ===== FORM LABELS ===== */
+  .form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #ccc;
+  }
+
+  /* ===== INPUTS & TEXTAREAS ===== */
+  .form-group select {
+    padding-right: 44px;
+    /* make room for flag */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    background: #222;
+    border: 1px solid #555;
+    border-radius: 6px;
+    padding: 10px;
+    color: #fff;
+    font-size: 14px;
+    width: 100%;
+  }
+
+
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    border-color: #005dac;
+    outline: none;
+  }
+
+  /* ===== SUBMIT BUTTON ===== */
+  .submit-btn {
+    margin-top: 20px;
+    padding: 12px 20px;
+    width: 100%;
+    background-color: #005dac;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .submit-btn:hover {
+    background-color: #0070d1;
+  }
+
+  /* ===== CUSTOM SELECT WITH FLAG ===== */
+  .custom-select-wrapper {
+    position: relative;
+  }
+
+  .flag-preview {
+    position: absolute;
+    right: 12px;
+    top: 20px;
+    /* adjust this depending on input height */
+    pointer-events: none;
+    transform: translateY(-50%);
+  }
+
+  .flag-preview img {
+    width: 24px;
+    height: 18px;
+    border-radius: 2px;
+    object-fit: cover;
+    visibility: hidden;
+    /* hidden by default */
+  }
+
+  #demo_url {
+    display: inline-block;
+    background: #222;
+    border: 1px solid #555;
+    border-radius: 6px;
+    padding: 10px;
+    color: #4eaaff;
+    text-decoration: underline;
+  }
+
+  .form-group .error-msg {
+    display: block;
+    width: 100%;
+    color: #ffa07a;
+    font-size: 0.9em;
+    margin-top: 4px;
+    /* min-height: 18px; */
+    line-height: 1.2;
+  }
+
+  /* Responsive tweaks for smaller devices */
+  @media (max-width: 767px) {
+
+    /* Modal content should scale better */
+    .modal-content {
+      margin: 10% auto;
+      width: 90%;
+      padding: 16px;
+      font-size: 14px;
+    }
+
+    .form-title {
+      font-size: 22px;
+    }
+
+    /* Adjust grid to single column */
+    .form-grid {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .form-group,
+    .form-group.full {
+      flex: 1 1 100%;
+      width: 100%;
+    }
+
+    .form-group label {
+      font-size: 14px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      font-size: 14px;
+      padding: 10px;
+    }
+
+    .submit-btn {
+      font-size: 15px;
+      padding: 12px 16px;
+    }
+
+    .close-btn {
+      top: 10px;
+      right: 10px;
+      font-size: 36px;
+      width: 36px;
+      height: 36px;
+    }
+
+    .flag-preview {
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+    }
+  }
+
+
+  #toast {
+    visibility: hidden;
+    min-width: 260px;
+    max-width: 90vw;
+    color: white;
+    text-align: left;
+    border-radius: 6px;
+    padding: 14px 20px;
+    position: fixed;
+    z-index: 9999;
+    top: 20px;
+    right: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: visibility 0s, opacity 0.5s ease-in-out;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  #toast.success {
+    background-color: #4BB543;
+  }
+
+  #toast.error {
+    background-color: #D9534F;
+  }
+
+  #toast.info {
+    background-color: #007BFF;
+  }
+
+  #toast.show {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /* Spinner */
+  #toast-spinner {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #fff;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    display: none;
+  }
+
+  #toast.info #toast-spinner {
+    display: inline-block;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Close Button */
+  #toast-close {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    line-height: 1;
+    margin-left: auto;
+    cursor: pointer;
+  }
+</style>
+
 <link rel="stylesheet" id="wp-block-library-css" href="css/style.min.css" media="all">
 <link rel="stylesheet" id="contact-form-7-css" href="css/styles.css" media="all">
 <link rel="stylesheet" id="font-awesome-official-css" href="css/all.css" media="all" crossorigin="anonymous">
@@ -96,6 +460,7 @@
 <meta name="msapplication-TileImage"
   content="https://s25652.pcdn.co/wp-content/uploads/2021/11/cropped-Favicon-logo-1-270x270.png">
 </head>
+
 <body class="page-template-default page page-id-12 page-life-at-aristocrat no-js">
   <div class="site-wrap">
     <header class="navbar navbar-fixed navbar-hs">
@@ -177,9 +542,14 @@
               <div class="block_gallery-swiper-container swiper-container">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide image-hover">
-                      <img alt="Skyexch" class="web-image content">
+                    <img alt="Skyexch" class="web-image content">
                     <div class="from-left image-back">
-                      <h3>
+                      <div class="hover_text"> <a href="#" class="a_parnter visit-link"
+                          data-url="https://skyexch.vrnlexch.com/#/dash" data-i18n="visit_website"
+                          aria-label="skyexch"><button class="btn-slide"> Get Demo ID
+                          </button></a>
+                      </div>
+                      <!-- <h3>
                         Username : <span id="vrnldemo1">vrnldemo</span>
                         <i class="fas fa-copy copy-icon" id="copy-icons-u1"
                           onclick="copyToClipboard('vrnldemo1', 'vrnldemo1', 'copy-success-vrnldemo1','copy-icons-u1')"
@@ -194,15 +564,18 @@
                     </h3>
                     <a href="https://skyexch.vrnlexch.com/#/dash" target="_blank">
                       <h3>Explore our website demo at skyexch.vrnlexch.com/ to experience our features.</h3>
-                    </a>
+                    </a> -->
                     </div>
                   </div>
                   <div class="swiper-slide image-hover">
-                    <a href="https://velki.vrnlexch.com/#/home" target="_blank">
-                      <img alt="Velki" class="web-image1 content">
-                    </a>
+                    <img alt="Velki" class="web-image1 content">
                     <div class="from-right image-back">
-                      <h3>
+                      <div class="hover_text"> <a href="#" class="a_parnter visit-link"
+                          data-url="https://velki.vrnlexch.com/#/home" data-i18n="visit_website"
+                          aria-label="skyexch"><button class="btn-slide"> Get Demo ID
+                          </button></a>
+                      </div>
+                      <!-- <h3>
                         Username : <span id="vrnldemo2">vrnldemo</span>
                         <i class="fas fa-copy copy-icon" id="copy-icons-u2"
                           onclick="copyToClipboard('vrnldemo2', 'vrnldemo2', 'copy-success-vrnldemo2','copy-icons-u2')"
@@ -212,20 +585,25 @@
                       </h3>
                       <h3>
                         Password : <span id="password2">Asdf1234</span>
-                        <i class="fa-solid fa-copy copy-icon" id="copy-icon2" onclick="copyToClipboard('password2', 'password2', 'copy-success-password2','copy-icon2')" style="display: inline;"></i>
-                        <i class="fas fa-check copy-success icon" id="copy-success-password2" style="display: none;"></i>
-                    </h3>
-                    <a href="https://velki.vrnlexch.com/#/home" target="_blank">
-                      <h3>Explore our website demo at velki.vrnlexch.com/ to experience our features.</h3>
-                    </a>
+                        <i class="fa-solid fa-copy copy-icon" id="copy-icon2"
+                          onclick="copyToClipboard('password2', 'password2', 'copy-success-password2','copy-icon2')"
+                          style="display: inline;"></i>
+                        <i class="fas fa-check copy-success icon" id="copy-success-password2"
+                          style="display: none;"></i>
+                      </h3>
+                      <a href="https://velki.vrnlexch.com/#/home" target="_blank">
+                        <h3>Explore our website demo at velki.vrnlexch.com/ to experience our features.</h3>
+                      </a> -->
                     </div>
                   </div>
                   <div class="swiper-slide image-hover">
-                    <a href="https://babu365.com/" target="_blank">
-                      <img class="web-image4" alt="Babu365">
-                    </a>
+                    <img class="web-image4" alt="Babu365">
                     <div class="from-right image-back">
-                      <h3>
+                      <div class="hover_text"> <a href="#" class="a_parnter visit-link" data-url="https://babu365.com/"
+                          data-i18n="visit_website" aria-label="skyexch"><button class="btn-slide"> Get Demo ID
+                          </button></a>
+                      </div>
+                      <!-- <h3>
                         Username : <span id="vrnldemo5">vrnldemo</span>
                         <i class="fas fa-copy copy-icon" id="copy-icons-u5"
                           onclick="copyToClipboard('vrnldemo5', 'vrnldemo5', 'copy-success-vrnldemo5','copy-icons-u5')"
@@ -235,20 +613,26 @@
                       </h3>
                       <h3>
                         Password : <span id="password5">Asdf1234</span>
-                        <i class="fa-solid fa-copy copy-icon" id="copy-icon5" onclick="copyToClipboard('password5', 'password5', 'copy-success-password5','copy-icon5')" style="display: inline;"></i>
-                        <i class="fas fa-check copy-success icon" id="copy-success-password5" style="display: none;"></i>
-                    </h3>
-                    <a href="https://babu365.com/" target="_blank">
-                      <h3>Explore our website demo at babu365.vrnlexch.com to experience our features.</h3>
-                    </a>
+                        <i class="fa-solid fa-copy copy-icon" id="copy-icon5"
+                          onclick="copyToClipboard('password5', 'password5', 'copy-success-password5','copy-icon5')"
+                          style="display: inline;"></i>
+                        <i class="fas fa-check copy-success icon" id="copy-success-password5"
+                          style="display: none;"></i>
+                      </h3>
+                      <a href="https://babu365.com/" target="_blank">
+                        <h3>Explore our website demo at babu365.vrnlexch.com to experience our features.</h3>
+                      </a> -->
                     </div>
                   </div>
                   <div class="swiper-slide image-hover">
-                    <a href="https://lcexch.vrnlexch.com/#/" target="_blank">
-                      <img class="web-image8" alt="Lcexch">
-                    </a>
+                    <img class="web-image8" alt="Lcexch">
                     <div class="from-left image-back">
-                      <h3>
+                      <div class="hover_text"> <a href="#" class="a_parnter visit-link"
+                          data-url="https://lcexch.vrnlexch.com/#/" data-i18n="visit_website"
+                          aria-label="skyexch"><button class="btn-slide"> Get Demo ID
+                          </button></a>
+                      </div>
+                      <!-- <h3>
                         Username : <span id="vrnldemo10">vrnldemo</span>
                         <i class="fas fa-copy copy-icon" id="copy-icons-u10"
                           onclick="copyToClipboard('vrnldemo10', 'vrnldemo10', 'copy-success-vrnldemo10','copy-icons-u10')"
@@ -258,20 +642,26 @@
                       </h3>
                       <h3>
                         Password : <span id="password10">Asdf1234</span>
-                        <i class="fa-solid fa-copy copy-icon" id="copy-icon10" onclick="copyToClipboard('password10', 'password10', 'copy-success-password10','copy-icon10')" style="display: inline;"></i>
-                        <i class="fas fa-check copy-success icon" id="copy-success-password10" style="display: none;"></i>
-                    </h3>
-                    <a href="https://lcexch.vrnlexch.com/#/" target="_blank">
-                      <h3>Explore our website demo at lcexch.vrnlexch.com to experience our features.</h3>
-                    </a>
+                        <i class="fa-solid fa-copy copy-icon" id="copy-icon10"
+                          onclick="copyToClipboard('password10', 'password10', 'copy-success-password10','copy-icon10')"
+                          style="display: inline;"></i>
+                        <i class="fas fa-check copy-success icon" id="copy-success-password10"
+                          style="display: none;"></i>
+                      </h3>
+                      <a href="https://lcexch.vrnlexch.com/#/" target="_blank">
+                        <h3>Explore our website demo at lcexch.vrnlexch.com to experience our features.</h3>
+                      </a> -->
                     </div>
                   </div>
                   <div class="swiper-slide image-hover">
-                    <a href="https://gullybet.vrnlexch.com/#/home/hot" target="_blank">
-                      <img class="web-image3 content" alt="Gullybet">
-                    </a>
+                    <img class="web-image3 content" alt="Gullybet">
                     <div class="from-left image-back">
-                      <h3>
+                      <div class="hover_text"> <a href="#" class="a_parnter visit-link"
+                          data-url="https://gullybet.vrnlexch.com/#/home/hot" data-i18n="visit_website"
+                          aria-label="skyexch"><button class="btn-slide"> Get Demo ID
+                          </button></a>
+                      </div>
+                      <!-- <h3>
                         Username : <span id="vrnldemo4">vrnldemo</span>
                         <i class="fas fa-copy copy-icon" id="copy-icons-u4"
                           onclick="copyToClipboard('vrnldemo4', 'vrnldemo4', 'copy-success-vrnldemo4','copy-icons-u4')"
@@ -281,20 +671,26 @@
                       </h3>
                       <h3>
                         Password : <span id="password4">Asdf1234</span>
-                        <i class="fa-solid fa-copy copy-icon" id="copy-icon4" onclick="copyToClipboard('password4', 'password4', 'copy-success-password4','copy-icon4')" style="display: inline;"></i>
-                        <i class="fas fa-check copy-success icon" id="copy-success-password4" style="display: none;"></i>
-                    </h3>
-                    <a href="https://gullybet.vrnlexch.com/#/home/hot" target="_blank">
-                      <h3>Explore our website demo at gullybet.vrnlexch.com to experience our features.</h3>
-                    </a>
+                        <i class="fa-solid fa-copy copy-icon" id="copy-icon4"
+                          onclick="copyToClipboard('password4', 'password4', 'copy-success-password4','copy-icon4')"
+                          style="display: inline;"></i>
+                        <i class="fas fa-check copy-success icon" id="copy-success-password4"
+                          style="display: none;"></i>
+                      </h3>
+                      <a href="https://gullybet.vrnlexch.com/#/home/hot" target="_blank">
+                        <h3>Explore our website demo at gullybet.vrnlexch.com to experience our features.</h3>
+                      </a> -->
                     </div>
                   </div>
                   <div class="swiper-slide image-hover">
-                    <a href="https://9bazi.vrnlexch.com/#/dash" target="_blank">
-                      <img alt="9bazi" class="web-image2 content">
-                    </a>
+                    <img alt="9bazi" class="web-image2 content">
                     <div class="from-bottom image-back">
-                      <h3>
+                      <div class="hover_text"> <a href="#" class="a_parnter visit-link"
+                          data-url="https://9bazi.vrnlexch.com/#/dash" data-i18n="visit_website"
+                          aria-label="skyexch"><button class="btn-slide"> Get Demo ID
+                          </button></a>
+                      </div>
+                      <!-- <h3>
                         Username : <span id="vrnldemo3">vrnldemo</span>
                         <i class="fas fa-copy copy-icon" id="copy-icons-u3"
                           onclick="copyToClipboard('vrnldemo3', 'vrnldemo3', 'copy-success-vrnldemo3','copy-icons-u3')"
@@ -304,20 +700,26 @@
                       </h3>
                       <h3>
                         Password : <span id="password3">Asdf1234</span>
-                        <i class="fa-solid fa-copy copy-icon" id="copy-icon3" onclick="copyToClipboard('password3', 'password3', 'copy-success-password3','copy-icon3')" style="display: inline;"></i>
-                        <i class="fas fa-check copy-success icon" id="copy-success-password3" style="display: none;"></i>
-                    </h3>
-                    <a href="https://9bazi.vrnlexch.com/#/dash" target="_blank">
-                      <h3>Explore our website demo at 9bazi.vrnlexch.com to experience our features.</h3>
-                    </a>
+                        <i class="fa-solid fa-copy copy-icon" id="copy-icon3"
+                          onclick="copyToClipboard('password3', 'password3', 'copy-success-password3','copy-icon3')"
+                          style="display: inline;"></i>
+                        <i class="fas fa-check copy-success icon" id="copy-success-password3"
+                          style="display: none;"></i>
+                      </h3>
+                      <a href="https://9bazi.vrnlexch.com/#/dash" target="_blank">
+                        <h3>Explore our website demo at 9bazi.vrnlexch.com to experience our features.</h3>
+                      </a> -->
                     </div>
                   </div>
                   <div class="swiper-slide image-hover">
-                    <a href="https://aura.vrnlexch.com/#/home" target="_blank">
-                      <img class="web-image5" alt="Aura444">
-                    </a>
+                    <img class="web-image5" alt="Aura444">
                     <div class="from-bottom image-back">
-                      <h3>
+                      <div class="hover_text"> <a href="#" class="a_parnter visit-link"
+                          data-url="https://aura.vrnlexch.com/#/home" data-i18n="visit_website"
+                          aria-label="skyexch"><button class="btn-slide"> Get Demo ID
+                          </button></a>
+                      </div>
+                      <!-- <h3>
                         Username : <span id="vrnldemo6">vrnldemo</span>
                         <i class="fas fa-copy copy-icon" id="copy-icons-u6"
                           onclick="copyToClipboard('vrnldemo6', 'vrnldemo6', 'copy-success-vrnldemo6','copy-icons-u6')"
@@ -327,20 +729,26 @@
                       </h3>
                       <h3>
                         Password : <span id="password6">Asdf1234</span>
-                        <i class="fa-solid fa-copy copy-icon" id="copy-icon6" onclick="copyToClipboard('password6', 'password6', 'copy-success-password6','copy-icon6')" style="display: inline;"></i>
-                        <i class="fas fa-check copy-success icon" id="copy-success-password6" style="display: none;"></i>
-                    </h3>
-                    <a href="https://aura.vrnlexch.com/#/home" target="_blank">
-                      <h3>Explore our website demo at ura.vrnlexch.com to experience our features.</h3>
-                    </a>
+                        <i class="fa-solid fa-copy copy-icon" id="copy-icon6"
+                          onclick="copyToClipboard('password6', 'password6', 'copy-success-password6','copy-icon6')"
+                          style="display: inline;"></i>
+                        <i class="fas fa-check copy-success icon" id="copy-success-password6"
+                          style="display: none;"></i>
+                      </h3>
+                      <a href="https://aura.vrnlexch.com/#/home" target="_blank">
+                        <h3>Explore our website demo at ura.vrnlexch.com to experience our features.</h3>
+                      </a> -->
                     </div>
                   </div>
                   <div class="swiper-slide image-hover">
-                    <a href="https://diamond.vrnlexch.com/#/home" target="_blank">
-                      <img class="web-image6" alt="Diamond">
-                    </a>
+                    <img class="web-image6" alt="Diamond">
                     <div class="from-left image-back">
-                      <h3>
+                      <div class="hover_text"> <a href="#" class="a_parnter visit-link"
+                          data-url="https://diamond.vrnlexch.com/#/home" data-i18n="visit_website"
+                          aria-label="skyexch"><button class="btn-slide"> Get Demo ID
+                          </button></a>
+                      </div>
+                      <!-- <h3>
                         Username : <span id="vrnldemo7">vrnldemo</span>
                         <i class="fas fa-copy copy-icon" id="copy-icons-u7"
                           onclick="copyToClipboard('vrnldemo7', 'vrnldemo7', 'copy-success-vrnldemo7','copy-icons-u7')"
@@ -350,20 +758,26 @@
                       </h3>
                       <h3>
                         Password : <span id="password7">Asdf1234</span>
-                        <i class="fa-solid fa-copy copy-icon" id="copy-icon7" onclick="copyToClipboard('password7', 'password7', 'copy-success-password7','copy-icon7')" style="display: inline;"></i>
-                        <i class="fas fa-check copy-success icon" id="copy-success-password7" style="display: none;"></i>
-                    </h3>
-                    <a href="https://diamond.vrnlexch.com/#/home" target="_blank">
-                      <h3>Explore our website demo at diamond.vrnlexch.com to experience our features.</h3>
-                    </a>
+                        <i class="fa-solid fa-copy copy-icon" id="copy-icon7"
+                          onclick="copyToClipboard('password7', 'password7', 'copy-success-password7','copy-icon7')"
+                          style="display: inline;"></i>
+                        <i class="fas fa-check copy-success icon" id="copy-success-password7"
+                          style="display: none;"></i>
+                      </h3>
+                      <a href="https://diamond.vrnlexch.com/#/home" target="_blank">
+                        <h3>Explore our website demo at diamond.vrnlexch.com to experience our features.</h3>
+                      </a> -->
                     </div>
                   </div>
                   <div class="swiper-slide image-hover">
-                    <a href="https://lotus.vrnlexch.com/#/" target="_blank">
-                      <img class="web-image7" alt="Lotus">
-                    </a>
+                    <img class="web-image7" alt="Lotus">
                     <div class="from-right image-back">
-                      <h3>
+                      <div class="hover_text"> <a href="#" class="a_parnter visit-link"
+                          data-url="https://lotus.vrnlexch.com/#/" data-i18n="visit_website"
+                          aria-label="skyexch"><button class="btn-slide"> Get Demo ID
+                          </button></a>
+                      </div>
+                      <!-- <h3>
                         Username : <span id="vrnldemo8">vrnldemo</span>
                         <i class="fas fa-copy copy-icon" id="copy-icons-u8"
                           onclick="copyToClipboard('vrnldemo8', 'vrnldemo8', 'copy-success-vrnldemo8','copy-icons-u8')"
@@ -373,53 +787,74 @@
                       </h3>
                       <h3>
                         Password : <span id="password8">Asdf1234</span>
-                        <i class="fa-solid fa-copy copy-icon" id="copy-icon8" onclick="copyToClipboard('password8', 'password8', 'copy-success-password8','copy-icon8')" style="display: inline;"></i>
-                        <i class="fas fa-check copy-success icon" id="copy-success-password8" style="display: none;"></i>
-                    </h3>
-                    <a href="https://lotus.vrnlexch.com/#/" target="_blank">
-                      <h3>Explore our website demo at lotus.vrnlexch.com to experience our features.</h3>
-                    </a>
+                        <i class="fa-solid fa-copy copy-icon" id="copy-icon8"
+                          onclick="copyToClipboard('password8', 'password8', 'copy-success-password8','copy-icon8')"
+                          style="display: inline;"></i>
+                        <i class="fas fa-check copy-success icon" id="copy-success-password8"
+                          style="display: none;"></i>
+                      </h3>
+                      <a href="https://lotus.vrnlexch.com/#/" target="_blank">
+                        <h3>Explore our website demo at lotus.vrnlexch.com to experience our features.</h3>
+                      </a> -->
                     </div>
                   </div>
                   <div class="swiper-slide image-hover">
-                    <a href="https://world777.vrnlexch.com/#/" target="_blank">
-                      <img alt="World777" class="web-image9">
-                    </a>
+                    <img alt="World777" class="web-image9">
                     <div class="from-bottom image-back">
-                      <h3 >
+                      <div class="hover_text"> <a href="#" class="a_parnter visit-link"
+                          data-url="https://world777.vrnlexch.com/#/" data-i18n="visit_website"
+                          aria-label="skyexch"><button class="btn-slide"> Get Demo ID
+                          </button></a>
+                      </div>
+                      <!-- <h3>
                         Username : <span id="vrnldemo9">vrnldemo</span>
-                        <i class="fas fa-copy copy-icon" id="copy-icons-u9" onclick="copyToClipboard('vrnldemo9', 'vrnldemo9', 'copy-success-vrnldemo9','copy-icons-u9')" style="display: inline;"></i>
-                        <i class="fa-solid fa-check copy-success" id="copy-success-vrnldemo9" style="display: none;"></i>
-                    </h3>
-                    <h3 >
+                        <i class="fas fa-copy copy-icon" id="copy-icons-u9"
+                          onclick="copyToClipboard('vrnldemo9', 'vrnldemo9', 'copy-success-vrnldemo9','copy-icons-u9')"
+                          style="display: inline;"></i>
+                        <i class="fa-solid fa-check copy-success" id="copy-success-vrnldemo9"
+                          style="display: none;"></i>
+                      </h3>
+                      <h3>
                         Password : <span id="password9">Asdf1234</span>
-                        <i class="fa-solid fa-copy copy-icon" id="copy-icon9" onclick="copyToClipboard('password9', 'password9', 'copy-success-password9','copy-icon9')" style="display: inline;"></i>
-                        <i class="fas fa-check copy-success icon" id="copy-success-password9" style="display: none;"></i>
-                    </h3>
-                    <a href="https://world777.vrnlexch.com/#/" target="_blank">
-                      <h3>Explore our website demo at world777.vrnlexch.com to experience our features.</h3>
-                    </a>
+                        <i class="fa-solid fa-copy copy-icon" id="copy-icon9"
+                          onclick="copyToClipboard('password9', 'password9', 'copy-success-password9','copy-icon9')"
+                          style="display: inline;"></i>
+                        <i class="fas fa-check copy-success icon" id="copy-success-password9"
+                          style="display: none;"></i>
+                      </h3>
+                      <a href="https://world777.vrnlexch.com/#/" target="_blank">
+                        <h3>Explore our website demo at world777.vrnlexch.com to experience our features.</h3>
+                      </a> -->
                     </div>
                   </div>
 
                   <div class="swiper-slide image-hover">
-                    <a href="https://mostvipgame.vrnlexch.com/#/" target="_blank">
-                      <img alt="mostvipgame" class="web-image10">
-                    </a>
+                    <img alt="mostvipgame" class="web-image10">
                     <div class="from-bottom image-back">
-                      <h3 >
+                      <div class="hover_text"> <a href="#" class="a_parnter visit-link"
+                          data-url="https://mostvipgame.vrnlexch.com/#/" data-i18n="visit_website"
+                          aria-label="skyexch"><button class="btn-slide"> Get Demo ID
+                          </button></a>
+                      </div>
+                      <!-- <h3>
                         Username : <span id="vrnldemo10">vrnldemo</span>
-                        <i class="fas fa-copy copy-icon" id="copy-icons-u10" onclick="copyToClipboard('vrnldemo10', 'vrnldemo10', 'copy-success-vrnldemo10','copy-icons-u10')" style="display: inline;"></i>
-                        <i class="fa-solid fa-check copy-success" id="copy-success-vrnldemo10" style="display: none;"></i>
-                    </h3>
-                    <h3 >
+                        <i class="fas fa-copy copy-icon" id="copy-icons-u10"
+                          onclick="copyToClipboard('vrnldemo10', 'vrnldemo10', 'copy-success-vrnldemo10','copy-icons-u10')"
+                          style="display: inline;"></i>
+                        <i class="fa-solid fa-check copy-success" id="copy-success-vrnldemo10"
+                          style="display: none;"></i>
+                      </h3>
+                      <h3>
                         Password : <span id="password10">Asdf1234</span>
-                        <i class="fa-solid fa-copy copy-icon" id="copy-icon10" onclick="copyToClipboard('password10', 'password10', 'copy-success-password10','copy-icon10')" style="display: inline;"></i>
-                        <i class="fas fa-check copy-success icon" id="copy-success-password10" style="display: none;"></i>
-                    </h3>
-                    <a href="https://world777.vrnlexch.com/#/" target="_blank">
-                      <h3>Explore our website demo at mostvipgame.vrnlexch.com to experience our features.</h3>
-                    </a>
+                        <i class="fa-solid fa-copy copy-icon" id="copy-icon10"
+                          onclick="copyToClipboard('password10', 'password10', 'copy-success-password10','copy-icon10')"
+                          style="display: inline;"></i>
+                        <i class="fas fa-check copy-success icon" id="copy-success-password10"
+                          style="display: none;"></i>
+                      </h3>
+                      <a href="https://world777.vrnlexch.com/#/" target="_blank">
+                        <h3>Explore our website demo at mostvipgame.vrnlexch.com to experience our features.</h3>
+                      </a> -->
                     </div>
                   </div>
                 </div>
@@ -589,19 +1024,23 @@
                                         .player-connected-fill-c {
                                           fill: none;
                                         }
+
                                         .player-connected-fill-b {
                                           stroke: #072c51;
                                           stroke-width: 10px;
                                         }
+
                                         .player-connected-fill-b,
                                         .player-connected-fill-c {
                                           stroke-linecap: round;
                                           stroke-linejoin: round;
                                         }
+
                                         .player-connected-fill-c {
                                           stroke: #fff;
                                           stroke-width: 12px;
                                         }
+
                                         .player-connected-fill-d {
                                           clip-path: url(life-at-aristocrat.html#a);
                                         }
@@ -666,17 +1105,21 @@
                                           stroke-linecap: round;
                                           stroke-linejoin: round;
                                         }
+
                                         .people-first-a,
                                         .people-first-b {
                                           stroke: #fff;
                                         }
+
                                         .people-first-a {
                                           stroke-width: 12px;
                                         }
+
                                         .people-first-b,
                                         .people-first-c {
                                           stroke-width: 10px;
                                         }
+
                                         .people-first-c {
                                           stroke: #f0a6ff;
                                         }
@@ -759,17 +1202,21 @@
                                           stroke-linecap: round;
                                           stroke-linejoin: round;
                                         }
+
                                         .our-shared-success-a,
                                         .our-shared-success-b {
                                           stroke: #fff;
                                         }
+
                                         .our-shared-success-a {
                                           stroke-width: 12px;
                                         }
+
                                         .our-shared-success-b,
                                         .our-shared-success-c {
                                           stroke-width: 10px;
                                         }
+
                                         .our-shared-success-c {
                                           stroke: #3c24ca;
                                         }
@@ -873,17 +1320,21 @@
                                           stroke-linecap: round;
                                           stroke-linejoin: round;
                                         }
+
                                         .best-practice-a,
                                         .best-practice-b {
                                           stroke: #fff;
                                         }
+
                                         .best-practice-a {
                                           stroke-width: 12px;
                                         }
+
                                         .best-practice-b,
                                         .best-practice-c {
                                           stroke-width: 10px;
                                         }
+
                                         .best-practice-c {
                                           stroke: #8cdd83;
                                         }
@@ -1207,6 +1658,938 @@
       </div> -->
     </div>
   </footer>
+  <!-- Modal Form -->
+  <div id="demoModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2 class="form-title">Request a Demo ID</h2>
+      <form id="demoForm" class="styled-form" novalidate>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" placeholder="Enter your name" minlength="3" id="name" name="name" required />
+            <div class="error-msg"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email ID</label>
+            <input type="email" placeholder="Enter your Email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="country">Country</label>
+            <div class="custom-select-wrapper">
+              <div>
+                <select id="country" name="country" required>
+                  <option value="" disabled selected>Select your country</option>
+                  <option value="Afghanistan" data-flag="af">Afghanistan</option>
+                  <option value="Åland Islands" data-flag="ax">Åland Islands</option>
+                  <option value="Albania" data-flag="al">Albania</option>
+                  <option value="Algeria" data-flag="dz">Algeria</option>
+                  <option value="American Samoa" data-flag="as">American Samoa</option>
+                  <option value="Andorra" data-flag="ad">Andorra</option>
+                  <option value="Angola" data-flag="ao">Angola</option>
+                  <option value="Anguilla" data-flag="ai">Anguilla</option>
+                  <option value="Antarctica" data-flag="aq">Antarctica</option>
+                  <option value="Antigua and Barbuda" data-flag="ag">Antigua and Barbuda</option>
+                  <option value="Argentina" data-flag="ar">Argentina</option>
+                  <option value="Armenia" data-flag="am">Armenia</option>
+                  <option value="Aruba" data-flag="aw">Aruba</option>
+                  <option value="Australia" data-flag="au">Australia</option>
+                  <option value="Austria" data-flag="at">Austria</option>
+                  <option value="Azerbaijan" data-flag="az">Azerbaijan</option>
+                  <option value="Bahamas" data-flag="bs">Bahamas</option>
+                  <option value="Bahrain" data-flag="bh">Bahrain</option>
+                  <option value="Bangladesh" data-flag="bd">Bangladesh</option>
+                  <option value="Barbados" data-flag="bb">Barbados</option>
+                  <option value="Belarus" data-flag="by">Belarus</option>
+                  <option value="Belgium" data-flag="be">Belgium</option>
+                  <option value="Belize" data-flag="bz">Belize</option>
+                  <option value="Benin" data-flag="bj">Benin</option>
+                  <option value="Bermuda" data-flag="bm">Bermuda</option>
+                  <option value="Bhutan" data-flag="bt">Bhutan</option>
+                  <option value="Bolivia" data-flag="bo">Bolivia</option>
+                  <option value="Bosnia and Herzegovina" data-flag="ba">Bosnia and Herzegovina</option>
+                  <option value="Botswana" data-flag="bw">Botswana</option>
+                  <option value="Bouvet Island" data-flag="bv">Bouvet Island</option>
+                  <option value="Brazil" data-flag="br">Brazil</option>
+                  <option value="British Indian Ocean Territory" data-flag="io">British Indian Ocean
+                    Territory</option>
+                  <option value="Brunei Darussalam" data-flag="bn">Brunei</option>
+                  <option value="Bulgaria" data-flag="bg">Bulgaria</option>
+                  <option value="Burkina Faso" data-flag="bf">Burkina Faso</option>
+                  <option value="Burundi" data-flag="bi">Burundi</option>
+                  <option value="Cabo Verde" data-flag="cv">Cabo Verde</option>
+                  <option value="Cambodia" data-flag="kh">Cambodia</option>
+                  <option value="Cameroon" data-flag="cm">Cameroon</option>
+                  <option value="Canada" data-flag="ca">Canada</option>
+                  <option value="Cayman Islands" data-flag="ky">Cayman Islands</option>
+                  <option value="Central African Republic" data-flag="cf">Central African Republic
+                  </option>
+                  <option value="Chad" data-flag="td">Chad</option>
+                  <option value="Chile" data-flag="cl">Chile</option>
+                  <option value="China" data-flag="cn">China</option>
+                  <option value="Christmas Island" data-flag="cx">Christmas Island</option>
+                  <option value="Cocos (Keeling) Islands" data-flag="cc">Cocos (Keeling) Islands</option>
+                  <option value="Colombia" data-flag="co">Colombia</option>
+                  <option value="Comoros" data-flag="km">Comoros</option>
+                  <option value="Congo" data-flag="cg">Congo</option>
+                  <option value="Democratic Republic of the Congo" data-flag="cd">Democratic Republic of
+                    the Congo</option>
+                  <option value="Cook Islands" data-flag="ck">Cook Islands</option>
+                  <option value="Costa Rica" data-flag="cr">Costa Rica</option>
+                  <option value="Croatia" data-flag="hr">Croatia</option>
+                  <option value="Cuba" data-flag="cu">Cuba</option>
+                  <option value="Curaçao" data-flag="cw">Curaçao</option>
+                  <option value="Cyprus" data-flag="cy">Cyprus</option>
+                  <option value="Czechia" data-flag="cz">Czechia</option>
+                  <option value="Denmark" data-flag="dk">Denmark</option>
+                  <option value="Djibouti" data-flag="dj">Djibouti</option>
+                  <option value="Dominica" data-flag="dm">Dominica</option>
+                  <option value="Dominican Republic" data-flag="do">Dominican Republic</option>
+                  <option value="Ecuador" data-flag="ec">Ecuador</option>
+                  <option value="Egypt" data-flag="eg">Egypt</option>
+                  <option value="El Salvador" data-flag="sv">El Salvador</option>
+                  <option value="Equatorial Guinea" data-flag="gq">Equatorial Guinea</option>
+                  <option value="Eritrea" data-flag="er">Eritrea</option>
+                  <option value="Estonia" data-flag="ee">Estonia</option>
+                  <option value="Eswatini" data-flag="sz">Eswatini</option>
+                  <option value="Ethiopia" data-flag="et">Ethiopia</option>
+                  <option value="Falkland Islands" data-flag="fk">Falkland Islands</option>
+                  <option value="Faroe Islands" data-flag="fo">Faroe Islands</option>
+                  <option value="Fiji" data-flag="fj">Fiji</option>
+                  <option value="Finland" data-flag="fi">Finland</option>
+                  <option value="France" data-flag="fr">France</option>
+                  <option value="French Guiana" data-flag="gf">French Guiana</option>
+                  <option value="French Polynesia" data-flag="pf">French Polynesia</option>
+                  <option value="French Southern Territories" data-flag="tf">French Southern Territories
+                  </option>
+                  <option value="Gabon" data-flag="ga">Gabon</option>
+                  <option value="Gambia" data-flag="gm">Gambia</option>
+                  <option value="Georgia" data-flag="ge">Georgia</option>
+                  <option value="Germany" data-flag="de">Germany</option>
+                  <option value="Ghana" data-flag="gh">Ghana</option>
+                  <option value="Gibraltar" data-flag="gi">Gibraltar</option>
+                  <option value="Greece" data-flag="gr">Greece</option>
+                  <option value="Greenland" data-flag="gl">Greenland</option>
+                  <option value="Grenada" data-flag="gd">Grenada</option>
+                  <option value="Guadeloupe" data-flag="gp">Guadeloupe</option>
+                  <option value="Guam" data-flag="gu">Guam</option>
+                  <option value="Guatemala" data-flag="gt">Guatemala</option>
+                  <option value="Guernsey" data-flag="gg">Guernsey</option>
+                  <option value="Guinea" data-flag="gn">Guinea</option>
+                  <option value="Guinea-Bissau" data-flag="gw">Guinea-Bissau</option>
+                  <option value="Guyana" data-flag="gy">Guyana</option>
+                  <option value="Haiti" data-flag="ht">Haiti</option>
+                  <option value="Heard Island and McDonald Islands" data-flag="hm">Heard Island and
+                    McDonald Islands</option>
+                  <option value="Holy See" data-flag="va">Holy See</option>
+                  <option value="Honduras" data-flag="hn">Honduras</option>
+                  <option value="Hong Kong" data-flag="hk">Hong Kong</option>
+                  <option value="Hungary" data-flag="hu">Hungary</option>
+                  <option value="Iceland" data-flag="is">Iceland</option>
+                  <option value="India" data-flag="in">India</option>
+                  <option value="Indonesia" data-flag="id">Indonesia</option>
+                  <option value="Iran" data-flag="ir">Iran</option>
+                  <option value="Iraq" data-flag="iq">Iraq</option>
+                  <option value="Ireland" data-flag="ie">Ireland</option>
+                  <option value="Isle of Man" data-flag="im">Isle of Man</option>
+                  <option value="Israel" data-flag="il">Israel</option>
+                  <option value="Italy" data-flag="it">Italy</option>
+                  <option value="Jamaica" data-flag="jm">Jamaica</option>
+                  <option value="Japan" data-flag="jp">Japan</option>
+                  <option value="Jersey" data-flag="je">Jersey</option>
+                  <option value="Jordan" data-flag="jo">Jordan</option>
+                  <option value="Kazakhstan" data-flag="kz">Kazakhstan</option>
+                  <option value="Kenya" data-flag="ke">Kenya</option>
+                  <option value="Kiribati" data-flag="ki">Kiribati</option>
+                  <option value="North Korea" data-flag="kp">North Korea</option>
+                  <option value="South Korea" data-flag="kr">South Korea</option>
+                  <option value="Kuwait" data-flag="kw">Kuwait</option>
+                  <option value="Kyrgyzstan" data-flag="kg">Kyrgyzstan</option>
+                  <option value="Laos" data-flag="la">Laos</option>
+                  <option value="Latvia" data-flag="lv">Latvia</option>
+                  <option value="Lebanon" data-flag="lb">Lebanon</option>
+                  <option value="Lesotho" data-flag="ls">Lesotho</option>
+                  <option value="Liberia" data-flag="lr">Liberia</option>
+                  <option value="Libya" data-flag="ly">Libya</option>
+                  <option value="Liechtenstein" data-flag="li">Liechtenstein</option>
+                  <option value="Lithuania" data-flag="lt">Lithuania</option>
+                  <option value="Luxembourg" data-flag="lu">Luxembourg</option>
+                  <option value="Macau" data-flag="mo">Macau</option>
+                  <option value="Madagascar" data-flag="mg">Madagascar</option>
+                  <option value="Malawi" data-flag="mw">Malawi</option>
+                  <option value="Malaysia" data-flag="my">Malaysia</option>
+                  <option value="Maldives" data-flag="mv">Maldives</option>
+                  <option value="Mali" data-flag="ml">Mali</option>
+                  <option value="Malta" data-flag="mt">Malta</option>
+                  <option value="Marshall Islands" data-flag="mh">Marshall Islands</option>
+                  <option value="Martinique" data-flag="mq">Martinique</option>
+                  <option value="Mauritania" data-flag="mr">Mauritania</option>
+                  <option value="Mauritius" data-flag="mu">Mauritius</option>
+                  <option value="Mayotte" data-flag="yt">Mayotte</option>
+                  <option value="Mexico" data-flag="mx">Mexico</option>
+                  <option value="Micronesia" data-flag="fm">Micronesia</option>
+                  <option value="Moldova" data-flag="md">Moldova</option>
+                  <option value="Monaco" data-flag="mc">Monaco</option>
+                  <option value="Mongolia" data-flag="mn">Mongolia</option>
+                  <option value="Montenegro" data-flag="me">Montenegro</option>
+                  <option value="Montserrat" data-flag="ms">Montserrat</option>
+                  <option value="Morocco" data-flag="ma">Morocco</option>
+                  <option value="Mozambique" data-flag="mz">Mozambique</option>
+                  <option value="Myanmar" data-flag="mm">Myanmar</option>
+                  <option value="Namibia" data-flag="na">Namibia</option>
+                  <option value="Nauru" data-flag="nr">Nauru</option>
+                  <option value="Nepal" data-flag="np">Nepal</option>
+                  <option value="Netherlands" data-flag="nl">Netherlands</option>
+                  <option value="New Caledonia" data-flag="nc">New Caledonia</option>
+                  <option value="New Zealand" data-flag="nz">New Zealand</option>
+                  <option value="Nicaragua" data-flag="ni">Nicaragua</option>
+                  <option value="Niger" data-flag="ne">Niger</option>
+                  <option value="Nigeria" data-flag="ng">Nigeria</option>
+                  <option value="Niue" data-flag="nu">Niue</option>
+                  <option value="Norfolk Island" data-flag="nf">Norfolk Island</option>
+                  <option value="North Macedonia" data-flag="mk">North Macedonia</option>
+                  <option value="Northern Mariana Islands" data-flag="mp">Northern Mariana Islands
+                  </option>
+                  <option value="Norway" data-flag="no">Norway</option>
+                  <option value="Oman" data-flag="om">Oman</option>
+                  <option value="Pakistan" data-flag="pk">Pakistan</option>
+                  <option value="Palau" data-flag="pw">Palau</option>
+                  <option value="Palestine State" data-flag="ps">Palestine State</option>
+                  <option value="Panama" data-flag="pa">Panama</option>
+                  <option value="Papua New Guinea" data-flag="pg">Papua New Guinea</option>
+                  <option value="Paraguay" data-flag="py">Paraguay</option>
+                  <option value="Peru" data-flag="pe">Peru</option>
+                  <option value="Philippines" data-flag="ph">Philippines</option>
+                  <option value="Pitcairn" data-flag="pn">Pitcairn</option>
+                  <option value="Poland" data-flag="pl">Poland</option>
+                  <option value="Portugal" data-flag="pt">Portugal</option>
+                  <option value="Puerto Rico" data-flag="pr">Puerto Rico</option>
+                  <option value="Qatar" data-flag="qa">Qatar</option>
+                  <option value="Réunion" data-flag="re">Réunion</option>
+                  <option value="Romania" data-flag="ro">Romania</option>
+                  <option value="Russia" data-flag="ru">Russia</option>
+                  <option value="Rwanda" data-flag="rw">Rwanda</option>
+                  <option value="Saint Barthélemy" data-flag="bl">Saint Barthélemy</option>
+                  <option value="Saint Helena" data-flag="sh">Saint Helena</option>
+                  <option value="Saint Kitts and Nevis" data-flag="kn">Saint Kitts and Nevis</option>
+                  <option value="Saint Lucia" data-flag="lc">Saint Lucia</option>
+                  <option value="Saint Martin (French part)" data-flag="mf">Saint Martin (French part)
+                  </option>
+                  <option value="Saint Pierre and Miquelon" data-flag="pm">Saint Pierre and Miquelon
+                  </option>
+                  <option value="Saint Vincent and the Grenadines" data-flag="vc">Saint Vincent and the
+                    Grenadines</option>
+                  <option value="Samoa" data-flag="ws">Samoa</option>
+                  <option value="San Marino" data-flag="sm">San Marino</option>
+                  <option value="Sao Tome and Principe" data-flag="st">Sao Tome and Principe</option>
+                  <option value="Saudi Arabia" data-flag="sa">Saudi Arabia</option>
+                  <option value="Senegal" data-flag="sn">Senegal</option>
+                  <option value="Serbia" data-flag="rs">Serbia</option>
+                  <option value="Seychelles" data-flag="sc">Seychelles</option>
+                  <option value="Sierra Leone" data-flag="sl">Sierra Leone</option>
+                  <option value="Singapore" data-flag="sg">Singapore</option>
+                  <option value="Sint Maarten (Dutch part)" data-flag="sx">Sint Maarten (Dutch part)
+                  </option>
+                  <option value="Slovakia" data-flag="sk">Slovakia</option>
+                  <option value="Slovenia" data-flag="si">Slovenia</option>
+                  <option value="Solomon Islands" data-flag="sb">Solomon Islands</option>
+                  <option value="Somalia" data-flag="so">Somalia</option>
+                  <option value="South Africa" data-flag="za">South Africa</option>
+                  <option value="South Georgia and the South Sandwich Islands" data-flag="gs">South
+                    Georgia and the South Sandwich Islands</option>
+                  <option value="South Sudan" data-flag="ss">South Sudan</option>
+                  <option value="Spain" data-flag="es">Spain</option>
+                  <option value="Sri Lanka" data-flag="lk">Sri Lanka</option>
+                  <option value="Sudan" data-flag="sd">Sudan</option>
+                  <option value="Suriname" data-flag="sr">Suriname</option>
+                  <option value="Svalbard and Jan Mayen" data-flag="sj">Svalbard and Jan Mayen</option>
+                  <option value="Sweden" data-flag="se">Sweden</option>
+                  <option value="Switzerland" data-flag="ch">Switzerland</option>
+                  <option value="Syrian Arab Republic" data-flag="sy">Syria</option>
+                  <option value="Taiwan" data-flag="tw">Taiwan</option>
+                  <option value="Tajikistan" data-flag="tj">Tajikistan</option>
+                  <option value="Tanzania" data-flag="tz">Tanzania</option>
+                  <option value="Thailand" data-flag="th">Thailand</option>
+                  <option value="Timor-Leste" data-flag="tl">Timor-Leste</option>
+                  <option value="Togo" data-flag="tg">Togo</option>
+                  <option value="Tokelau" data-flag="tk">Tokelau</option>
+                  <option value="Tonga" data-flag="to">Tonga</option>
+                  <option value="Trinidad and Tobago" data-flag="tt">Trinidad and Tobago</option>
+                  <option value="Tunisia" data-flag="tn">Tunisia</option>
+                  <option value="Turkey" data-flag="tr">Turkey</option>
+                  <option value="Turkmenistan" data-flag="tm">Turkmenistan</option>
+                  <option value="Tuvalu" data-flag="tv">Tuvalu</option>
+                  <option value="Uganda" data-flag="ug">Uganda</option>
+                  <option value="Ukraine" data-flag="ua">Ukraine</option>
+                  <option value="United Arab Emirates" data-flag="ae">United Arab Emirates</option>
+                  <option value="United Kingdom" data-flag="gb">United Kingdom</option>
+                  <option value="United States" data-flag="us">United States</option>
+                  <option value="Uruguay" data-flag="uy">Uruguay</option>
+                  <option value="Uzbekistan" data-flag="uz">Uzbekistan</option>
+                  <option value="Vanuatu" data-flag="vu">Vanuatu</option>
+                  <option value="Venezuela" data-flag="ve">Venezuela</option>
+                  <option value="Vietnam" data-flag="vn">Vietnam</option>
+                  <option value="Western Sahara" data-flag="eh">Western Sahara</option>
+                  <option value="Yemen" data-flag="ye">Yemen</option>
+                  <option value="Zambia" data-flag="zm">Zambia</option>
+                  <option value="Zimbabwe" data-flag="zw">Zimbabwe</option>
+                </select>
+              </div>
+              <div class="error-msg"></div>
+
+              <div id="flag-preview" class="flag-preview">
+                <img src="" alt="Flag" id="flag-img" />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="district">District</label>
+            <input type="text" placeholder="Enter your district" id="district" name="district" required />
+            <div class="error-msg"></div>
+          </div>
+
+          <div class="form-group full">
+            <label for="whatsappNumber">WhatsApp Number</label>
+            <div style="display: flex; gap: 6px; align-items: center;">
+              <input type="text" id="dialCode" readonly
+                style="width: 60px; background: #333; border: 1px solid #555; color: #ccc; text-align: center; border-radius: 6px; padding: 10px;"
+                aria-label="Country Dial Code" />
+              <input type="tel" id="whatsappNumber" name="whatsapp" placeholder="Enter WhatsApp number"
+                style="flex: 1; width: auto;" required />
+            </div>
+            <div class="error-msg"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="turnover">Monthly Turnover</label>
+            <input type="text" placeholder="Enter your monthly turnover" id="turnover" name="turnover" />
+            <div class="error-msg"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="users">How Many Users</label>
+            <input type="number" placeholder="Enter the number of users" id="users" name="users" />
+            <div class="error-msg"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="platform">Current Platform Using</label>
+            <input type="text" placeholder="Enter current platform" id="platform" name="platform" />
+            <div class="error-msg"></div>
+          </div>
+
+          <div class="form-group full">
+            <label for="issues">Issues With Current Platform</label>
+            <textarea id="issues" placeholder="Enter the issues with current platform" name="issues"
+              rows="3"></textarea>
+            <div class="error-msg"></div>
+          </div>
+
+          <!-- Telegram Yes/No Dropdown -->
+          <div class="form-group full">
+            <label for="telegramStatus">Are you on Telegram?</label>
+            <select id="telegramStatus" name="telegramStatus">
+              <option value="" disabled selected>-- Select --</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+            <div class="error-msg"></div>
+          </div>
+
+          <!-- Telegram Handle Input (initially hidden) -->
+          <div class="form-group full" id="telegramHandleWrapper" style="display: none;">
+            <label for="telegramHandle">Telegram Handle</label>
+            <input type="text" placeholder="Enter your Telegram Handle" id="telegramHandle" name="telegramHandle" />
+            <div class="error-msg"></div>
+          </div>
+
+          <div class="form-group full">
+            <label for="demo_url">Demo URL</label>
+            <a id="demo_url" href="#" target="_blank" style="color: #4eaaff; word-break: break-all;"></a>
+            <!-- <input type="hidden" name="demo_url" id="demo_url_input"> -->
+          </div>
+
+        </div>
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </div>
+  </div>
+
+
+  <div id="toast">
+    <span id="toast-spinner"></span>
+    <span id="toast-message"></span>
+    <button id="toast-close" onclick="hideToast()">×</button>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const countryDialCodes = {
+        "Afghanistan": "+93",
+        "Åland Islands": "+358",
+        "Albania": "+355",
+        "Algeria": "+213",
+        "American Samoa": "+1-684",
+        "Andorra": "+376",
+        "Angola": "+244",
+        "Anguilla": "+1-264",
+        "Antarctica": "+672",
+        "Antigua and Barbuda": "+1-268",
+        "Argentina": "+54",
+        "Armenia": "+374",
+        "Australia": "+61",
+        "Austria": "+43",
+        "Azerbaijan": "+994",
+        "Bahamas": "+1-242",
+        "Bahrain": "+973",
+        "Bangladesh": "+880",
+        "Barbados": "+1-246",
+        "Belarus": "+375",
+        "Belgium": "+32",
+        "Belize": "+501",
+        "Benin": "+229",
+        "Bermuda": "+1-441",
+        "Bhutan": "+975",
+        "Bolivia": "+591",
+        "Bosnia and Herzegovina": "+387",
+        "Botswana": "+267",
+        "Brazil": "+55",
+        "Brunei": "+673",
+        "Bulgaria": "+359",
+        "Burkina Faso": "+226",
+        "Burundi": "+257",
+        "Cambodia": "+855",
+        "Cameroon": "+237",
+        "Canada": "+1",
+        "Cape Verde": "+238",
+        "Cayman Islands": "+1-345",
+        "Central African Republic": "+236",
+        "Chad": "+235",
+        "Chile": "+56",
+        "China": "+86",
+        "Colombia": "+57",
+        "Comoros": "+269",
+        "Congo (Brazzaville)": "+242",
+        "Congo (Kinshasa)": "+243",
+        "Costa Rica": "+506",
+        "Croatia": "+385",
+        "Cuba": "+53",
+        "Cyprus": "+357",
+        "Czech Republic": "+420",
+        "Denmark": "+45",
+        "Djibouti": "+253",
+        "Dominica": "+1-767",
+        "Dominican Republic": "+1-809",
+        "Ecuador": "+593",
+        "Egypt": "+20",
+        "El Salvador": "+503",
+        "Equatorial Guinea": "+240",
+        "Eritrea": "+291",
+        "Estonia": "+372",
+        "Ethiopia": "+251",
+        "Fiji": "+679",
+        "Finland": "+358",
+        "France": "+33",
+        "French Polynesia": "+689",
+        "Gabon": "+241",
+        "Gambia": "+220",
+        "Georgia": "+995",
+        "Germany": "+49",
+        "Ghana": "+233",
+        "Gibraltar": "+350",
+        "Greece": "+30",
+        "Greenland": "+299",
+        "Grenada": "+1-473",
+        "Guam": "+1-671",
+        "Guatemala": "+502",
+        "Guinea": "+224",
+        "Guinea-Bissau": "+245",
+        "Guyana": "+592",
+        "Haiti": "+509",
+        "Honduras": "+504",
+        "Hong Kong": "+852",
+        "Hungary": "+36",
+        "Iceland": "+354",
+        "India": "+91",
+        "Indonesia": "+62",
+        "Iran": "+98",
+        "Iraq": "+964",
+        "Ireland": "+353",
+        "Israel": "+972",
+        "Italy": "+39",
+        "Jamaica": "+1-876",
+        "Japan": "+81",
+        "Jordan": "+962",
+        "Kazakhstan": "+7",
+        "Kenya": "+254",
+        "Kiribati": "+686",
+        "Kuwait": "+965",
+        "Kyrgyzstan": "+996",
+        "Laos": "+856",
+        "Latvia": "+371",
+        "Lebanon": "+961",
+        "Lesotho": "+266",
+        "Liberia": "+231",
+        "Libya": "+218",
+        "Liechtenstein": "+423",
+        "Lithuania": "+370",
+        "Luxembourg": "+352",
+        "Macau": "+853",
+        "Macedonia": "+389",
+        "Madagascar": "+261",
+        "Malawi": "+265",
+        "Malaysia": "+60",
+        "Maldives": "+960",
+        "Mali": "+223",
+        "Malta": "+356",
+        "Marshall Islands": "+692",
+        "Mauritania": "+222",
+        "Mauritius": "+230",
+        "Mexico": "+52",
+        "Micronesia": "+691",
+        "Moldova": "+373",
+        "Monaco": "+377",
+        "Mongolia": "+976",
+        "Montenegro": "+382",
+        "Morocco": "+212",
+        "Mozambique": "+258",
+        "Myanmar": "+95",
+        "Namibia": "+264",
+        "Nauru": "+674",
+        "Nepal": "+977",
+        "Netherlands": "+31",
+        "New Zealand": "+64",
+        "Nicaragua": "+505",
+        "Niger": "+227",
+        "Nigeria": "+234",
+        "Niue": "+683",
+        "Norway": "+47",
+        "Oman": "+968",
+        "Pakistan": "+92",
+        "Palau": "+680",
+        "Panama": "+507",
+        "Papua New Guinea": "+675",
+        "Paraguay": "+595",
+        "Peru": "+51",
+        "Philippines": "+63",
+        "Poland": "+48",
+        "Portugal": "+351",
+        "Puerto Rico": "+1-787",
+        "Qatar": "+974",
+        "Romania": "+40",
+        "Russia": "+7",
+        "Rwanda": "+250",
+        "Saint Kitts and Nevis": "+1-869",
+        "Saint Lucia": "+1-758",
+        "Saint Vincent and the Grenadines": "+1-784",
+        "Samoa": "+685",
+        "San Marino": "+378",
+        "Saudi Arabia": "+966",
+        "Senegal": "+221",
+        "Serbia": "+381",
+        "Seychelles": "+248",
+        "Sierra Leone": "+232",
+        "Singapore": "+65",
+        "Slovakia": "+421",
+        "Slovenia": "+386",
+        "Solomon Islands": "+677",
+        "Somalia": "+252",
+        "South Africa": "+27",
+        "South Korea": "+82",
+        "South Sudan": "+211",
+        "Spain": "+34",
+        "Sri Lanka": "+94",
+        "Sudan": "+249",
+        "Suriname": "+597",
+        "Swaziland": "+268",
+        "Sweden": "+46",
+        "Switzerland": "+41",
+        "Syria": "+963",
+        "Taiwan": "+886",
+        "Tajikistan": "+992",
+        "Tanzania": "+255",
+        "Thailand": "+66",
+        "Togo": "+228",
+        "Tonga": "+676",
+        "Trinidad and Tobago": "+1-868",
+        "Tunisia": "+216",
+        "Turkey": "+90",
+        "Turkmenistan": "+993",
+        "Tuvalu": "+688",
+        "Uganda": "+256",
+        "Ukraine": "+380",
+        "United Arab Emirates": "+971",
+        "United Kingdom": "+44",
+        "United States": "+1",
+        "Uruguay": "+598",
+        "Uzbekistan": "+998",
+        "Vanuatu": "+678",
+        "Vatican City": "+379",
+        "Venezuela": "+58",
+        "Vietnam": "+84",
+        "Yemen": "+967",
+        "Zambia": "+260",
+        "Zimbabwe": "+263"
+      };
+
+      const modal = document.getElementById("demoModal");
+      const openButtons = document.querySelectorAll(".a_parnter");
+      const closeBtn = modal.querySelector(".close-btn");
+      const form = document.getElementById("demoForm");
+      const flagImg = document.getElementById("flag-img");
+      const dialCodeInput = document.getElementById("dialCode");
+      const whatsappNumberInput = document.getElementById("whatsappNumber");
+      const telegramStatus = document.getElementById("telegramStatus");
+      const telegramHandleWrapper = document.getElementById("telegramHandleWrapper");
+      const telegramHandleInput = document.getElementById("telegramHandle");
+      const countrySelect = document.getElementById("country");
+
+      (async function setDefaultCountryFromIP() {
+        try {
+          const res = await fetch('https://geolocation-db.com/json/');
+          const data = await res.json();
+
+          const userCountry = data.country_name;
+
+          // Try to select the matching country in the dropdown
+          for (let option of countrySelect.options) {
+            if (option.value === userCountry) {
+              countrySelect.value = userCountry;
+              countrySelect.dispatchEvent(new Event('change'));
+              break;
+            }
+          }
+        } catch (error) {
+          console.warn("Could not set default country from IP", error);
+        }
+      })();
+
+      let currentActiveFlipBox = null;
+
+      telegramStatus.addEventListener("change", function () {
+        if (this.value === "Yes") {
+          telegramHandleWrapper.style.display = "block";
+        } else {
+          telegramHandleWrapper.style.display = "none";
+          telegramHandleInput.value = ""; // clear input if not needed
+        }
+      });
+
+      // Update flag preview and dial code on country change
+      countrySelect.addEventListener("change", function () {
+        const selected = this.options[this.selectedIndex];
+        const flagCode = selected.getAttribute('data-flag');
+        if (flagCode) {
+          flagImg.src = `https://flagcdn.com/w80/${flagCode}.png`;
+          flagImg.alt = selected.text + " Flag";
+          flagImg.style.visibility = 'visible';
+        } else {
+          flagImg.src = '';
+          flagImg.style.visibility = 'hidden';
+        }
+
+        // Set dial code readonly input
+        const dialCode = countryDialCodes[selected.value] || "";
+        dialCodeInput.value = dialCode;
+
+        // Optional: clear WhatsApp number input on country change
+        // whatsappNumberInput.value = "";
+      });
+
+      document.querySelectorAll(".visit-link").forEach(link => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault(); // Prevent link navigation
+
+          const card = link.closest(".swiper-slide");
+          if (card) {
+            // Set demo URL in modal
+            const demoUrlAnchor = document.getElementById("demo_url");
+            const realUrl = link.getAttribute('data-url');
+            if (demoUrlAnchor && realUrl) {
+              demoUrlAnchor.href = realUrl;
+              demoUrlAnchor.textContent = realUrl;
+            }
+            // Open modal
+            modal.style.display = "block";
+          }
+        });
+      });
+
+      // Open modal and flip the corresponding card
+      openButtons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          const card = btn.closest(".swiper-slide");
+          if (card) {
+            // Auto-fill demo URL
+            const demoUrlAnchor = document.getElementById("demo_url");
+            const visitLink = card.querySelector('.visit-link');
+            if (visitLink && demoUrlAnchor) {
+              const realUrl = visitLink.getAttribute('data-url');
+              if (realUrl) {
+                demoUrlAnchor.href = realUrl;
+                demoUrlAnchor.textContent = realUrl;
+              }
+            }
+          }
+          modal.style.display = "block";
+        });
+      });
+
+      // Close modal via close button
+      closeBtn.addEventListener("click", closeModalAndFlipBack);
+
+      // Close modal when clicking outside modal content
+      window.addEventListener("click", function (event) {
+        if (event.target === modal) {
+          closeModalAndFlipBack();
+        }
+      });
+
+      // Close modal with Escape key
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          closeModalAndFlipBack();
+        }
+      });
+
+      function closeModalAndFlipBack() {
+        modal.style.display = "none";
+
+        // Preserve selected country before reset
+        const selectedCountry = countrySelect.value;
+
+        // Reset only the form fields we care about, not the country
+        form.querySelectorAll("input, textarea, select").forEach(input => {
+          if (input.id !== "country" && input.type !== "button" && input.type !== "submit") {
+            input.value = "";
+          }
+        });
+
+        // Re-set the country field to previously selected value
+        countrySelect.value = selectedCountry;
+        countrySelect.dispatchEvent(new Event('change')); // Update flag and dial code
+
+        // Clear error messages and restore borders
+        form.querySelectorAll(".error-msg").forEach(msg => msg.remove());
+        form.querySelectorAll("input, select, textarea").forEach(el => el.style.borderColor = "#555");
+
+        // Hide Telegram handle field if not needed
+        telegramHandleWrapper.style.display = (telegramStatus.value === "Yes") ? "block" : "none";
+
+        // Hide flag only if no valid country
+        if (!selectedCountry) {
+          flagImg.style.visibility = 'hidden';
+        }
+      }
+
+
+      // Form submission + validation
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        const demoUrlAnchor = document.getElementById("demo_url");
+
+        // Reset styles and messages
+        form.querySelectorAll(".error-msg").forEach(msg => msg.remove());
+        form.querySelectorAll("input, textarea, select").forEach(el => el.style.borderColor = "#555");
+
+        let isValid = true;
+        const isEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+        const isPhone = (value) => /^\+?[0-9\s\-()]{7,20}$/.test(value);
+
+        // Attach real-time validation
+        form.querySelectorAll("input, select, textarea").forEach(input => {
+          input.addEventListener("input", () => {
+            const id = input.id;
+            const value = input.value.trim();
+            let valid = true;
+
+            switch (id) {
+              case "email":
+                valid = isEmail(value);
+                break;
+              case "name":
+                valid = value.length >= 3;
+                break;
+              case "whatsappNumber":
+                valid = isPhone(dialCodeInput.value + value);
+                break;
+              case "telegramHandle":
+                if (telegramStatus.value === "Yes") {
+                  valid = value.startsWith("@");
+                }
+                break;
+              case "issues":
+                valid = value.length >= 10;
+                break;
+              case "users":
+                valid = !isNaN(value) && Number(value) > 0;
+                break;
+              default:
+                valid = value !== "";
+            }
+
+            // If field is now valid, clean up error
+            if (valid) {
+              input.style.borderColor = "#555";
+              const existingError = input.parentElement.querySelector(".error-msg");
+              if (existingError) {
+                existingError.remove();
+              }
+            }
+          });
+        });
+
+        // function showError(id, message) {
+        //   const el = document.getElementById(id);
+        //   const msg = el.parentElement.querySelector(".error-msg");
+        //   if (msg) msg.textContent = message;
+        //   el.style.borderColor = "red";
+        //   isValid = false;
+        // }
+
+        const fields = [
+          { id: "country", msg: "Please select your country." },
+          { id: "district", msg: "Please enter your district." },
+          { id: "name", msg: "Please enter your name (at least 3 characters).", validate: v => v.trim().length >= 3 },
+          { id: "email", msg: "Please enter a valid email.", validate: isEmail },
+          { id: "turnover", msg: "Please enter your monthly turnover." },
+          { id: "platform", msg: "Please enter your current platform." },
+          { id: "issues", msg: "Please describe the issues (at least 10 characters).", validate: v => v.trim().length >= 10 },
+          { id: "users", msg: "Please enter a valid number of users.", validate: v => !isNaN(v) && Number(v) > 0 },
+          {
+            id: "whatsappNumber",
+            msg: "Please enter a valid WhatsApp number.",
+            validate: () => {
+              const number = whatsappNumberInput.value.trim();
+              const fullNumber = dialCodeInput.value + number;
+              return isPhone(fullNumber);
+            }
+          },
+          {
+            id: "telegramStatus",
+            msg: "Please select if you have a Telegram handle.",
+            validate: v => v === "Yes" || v === "No"
+          },
+          // Conditionally add Telegram field:
+          ...(telegramStatus && telegramStatus.value === "Yes"
+            ? [{
+              id: "telegramHandle",
+              msg: "Please enter a valid Telegram handle starting with @",
+              validate: v => v.trim().startsWith("@")
+            }]
+            : [])
+        ];
+
+        // Validate fields and show error messages
+        fields.forEach(({ id, msg, validate }) => {
+          const el = document.getElementById(id);
+          const value = el ? el.value.trim() : "";
+
+          const valid = value && (!validate || validate(value));
+          if (!valid) {
+            isValid = false;
+            el.style.borderColor = "#f87171";
+
+            // Create error message below the input
+            const error = document.createElement("div");
+            error.className = "error-msg";
+            error.style.color = "#ff6b6b";
+            error.style.fontSize = "0.9em";
+            error.style.marginTop = "4px";
+            error.textContent = msg;
+
+            // Insert after the element (if there's already an error message, it's removed above)
+            el.parentNode.insertBefore(error, el.nextSibling);
+          }
+        });
+
+        if (!isValid) return;
+
+        // Show processing toast
+        showToast('Processing...', 'info');
+
+        // Prepare formData
+        const formData = new FormData(form);
+        const fullWhatsApp = dialCodeInput.value + whatsappNumberInput.value.trim();
+        formData.set("whatsapp", fullWhatsApp);
+        formData.delete("whatsappNumber"); // Don't send uncombined number
+        // formData.set("site", window.location.hostname);
+        formData.set("site", demoUrlAnchor.href);
+        formData.set("timestamp", new Date().toISOString());
+
+        try {
+          const ipRes = await fetch('https://api.ipify.org?format=json');
+          const ipJson = await ipRes.json();
+          formData.set('ip', ipJson.ip);
+        } catch (err) {
+          console.warn("IP fetch failed", err);
+        }
+        formData.set("requestedFrom", window.location.hostname);
+
+        try {
+          console.log([...formData]);
+          const submitRes = await fetch('https://script.google.com/macros/s/AKfycbyWyO_fHI5wKhUJujYgD_9q7h-mtQs18g-3RmdSfSQ4qvoqGKyP6UIgobCp8x8SRMA/exec', {
+            method: 'POST',
+            body: formData
+          });
+
+          if (!submitRes.ok) throw new Error("Submission failed");
+
+          if (currentActiveFlipBox) {
+            const demoInfo = currentActiveFlipBox.querySelector(".demo_info");
+            if (demoInfo) demoInfo.style.display = "block";
+          }
+
+          // alert("Form submitted successfully!");
+          showToast('Success! Your action was completed.');
+
+          const selectedCountry = countrySelect.value; // preserve selected country
+          form.reset();
+          countrySelect.value = selectedCountry;
+          countrySelect.dispatchEvent(new Event('change')); // re-trigger flag & dial code
+          modal.style.display = "none";
+
+        } catch (err) {
+          // alert("Error submitting form.");
+          showToast('Oops, something went wrong.', 'error');
+          console.error(err);
+        }
+      });
+    });
+  </script>
+
+  <script>
+    function showToast(message, type = 'success') {
+      const toast = document.getElementById('toast');
+      const spinner = document.getElementById('toast-spinner');
+      const messageSpan = document.getElementById('toast-message');
+
+      // Reset styles
+      toast.classList.remove('success', 'error', 'info');
+      toast.classList.add(type);
+      messageSpan.textContent = message;
+
+      // Spinner only for info type
+      spinner.style.display = type === 'info' ? 'inline-block' : 'none';
+
+      toast.classList.add('show');
+
+      // Don't auto-hide if it's a loading/info toast
+      if (type !== 'info') {
+        setTimeout(() => {
+          hideToast();
+        }, 5000);
+      }
+    }
+
+    function hideToast() {
+      const toast = document.getElementById('toast');
+      toast.classList.remove('show');
+    }
+
+  </script>
   <!-- <link rel="stylesheet" id="block_hero_video-stylesheet-css" href="css/block_hero_video.css" media="all"> -->
   <!-- <link rel="stylesheet" id="block_text-stylesheet-css" href="css/block_text.css" media="all"> -->
   <!-- <link rel="stylesheet" id="block_talent_cards_slider-stylesheet-css" href="css/block_talent_cards_slider.css"
@@ -1246,10 +2629,11 @@
         successIcon.style.display = 'inline';
         setTimeout(function () {
           successIcon.style.display = 'none';
-          copyIcon.style.display = 'inline'; 
+          copyIcon.style.display = 'inline';
         }, 2000);
       }
     }
   </script>
 </body>
+
 </html>
