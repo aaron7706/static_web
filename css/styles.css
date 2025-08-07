@@ -11542,53 +11542,60 @@ footer ul.menu a:hover {
     height: 40px;
     width: 40px;
     background-image: url('../images/social-icon.webp');
-    background-position: -5px 45px !important;
+    background-position: -5px 89px !important;
   }
 
   .whatsapp_icon {
     height: 40px;
     width: 40px;
     background-image: url('../images/social-icon.webp');
-    background-position: -5px 130px !important;
+    background-position: -5px -47px !important;
   }
 
-  .skyup_icon {
+  /* .skyup_icon {
     height: 40px;
     width: 40px;
     background-image: url('../images/social-icon.webp');
     background-position: -5px 90px !important;
-  }
+  } */
 
   .facebook_icon {
     height: 40px;
     width: 40px;
-    background-image: url('../images/social-icon.webp');
-    background-position: -5px 175px !important;
+    background-image: url('../images/social-icon.png');
+    background-position: -5px 214px !important;
+  }
+    .email_icon {
+    height: 40px;
+    width: 40px;
+    background-image: url('../images/social-icon.png');
+    background-position: -5px 272px !important;
   }
 }
 
 .instagram_icon {
   height: 40px;
-  background-image: url('../images/social-icon.webp');
-  background-position: 0px 45px;
+  background-image: url('../images/social-icon.png');
+  background-position: 0px 89px;
 }
 
 .whatsapp_icon {
   height: 40px;
-  background-image: url('../images/social-icon.webp');
-  background-position: 0px 130px;
+  background-image: url('../images/social-icon.png');
+  background-position: 0px -47px;
 }
 
-.skyup_icon {
-  height: 40px;
-  background-image: url('../images/social-icon.webp');
-  background-position: 0px 90px;
-}
+
 
 .facebook_icon {
   height: 40px;
-  background-image: url('../images/social-icon.webp');
-  background-position: 0px 175px;
+  background-image: url('../images/social-icon.png');
+  background-position: 0px 214px;
+}
+.email_icon {
+  height: 40px;
+  background-image: url('../images/social-icon.png');
+  background-position: 0px 272px;
 }
 
 .fa.fa-glass:before {
