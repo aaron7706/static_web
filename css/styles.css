@@ -11542,7 +11542,7 @@ footer ul.menu a:hover {
     height: 40px;
     width: 40px;
     background-image: url('../images/social-icon.webp');
-    background-position: -5px 89px !important;
+    background-position: -5px 91px !important;
   }
 
   .whatsapp_icon {
@@ -11566,6 +11566,12 @@ footer ul.menu a:hover {
     background-position: -5px 214px !important;
   }
     .email_icon {
+    height: 40px;
+    width: 40px;
+    background-image: url('../images/social-icon.png');
+    background-position: -5px 272px !important;
+  }
+      .telegram_icon {
     height: 40px;
     width: 40px;
     background-image: url('../images/social-icon.png');
@@ -11597,6 +11603,13 @@ footer ul.menu a:hover {
   background-image: url('../images/social-icon.png');
   background-position: 0px 272px;
 }
+
+      .telegram_icon {
+    height: 40px;
+    width: 40px;
+    background-image: url('../images/social-icon.png');
+    background-position: -5px 272px !important;
+  }
 
 .fa.fa-glass:before {
   content: "\f000"
@@ -15874,3 +15887,4 @@ i.moovegdpr-arrow-close i.moovegdpr-arrow-close:before {
 .block_talent_cards_slider-wrapper:not(.darker-theme) svg path:nth-child(2) {
   fill: #072c51 !important
 }
+
