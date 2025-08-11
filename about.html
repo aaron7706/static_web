@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,12 +56,400 @@
       padding: calc(.667em + 2px) calc(1.333em + 2px);
       font-size: 1.125em
     }
+
     .wp-block-file__button {
       background: #32373c;
       color: #fff;
       text-decoration: none
     }
   </style>
+  <!-- <style>
+    .dropdown-selected {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: inherit;
+      font-size: inherit;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    .dropdown-selected img {
+      width: 18px;
+      height: 18px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .arrow-down1 {
+      /* margin-left: 5px; */
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      padding: 3px;
+      transform: rotate(45deg);
+    }
+
+
+    .dropdown-options {
+      display: none;
+      position: absolute;
+      background: rgba(0, 0, 0, 0.8);
+      max-height: 300px;
+      overflow-y: scroll;
+      /* Keep scrolling enabled */
+      z-index: 1000;
+      top: 200%;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      scrollbar-width: none;
+      /* Firefox */
+      scrollbar-color: transparent transparent;
+      /* Firefox */
+      min-width: 150px;
+      max-width: 100%;
+      box-sizing: border-box;
+      word-wrap: break-word;
+    }
+
+    /* Webkit-based browsers (Chrome, Safari) */
+    .dropdown-options::-webkit-scrollbar {
+      width: 0;
+      /* Hide the scrollbar */
+      height: 0;
+    }
+
+    .dropdown-options::-webkit-scrollbar-thumb {
+      background-color: transparent;
+      /* Ensure the thumb is also transparent */
+    }
+
+    .dropdown-options::-webkit-scrollbar-track {
+      background-color: transparent;
+      /* Make the track transparent */
+    }
+
+    .dropdown-options.dropdown-open {
+      display: block;
+    }
+
+    .dropdown-option {
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+      color: white;
+    }
+
+    .dropdown-options .dropdown-option img {
+      width: 20px;
+      height: 20px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .dropdown-options .dropdown-option:hover {
+      background-color: rgba(240, 240, 240, 0.6);
+    }
+
+    .dropdown-options.show-dropdown {
+      display: block;
+    }
+
+    .mob-menu-wrap.fx.fx-ac.fx-jc {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    /* Responsive design adjustments */
+    @media (max-width: 768px) {
+      .dropdown-options {
+        min-width: 40%;
+        max-width: 100%;
+        left: 55%;
+        top: 100%;
+        margin-left: 10px;
+        margin-top: 8px;
+        transform: none;
+      }
+
+      .dropdown-selected {
+        font-size: 14px;
+        gap: 6px;
+        position: relative;
+      }
+
+      .dropdown-selected img {
+        width: 20px;
+        height: 20px;
+      }
+
+      .arrow-down1 {
+        padding: 2px;
+      }
+
+      .dropdown-options .dropdown-option {
+        padding: 10px 12px;
+        font-size: 14px;
+      }
+
+      .dropdown-selected {
+        padding: 8px;
+      }
+    }
+
+    /* For very small screens (under 480px) */
+    @media (max-width: 480px) {
+      .dropdown-selected img {
+        width: 18px;
+        height: 18px;
+      }
+
+      .dropdown-options .dropdown-option {
+        padding: 8px 10px;
+        font-size: 14px;
+      }
+
+      .dropdown-selected {
+        font-size: 12px;
+      }
+    }
+  </style> -->
+
+  <style>
+    /* Dropdown Styles for Dropdown 1 */
+    .custom-dropdown1 {
+      position: relative;
+      display: none;
+    }
+
+    .dropdown-selected1 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-items: center;
+      font-family: inherit;
+      font-size: inherit;
+      gap: 8px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      /* Light gray border */
+      border-radius: 6px;
+      /* Rounded corners for better look */
+      padding: 6px 8px;
+      /* Add space inside so border isn’t too tight */
+    }
+
+    .dropdown-selected1:hover {
+      border-color: #888;
+      /* Darker gray when hovered */
+    }
+
+
+    .dropdown-selected1 img {
+      width: 14px;
+      height: 14px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .arrow-down1 {
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      padding: 3px;
+      transform: rotate(45deg);
+    }
+
+    .dropdown-options1 {
+      display: none;
+      position: absolute;
+      background: rgba(0, 0, 0, 0.8);
+      max-height: 300px;
+      overflow-y: scroll;
+      z-index: 1000;
+      top: 200%;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      scrollbar-width: none;
+      min-width: 150px;
+      max-width: 100%;
+      box-sizing: border-box;
+      word-wrap: break-word;
+    }
+
+    .dropdown-options1.dropdown-open1 {
+      display: block;
+    }
+
+    .dropdown-option1 {
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+      color: white;
+    }
+
+    .dropdown-options1 .dropdown-option1 img {
+      width: 20px;
+      height: 20px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .dropdown-options1 .dropdown-option1:hover {
+      background-color: rgba(240, 240, 240, 0.6);
+    }
+
+    @media (max-width: 768px) {
+      .custom-dropdown1 {
+        display: block;
+        /* or flex depending on layout */
+      }
+
+      .menu-wrapper-test {
+        position: absolute;
+        top: 18px;
+        margin-right: 60px;
+        /* margin-left: auto; */
+      }
+
+      .dropdown-options1 {
+        /* min-width: 40%; */
+        max-width: 100%;
+        top: 100%;
+        margin-top: 8px;
+      }
+
+      .dropdown-selected1 {
+        justify-content: start;
+        font-size: 18px;
+        gap: 6px;
+        position: relative;
+      }
+
+      .dropdown-selected1 img {
+        width: 20px;
+        height: 20px;
+      }
+
+      .arrow-down1 {
+        padding: 2px;
+      }
+
+      .dropdown-options1 .dropdown-option1 {
+        padding: 10px 12px;
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .dropdown-selected1 img {
+        width: 18px;
+        height: 18px;
+      }
+
+      .dropdown-options1 .dropdown-option1 {
+        padding: 8px 10px;
+        font-size: 18px;
+      }
+
+      .dropdown-selected1 {
+        justify-content: start;
+        font-size: 18px;
+      }
+    }
+
+    /* Dropdown Styles */
+    .custom-dropdown {
+      position: relative;
+      display: none;
+    }
+
+    .dropdown-selected {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: inherit;
+      font-size: inherit;
+      gap: 8px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      /* Light gray border */
+      border-radius: 6px;
+      /* Rounded corners for better look */
+      padding: 6px 8px;
+      /* Add space inside so border isn’t too tight */
+    }
+
+    .dropdown-selected:hover {
+      border-color: #888;
+      /* Darker gray when hovered */
+    }
+
+    .dropdown-selected img {
+      width: 14px;
+      height: 14px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .arrow-down {
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      padding: 3px;
+      transform: rotate(45deg);
+    }
+
+    .dropdown-options {
+      display: none;
+      position: absolute;
+      background: rgba(0, 0, 0, 0.8);
+      max-height: 300px;
+      overflow-y: scroll;
+      z-index: 1000;
+      top: 150%;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      scrollbar-width: none;
+      min-width: 150px;
+      max-width: 100%;
+      box-sizing: border-box;
+      word-wrap: break-word;
+    }
+
+    .dropdown-options.dropdown-open {
+      display: block;
+    }
+
+    .dropdown-option {
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+      color: white;
+    }
+
+    .dropdown-options .dropdown-option img {
+      width: 20px;
+      height: 20px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .dropdown-options .dropdown-option:hover {
+      background-color: rgba(240, 240, 240, 0.6);
+    }
+  </style>
+
   <link rel="stylesheet" id="contact-form-7-css" href="css/styles.css" media="all">
   <!-- <link rel="stylesheet" id="theme-style-css" href="css/bundle.css" media="all"> -->
   <link rel="stylesheet" id="font-awesome-official-css" href="css/all.css" media="all" crossorigin="anonymous">
@@ -74,6 +463,7 @@
   <meta name="msapplication-TileImage"
     content="https://s25652.pcdn.co/wp-content/uploads/2021/11/cropped-Favicon-logo-1-270x270.png.webp">
 </head>
+
 <body class="page-template-default page page-id-14 page-sustainability no-js">
   <div class="site-wrap">
     <a class="visually-hidden-focusable" href="about.html">Skip Content</a>
@@ -81,12 +471,161 @@
       <div class="navbar-content d-flex">
         <div class="logo-wrapper">
           <a href="/index.html" class="site-logo" aria-label="logo">
-            <img src="images/VRNL exch logo.webp" alt="vrnllogo" style=" width: 126px; height: auto; 
-        ">
+            <img src="images/VRNL exch logo.webp" alt="vrnllogo" style=" width: 126px; height: auto; ">
           </a>
         </div>
         <div class="nav-wrapper">
           <nav>
+            <div class="menu-wrapper-test">
+              <div class="custom-dropdown1" id="customDropdown1">
+                <div class="dropdown-selected1" id="dropdownSelected1">
+                  <img id="selectedFlag1" src="/images/En.webp" alt="Selected Flag" />
+                  <span id="selectedLanguage1" style="color: white;">English</span>
+                  <i class="arrow-down1"></i>
+                </div>
+                <div class="dropdown-options1" id="dropdownOptions1">
+                  <div class="dropdown-option1" data-value="en" data-flag="/images/En.webp">
+                    <img src="/images/En.webp" alt="English Flag" /> English
+                  </div>
+                  <div class="dropdown-option1" data-value="ar" data-flag="/images/arabic.webp">
+                    <img src="/images/arabic.webp" style="border-radius: 50%;" alt="Arabic Flag" /> Arabic
+                  </div>
+                  <div class="dropdown-option1" data-value="zu" data-flag="/images/zulu.webp">
+                    <img src="/images/zulu.webp" style="border-radius: 50%;" alt="Zulu Flag" /> Zulu
+                  </div>
+                  <div class="dropdown-option1" data-value="es" data-flag="/images/spanish.webp">
+                    <img src="/images/spanish.webp" style="border-radius: 50%;" alt="Spanish Flag" />
+                    Spanish
+                  </div>
+                  <div class="dropdown-option1" data-value="pt" data-flag="/images/Portuguese.webp">
+                    <img src="/images/Portuguese.webp" style="border-radius: 50%;" alt="Portuguese Flag" />
+                    Portuguese
+                  </div>
+                  <div class="dropdown-option1" data-value="id" data-flag="/images/Indonesian.webp">
+                    <img src="/images/Indonesian.webp" style="border-radius: 50%;" alt="Indonesian Flag" />
+                    Indonesian
+                  </div>
+                  <div class="dropdown-option1" data-value="ms" data-flag="/images/Malay.webp">
+                    <img src="/images/Malay.webp" style="border-radius: 50%;" alt="Malay Flag" /> Malaysian
+                  </div>
+                  <div class="dropdown-option1" data-value="fil" data-flag="/images/Filipino.webp">
+                    <img src="/images/Filipino.webp" style="border-radius: 50%;" alt="Filipino Flag" />
+                    Filipino
+                  </div>
+                  <div class="dropdown-option1" data-value="ko" data-flag="/images/Korean.webp">
+                    <img src="/images/Korean.webp" style="border-radius: 50%;" alt="Korean Flag" /> Korean
+                  </div>
+                  <div class="dropdown-option1" data-value="zh" data-flag="/images/Mandarin.webp">
+                    <img src="/images/Mandarin.webp" style="border-radius: 50%;" alt="Mandarin Flag" />
+                    Mandarin
+                  </div>
+                  <div class="dropdown-option1" data-value="th" data-flag="/images/Thai.webp">
+                    <img src="/images/Thai.webp" style="border-radius: 50%;" alt="Thai Flag" /> Thai
+                  </div>
+                  <div class="dropdown-option1" data-value="ga" data-flag="/images/Irish-Gaelic.webp">
+                    <img src="/images/Irish-Gaelic.webp" style="border-radius: 50%;" alt="Irish Flag" />
+                    Irish
+                  </div>
+                  <div class="dropdown-option1" data-value="nl" data-flag="/images/Dutch.webp">
+                    <img src="/images/Dutch.webp" style="border-radius: 50%;" alt="Dutch Flag" /> Dutch
+                  </div>
+                  <div class="dropdown-option1" data-value="bs" data-flag="/images/Bosnian.webp">
+                    <img src="/images/Bosnian.webp" style="border-radius: 50%;" alt="Bosnian Flag" />
+                    Bosnian
+                  </div>
+                  <div class="dropdown-option1" data-value="bg" data-flag="/images/Bulgarian.webp">
+                    <img src="/images/Bulgarian.webp" style="border-radius: 50%;" alt="Bulgarian Flag" />
+                    Bulgarian
+                  </div>
+                  <div class="dropdown-option1" data-value="hr" data-flag="/images/Croatian.webp">
+                    <img src="/images/Croatian.webp" style="border-radius: 50%;" alt="Croatian Flag" />
+                    Croatian
+                  </div>
+                  <div class="dropdown-option1" data-value="cs" data-flag="/images/Czech.webp">
+                    <img src="/images/Czech.webp" style="border-radius: 50%;" alt="Czech Flag" /> Czech
+                  </div>
+                  <div class="dropdown-option1" data-value="da" data-flag="/images/Danish.webp">
+                    <img src="/images/Danish.webp" style="border-radius: 50%;" alt="Danish Flag" /> Danish
+                  </div>
+                  <div class="dropdown-option1" data-value="et" data-flag="/images/Estonian.webp">
+                    <img src="/images/Estonian.webp" style="border-radius: 50%;" alt="Estonian Flag" />
+                    Estonian
+                  </div>
+                  <div class="dropdown-option1" data-value="fi" data-flag="/images/Finnish.webp">
+                    <img src="/images/Finnish.webp" style="border-radius: 50%;" alt="Finnish Flag" />
+                    Finnish
+                  </div>
+                  <div class="dropdown-option1" data-value="de" data-flag="/images/German.webp">
+                    <img src="/images/German.webp" style="border-radius: 50%;" alt="German Flag" /> German
+                  </div>
+                  <div class="dropdown-option1" data-value="hu" data-flag="/images/Hungarian.webp">
+                    <img src="/images/Hungarian.webp" style="border-radius: 50%;" alt="Hungarian Flag" />
+                    Hungarian
+                  </div>
+                  <div class="dropdown-option1" data-value="is" data-flag="/images/Icelandic.webp">
+                    <img src="/images/Icelandic.webp" style="border-radius: 50%;" alt="Icelandic Flag" />
+                    Icelandic
+                  </div>
+                  <div class="dropdown-option1" data-value="it" data-flag="/images/Italian.webp">
+                    <img src="/images/Italian.webp" style="border-radius: 50%;" alt="Italian Flag" />
+                    Italian
+                  </div>
+                  <div class="dropdown-option1" data-value="lv" data-flag="/images/Latvian.webp">
+                    <img src="/images/Latvian.webp" style="border-radius: 50%;" alt="Latvian Flag" />
+                    Latvian
+                  </div>
+                  <div class="dropdown-option1" data-value="lt" data-flag="/images/Lithuanian.webp">
+                    <img src="/images/Lithuanian.webp" style="border-radius: 50%;" alt="Lithuanian Flag" />
+                    Lithuanian
+                  </div>
+                  <div class="dropdown-option1" data-value="lb" data-flag="/images/Luxembourgish.webp">
+                    <img src="/images/Luxembourgish.webp" style="border-radius: 50%;" alt="Luxembourgish Flag" />
+                    Luxembourgish
+                  </div>
+                  <div class="dropdown-option1" data-value="mk" data-flag="/images/Macedonian.webp">
+                    <img src="/images/Macedonian.webp" style="border-radius: 50%;" alt="Macedonian Flag" />
+                    Macedonian
+                  </div>
+                  <div class="dropdown-option1" data-value="mt" data-flag="/images/Maltese.webp">
+                    <img src="/images/Maltese.webp" style="border-radius: 50%;" alt="Maltese Flag" />
+                    Maltese
+                  </div>
+                  <div class="dropdown-option1" data-value="ro" data-flag="/images/Romanian.webp">
+                    <img src="/images/Romanian.webp" style="border-radius: 50%;" alt="Romanian Flag" />
+                    Romanian
+                  </div>
+                  <div class="dropdown-option1" data-value="sr" data-flag="/images/Montenegrin.webp">
+                    <img src="/images/Montenegrin.webp" style="border-radius: 50%;" alt="Montenegrin Flag" />
+                    Montenegrin
+                  </div>
+                  <div class="dropdown-option1" data-value="no" data-flag="/images/Norwegian.webp">
+                    <img src="/images/Norwegian.webp" style="border-radius: 50%;" alt="Norwegian Flag" />
+                    Norwegian
+                  </div>
+                  <div class="dropdown-option1" data-value="pl" data-flag="/images/Polish.webp">
+                    <img src="/images/Polish.webp" style="border-radius: 50%;" alt="Polish Flag" /> Polish
+                  </div>
+                  <div class="dropdown-option1" data-value="sk" data-flag="/images/Slovak.webp">
+                    <img src="/images/Slovak.webp" style="border-radius: 50%;" alt="Slovak Flag" /> Slovak
+                  </div>
+                  <div class="dropdown-option1" data-value="sv" data-flag="/images/Swedish.webp">
+                    <img src="/images/Swedish.webp" style="border-radius: 50%;" alt="Swedish Flag" />
+                    Swedish
+                  </div>
+                  <div class="dropdown-option1" data-value="uk" data-flag="/images/Ukrainian.webp">
+                    <img src="/images/Ukrainian.webp" style="border-radius: 50%;" alt="Ukrainian Flag" />
+                    Ukrainian
+                  </div>
+                  <div class="dropdown-option1" data-value="fr" data-flag="/images/French.webp">
+                    <img src="/images/French.webp" style="border-radius: 50%;" alt="French Flag" /> French
+                  </div>
+                  <div class="dropdown-option1" data-value="ru" data-flag="/images/Russian.webp">
+                    <img src="/images/Russian.webp" style="border-radius: 50%;" alt="Russian Flag" />
+                    Russian
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="nav-toggler">
               <h3 class="visually-hidden">Site Main Navigation</h3>
               <span></span>
@@ -97,14 +636,164 @@
               <div class="menu">
                 <ul id="primary-menu" class="menu">
                   <li id="menu-item-20" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20"><a
-                      href="index.html">Home</a></li>
+                      href="index.html" data-i18n="home">Home</a></li>
                   <li id="menu-item-20" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20"><a
-                      href="about.html">About Us</a></li>
+                      href="about.html" data-i18n="about_us">About Us</a></li>
                   <li id="menu-item-519" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-519">
-                    <a href="why.html">Why VRNL Exchange</a>
+                    <a href="why.html" data-i18n="why_vrnl">Why VRNL Exchange</a>
                   </li>
                   <li id="menu-item-19" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19"><a
-                      href="serv.html">Services</a></li>
+                      href="serv.html" data-i18n="services">Services</a></li>
+                  <li id="menu-item-19" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19">
+                    <div class="custom-dropdown" id="customDropdown">
+                      <div class="dropdown-selected" id="dropdownSelected">
+                        <img id="selectedFlag" src="/images/En.webp" alt="Selected Flag" />
+                        <span id="selectedLanguage" style="color: white;">English</span>
+                        <i class="arrow-down"></i>
+                      </div>
+                      <div class="dropdown-options" id="dropdownOptions">
+                        <div class="dropdown-option" data-value="en" data-flag="/images/En.webp">
+                          <img src="/images/En.webp" alt="English Flag" /> English
+                        </div>
+                        <div class="dropdown-option" data-value="ar" data-flag="/images/arabic.webp">
+                          <img src="/images/arabic.webp" style="border-radius: 50%;" alt="Arabic Flag" /> Arabic
+                        </div>
+                        <div class="dropdown-option" data-value="zu" data-flag="/images/zulu.webp">
+                          <img src="/images/zulu.webp" style="border-radius: 50%;" alt="Zulu Flag" /> Zulu
+                        </div>
+                        <div class="dropdown-option" data-value="es" data-flag="/images/spanish.webp">
+                          <img src="/images/spanish.webp" style="border-radius: 50%;" alt="Spanish Flag" />
+                          Spanish
+                        </div>
+                        <div class="dropdown-option" data-value="pt" data-flag="/images/Portuguese.webp">
+                          <img src="/images/Portuguese.webp" style="border-radius: 50%;" alt="Portuguese Flag" />
+                          Portuguese
+                        </div>
+                        <div class="dropdown-option" data-value="id" data-flag="/images/Indonesian.webp">
+                          <img src="/images/Indonesian.webp" style="border-radius: 50%;" alt="Indonesian Flag" />
+                          Indonesian
+                        </div>
+                        <div class="dropdown-option" data-value="ms" data-flag="/images/Malay.webp">
+                          <img src="/images/Malay.webp" style="border-radius: 50%;" alt="Malay Flag" /> Malaysian
+                        </div>
+                        <div class="dropdown-option" data-value="fil" data-flag="/images/Filipino.webp">
+                          <img src="/images/Filipino.webp" style="border-radius: 50%;" alt="Filipino Flag" />
+                          Filipino
+                        </div>
+                        <div class="dropdown-option" data-value="ko" data-flag="/images/Korean.webp">
+                          <img src="/images/Korean.webp" style="border-radius: 50%;" alt="Korean Flag" /> Korean
+                        </div>
+                        <div class="dropdown-option" data-value="zh" data-flag="/images/Mandarin.webp">
+                          <img src="/images/Mandarin.webp" style="border-radius: 50%;" alt="Mandarin Flag" />
+                          Mandarin
+                        </div>
+                        <div class="dropdown-option" data-value="th" data-flag="/images/Thai.webp">
+                          <img src="/images/Thai.webp" style="border-radius: 50%;" alt="Thai Flag" /> Thai
+                        </div>
+                        <div class="dropdown-option" data-value="ga" data-flag="/images/Irish-Gaelic.webp">
+                          <img src="/images/Irish-Gaelic.webp" style="border-radius: 50%;" alt="Irish Flag" />
+                          Irish
+                        </div>
+                        <div class="dropdown-option" data-value="nl" data-flag="/images/Dutch.webp">
+                          <img src="/images/Dutch.webp" style="border-radius: 50%;" alt="Dutch Flag" /> Dutch
+                        </div>
+                        <div class="dropdown-option" data-value="bs" data-flag="/images/Bosnian.webp">
+                          <img src="/images/Bosnian.webp" style="border-radius: 50%;" alt="Bosnian Flag" />
+                          Bosnian
+                        </div>
+                        <div class="dropdown-option" data-value="bg" data-flag="/images/Bulgarian.webp">
+                          <img src="/images/Bulgarian.webp" style="border-radius: 50%;" alt="Bulgarian Flag" />
+                          Bulgarian
+                        </div>
+                        <div class="dropdown-option" data-value="hr" data-flag="/images/Croatian.webp">
+                          <img src="/images/Croatian.webp" style="border-radius: 50%;" alt="Croatian Flag" />
+                          Croatian
+                        </div>
+                        <div class="dropdown-option" data-value="cs" data-flag="/images/Czech.webp">
+                          <img src="/images/Czech.webp" style="border-radius: 50%;" alt="Czech Flag" /> Czech
+                        </div>
+                        <div class="dropdown-option" data-value="da" data-flag="/images/Danish.webp">
+                          <img src="/images/Danish.webp" style="border-radius: 50%;" alt="Danish Flag" /> Danish
+                        </div>
+                        <div class="dropdown-option" data-value="et" data-flag="/images/Estonian.webp">
+                          <img src="/images/Estonian.webp" style="border-radius: 50%;" alt="Estonian Flag" />
+                          Estonian
+                        </div>
+                        <div class="dropdown-option" data-value="fi" data-flag="/images/Finnish.webp">
+                          <img src="/images/Finnish.webp" style="border-radius: 50%;" alt="Finnish Flag" />
+                          Finnish
+                        </div>
+                        <div class="dropdown-option" data-value="de" data-flag="/images/German.webp">
+                          <img src="/images/German.webp" style="border-radius: 50%;" alt="German Flag" /> German
+                        </div>
+                        <div class="dropdown-option" data-value="hu" data-flag="/images/Hungarian.webp">
+                          <img src="/images/Hungarian.webp" style="border-radius: 50%;" alt="Hungarian Flag" />
+                          Hungarian
+                        </div>
+                        <div class="dropdown-option" data-value="is" data-flag="/images/Icelandic.webp">
+                          <img src="/images/Icelandic.webp" style="border-radius: 50%;" alt="Icelandic Flag" />
+                          Icelandic
+                        </div>
+                        <div class="dropdown-option" data-value="it" data-flag="/images/Italian.webp">
+                          <img src="/images/Italian.webp" style="border-radius: 50%;" alt="Italian Flag" />
+                          Italian
+                        </div>
+                        <div class="dropdown-option" data-value="lv" data-flag="/images/Latvian.webp">
+                          <img src="/images/Latvian.webp" style="border-radius: 50%;" alt="Latvian Flag" />
+                          Latvian
+                        </div>
+                        <div class="dropdown-option" data-value="lt" data-flag="/images/Lithuanian.webp">
+                          <img src="/images/Lithuanian.webp" style="border-radius: 50%;" alt="Lithuanian Flag" />
+                          Lithuanian
+                        </div>
+                        <div class="dropdown-option" data-value="lb" data-flag="/images/Luxembourgish.webp">
+                          <img src="/images/Luxembourgish.webp" style="border-radius: 50%;" alt="Luxembourgish Flag" />
+                          Luxembourgish
+                        </div>
+                        <div class="dropdown-option" data-value="mk" data-flag="/images/Macedonian.webp">
+                          <img src="/images/Macedonian.webp" style="border-radius: 50%;" alt="Macedonian Flag" />
+                          Macedonian
+                        </div>
+                        <div class="dropdown-option" data-value="mt" data-flag="/images/Maltese.webp">
+                          <img src="/images/Maltese.webp" style="border-radius: 50%;" alt="Maltese Flag" />
+                          Maltese
+                        </div>
+                        <div class="dropdown-option" data-value="ro" data-flag="/images/Romanian.webp">
+                          <img src="/images/Romanian.webp" style="border-radius: 50%;" alt="Romanian Flag" />
+                          Romanian
+                        </div>
+                        <div class="dropdown-option" data-value="sr" data-flag="/images/Montenegrin.webp">
+                          <img src="/images/Montenegrin.webp" style="border-radius: 50%;" alt="Montenegrin Flag" />
+                          Montenegrin
+                        </div>
+                        <div class="dropdown-option" data-value="no" data-flag="/images/Norwegian.webp">
+                          <img src="/images/Norwegian.webp" style="border-radius: 50%;" alt="Norwegian Flag" />
+                          Norwegian
+                        </div>
+                        <div class="dropdown-option" data-value="pl" data-flag="/images/Polish.webp">
+                          <img src="/images/Polish.webp" style="border-radius: 50%;" alt="Polish Flag" /> Polish
+                        </div>
+                        <div class="dropdown-option" data-value="sk" data-flag="/images/Slovak.webp">
+                          <img src="/images/Slovak.webp" style="border-radius: 50%;" alt="Slovak Flag" /> Slovak
+                        </div>
+                        <div class="dropdown-option" data-value="sv" data-flag="/images/Swedish.webp">
+                          <img src="/images/Swedish.webp" style="border-radius: 50%;" alt="Swedish Flag" />
+                          Swedish
+                        </div>
+                        <div class="dropdown-option" data-value="uk" data-flag="/images/Ukrainian.webp">
+                          <img src="/images/Ukrainian.webp" style="border-radius: 50%;" alt="Ukrainian Flag" />
+                          Ukrainian
+                        </div>
+                        <div class="dropdown-option" data-value="fr" data-flag="/images/French.webp">
+                          <img src="/images/French.webp" style="border-radius: 50%;" alt="French Flag" /> French
+                        </div>
+                        <div class="dropdown-option" data-value="ru" data-flag="/images/Russian.webp">
+                          <img src="/images/Russian.webp" style="border-radius: 50%;" alt="Russian Flag" />
+                          Russian
+                        </div>
+                      </div>
+                    </div>
+                  </li>
                   <!-- <li id="menu-item-19" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19"><a
                       href="payment.html" target="_blank">Payment Provider</a></li> -->
                 </ul>
@@ -124,11 +813,12 @@
                 <div class="col-12">
                   <div class="play-hide">
                     <div class="content-layout-item block_hero-header">
-                      <h2>About US</h2>
+                      <h2 data-i18n="about_us">About US</h2>
                     </div>
                     <div class="content-layout-item block_hero-subheading">
                       <span style="background:#8cdd83!important;"></span>
-                      <h3>VRNL Exchange The Largest Platform For Providing Online Sports and Casino Betting White Label.
+                      <h3 data-i18n="about_us_title">VRNL Exchange The Largest Platform For Providing Online Sports and
+                        Casino Betting White Label.
                         We offer Exchange API along with our custom site services for India and Bangladesh with low
                         margins and on a reliable platform. </h3>
                     </div>
@@ -138,7 +828,7 @@
             </div>
           </div>
           <div class="vimeo-iframe-wrapper wrapps">
-              <img src="images/3.webp
+            <img src="images/3.webp
               " alt="" loading="lazy" style="width: 100%;">
           </div>
         </div>
@@ -149,11 +839,12 @@
                 <div class="col-lg-7 col-xl-6">
                   <div class="play-hide">
                     <div class="content-layout-item block_hero-header">
-                      <h2>About Us</h2>
+                      <h2 data-i18n="about_us">About Us</h2>
                     </div>
                     <div class="content-layout-item block_hero-subheading">
                       <span style="background:#8cdd83!important;"></span>
-                      <h3>VRNL Exchange The Largest Platform For Providing Online Sports and Casino Betting White Label.
+                      <h3 data-i18n="about_us_title">VRNL Exchange The Largest Platform For Providing Online Sports and
+                        Casino Betting White Label.
                         We offer Exchange API along with our custom site services for India and Bangladesh with low
                         margins and on a reliable platform. </h3>
                     </div>
@@ -163,14 +854,14 @@
             </div>
           </div>
           <div class="vimeo-iframe-wrapper wrapps">
-              <img src="images/2.webp" alt="" style="width: 100%;" loading="lazy">
+            <img src="images/2.webp" alt="" style="width: 100%;" loading="lazy">
           </div>
         </div>
       </section>
       <section class="block_tabs_slider-wrapper section darker-theme ">
         <div class="container-lg">
           <div class="block_header text-center mb-5">
-            <h2 class="display-3 mb-0" id="">Offerings</h2>
+            <h2 class="display-3 mb-0" id="" data-i18n="offerings">Offerings</h2>
           </div>
           <div class="block_tabs_slider">
             <div class="swiper-pagination block_tabs_slider-pagination d-none d-lg-flex"></div>
@@ -180,9 +871,10 @@
                   <div class="container-lg">
                     <div class="row">
                       <div class="col-12 col-lg-7 col-xl-6">
-                        <p class="h3 subheading">BetBliss</p>
-                        <h3 class="header display-3">Betting Excitement</h3>
-                        <p>Immerse yourself in the realm of sports betting with VRNL Exchange, where excitement,
+                        <p class="h3 subheading" data-i18n="betbliss">BetBliss</p>
+                        <h3 class="header display-3" data-i18n="betting_excitement">Betting Excitement</h3>
+                        <p data-i18n="betting_excitement_desp">Immerse yourself in the realm of sports betting with VRNL
+                          Exchange, where excitement,
                           strategy, and thrill come together. Our secure platform enables enthusiasts to predict and
                           wager on sports outcomes, enhancing the gaming experience. Join VRNL Exchange for an adventure
                           where each match is an opportunity for skill and luck to shine.</p>
@@ -202,9 +894,10 @@
                   <div class="container-lg">
                     <div class="row">
                       <div class="col-12 col-lg-7 col-xl-6">
-                        <p class="h3 subheading">ConnectEase</p>
-                        <h3 class="header display-3">API Integration</h3>
-                        <p>Our services excel through effortless API integration, seamlessly connecting your chosen
+                        <p class="h3 subheading" data-i18n="connectease">ConnectEase</p>
+                        <h3 class="header display-3" data-i18n="api_integration">API Integration</h3>
+                        <p data-i18n="api_integration_desp">Our services excel through effortless API integration,
+                          seamlessly connecting your chosen
                           platform to your business units. This ensures a smooth flow of information and operations,
                           enhancing overall efficiency.</p>
                       </div>
@@ -223,9 +916,10 @@
                   <div class="container-lg">
                     <div class="row">
                       <div class="col-12 col-lg-7 col-xl-6">
-                        <p class="h3 subheading">clients</p>
-                        <h3 class="header display-3"> Relationships Matter</h3>
-                        <p>At VRNL Exchange, we prioritize the significance of relationships. Whether with clients,
+                        <p class="h3 subheading" data-i18n="clients">clients</p>
+                        <h3 class="header display-3" data-i18n="relationships_matter"> Relationships Matter</h3>
+                        <p data-i18n="relationships_matter_desp">At VRNL Exchange, we prioritize the significance of
+                          relationships. Whether with clients,
                           partners, or users, our commitment revolves around building strong connections. We believe
                           that these relationships, built on trust and transparency, are integral to the success of our
                           exchange platform.</p>
@@ -245,9 +939,10 @@
                   <div class="container-lg">
                     <div class="row">
                       <div class="col-12 col-lg-7 col-xl-6">
-                        <p class="h3 subheading">Games</p>
-                        <h3 class="header display-3">Exciting Gaming</h3>
-                        <p>At VRNL Exchange, gaming is pure excitement. Experience the thrill across designs like SKY,
+                        <p class="h3 subheading" data-i18n="games">Games</p>
+                        <h3 class="header display-3" data-i18n="exciting_gaming">Exciting Gaming</h3>
+                        <p data-i18n="exciting_gaming_desp">At VRNL Exchange, gaming is pure excitement. Experience the
+                          thrill across designs like SKY,
                           LOTUS, WORLD777, AURA. Each bet is a chance for fun, making your gaming adventure
                           unforgettable.</p>
                       </div>
@@ -302,6 +997,7 @@
         .subheading {
           color: #8cdd83 !important;
         }
+
         .swiper-button-prev,
         .swiper-button-next {
           fill: #8cdd83 !important;
@@ -310,7 +1006,8 @@
       <section class="block_widget_cards-wrapper section ">
         <div class="container-lg">
           <div class="block_header text-center mb-5">
-            <h2 class="display-3 mb-0" id="">We put the wellbeing of our people, customers and partners, first.</h2>
+            <h2 class="display-3 mb-0" id="" data-i18n="wellbeing">We put the wellbeing of our people, customers and
+              partners, first.</h2>
           </div>
           <div class="row justify-content-center">
             <div class="col-12 col-lg-12 col-xl-10 col-xxl-9">
@@ -321,9 +1018,10 @@
                       <img src="images/icons8-casino-96.webp" alt="corporate social responsibility"
                         class="card-image w-100 py-5" style="height: auto; width: 100%;" loading="lazy">
                     </div>
-                    <h3 class="mb-0">Games</h3>
+                    <h3 class="mb-0" data-i18n="games">Games</h3>
                     <div class="py-4">
-                      <p> Indulge in a collection of over 1000+ slot and table games at VRNL Exchange. Tailored for
+                      <p data-i18n="games_desp"> Indulge in a collection of over 1000+ slot and table games at VRNL
+                        Exchange. Tailored for
                         gaming enthusiasts, our platform features a diverse range of slots, spanning from classic
                         options to themed adventures. Immerse yourself in the authentic casino ambiance with our
                         selection of table games, including the classic thrill of blackjack.
@@ -337,9 +1035,10 @@
                       <img src="images/sport_solution.webp" alt="corporate social responsibility"
                         class="card-image w-100 py-5" style="height: auto; width: 100%;" loading="lazy">
                     </div>
-                    <h3 class="mb-0">Integrated Sports Solutions</h3>
+                    <h3 class="mb-0" data-i18n="intss">Integrated Sports Solutions</h3>
                     <div class="py-4">
-                      <p> At VRNL Exchange, we take pride in providing holistic solutions for sports enthusiasts. Our
+                      <p data-i18n="intss_desp"> At VRNL Exchange, we take pride in providing holistic solutions for
+                        sports enthusiasts. Our
                         offerings include APIs covering all major leagues in exchanges, ensuring a seamless experience
                         for accessing real-time data.
                       </p>
@@ -352,9 +1051,10 @@
                       <img src="images/community.webp" alt="corporate social responsibility"
                         class="card-image w-100 py-5" style="height: auto; width: 100%;" loading="lazy">
                     </div>
-                    <h3 class="mb-0"> Celebrated Community</h3>
+                    <h3 class="mb-0" data-i18n="celebrated_community"> Celebrated Community</h3>
                     <div class="py-4">
-                      <p>At VRNL Exchange, our ongoing commitment is to surpass your expectations, ensuring that your
+                      <p data-i18n="celebrated_community_desp">At VRNL Exchange, our ongoing commitment is to surpass
+                        your expectations, ensuring that your
                         time with us is nothing short of extraordinary. Become a part of our community, where your needs
                         and satisfaction are not only prioritized but celebrated.
                       </p>
@@ -373,7 +1073,8 @@
     <div class="container-lg">
       <div class="row justify-content-between">
         <div class="col-12 col-lg-4 d-none d-lg-block lead">
-          <p>At Vrnl Exchange, we redefine the gaming experience. As your trusted partner, we deliver cutting-edge
+          <p data-i18n="index_footer">At Vrnl Exchange, we redefine the gaming experience. As your trusted partner, we
+            deliver cutting-edge
             solutions, from sports betting white-label platforms to seamless APIs and captivating casinos. Elevate your
             brand with Vrnl Exchange and stay ahead in the game</p>
         </div>
@@ -382,24 +1083,24 @@
             <div class="footer-mb-nav col-12 col-lg-5 mb-3">
               <div class="d-lg-none pb-2">
                 <a class="h3 text-white" data-bs-toggle="collapse" href="#collapseMenu1" role="button"
-                  aria-expanded="false" aria-controls="collapseMenu1">
+                  aria-expanded="false" aria-controls="collapseMenu1" data-i18n="company">
                   Company</a>
               </div>
               <div class="collapse d-lg-block pb-3" id="collapseMenu1">
-                <h4 class="h5 d-none d-lg-block">
+                <h4 class="h5 d-none d-lg-block" data-i18n="company">
                   Company
                 </h4>
                 <div class="menu-company-container">
                   <ul id="footer-menu-1" class="menu list-unstyled mb-0">
                     <li id="menu-item-407"
                       class="menu-item menu-item-type-post_type menu-item-object-page menu-item-407"><a
-                        href="about.html">About Us</a></li>
+                        href="about.html" data-i18n="about_us">About Us</a></li>
                     <li id="menu-item-152"
-                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-152"><a
-                        href="why.html">Why VRNL Exchange</a></li>
+                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-152"><a href="why.html"
+                        data-i18n="why_vrnl">Why VRNL Exchange</a></li>
                     <li id="menu-item-1133"
                       class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1133"><a target="_blank"
-                        rel="noopener" href="serv.html">Services</a></li>
+                        rel="noopener" href="serv.html" data-i18n="services">Services</a></li>
                   </ul>
                 </div>
               </div>
@@ -407,55 +1108,56 @@
             <div class="footer-mb-nav col-12 col-lg-5 mb-3">
               <div class="d-lg-none pb-2">
                 <a class="h3 text-white" data-bs-toggle="collapse" href="#collapseMenu2" role="button"
-                  aria-expanded="false" aria-controls="collapseMenu2">
+                  aria-expanded="false" aria-controls="collapseMenu2" data-i18n="t&c">
                   Terms and Policies</a>
               </div>
               <div class="collapse d-lg-block pb-3" id="collapseMenu2">
-                <h4 class="h5 d-none d-lg-block">Terms and Policies </h4>
+                <h4 class="h5 d-none d-lg-block" data-i18n="t&c">Terms and Policies </h4>
                 <div class="menu-terms-and-policies-container">
                   <ul id="footer-menu-2" class="menu list-unstyled mb-0">
                     <li id="menu-item-170"
                       class="menu-item menu-item-type-post_type menu-item-object-page menu-item-170"><a
-                        href="privacy.html" target="_blank">Privacy Policy</a></li>
+                        href="privacy.html" target="_blank" data-i18n="pp">Privacy Policy</a></li>
                     <li id="menu-item-171"
                       class="menu-item menu-item-type-post_type menu-item-object-page menu-item-171"><a
-                        href="contact-us.html">Contact Us</a></li>
+                        href="contact-us.html" data-i18n="contact_us">Contact Us</a></li>
                   </ul>
                 </div>
               </div>
             </div>
-          <div class="col-1 mt-3">
-             <a href="https://api.whatsapp.com/send/?phone=%2B919326837979&text&type=phone_number&app_absent=0" target="_blank">
-              <img src="images/whatsapp-icon.png" loading="lazy" alt="whatsapp"  style=" width: 30px;
-    height: 30px;"/>
+            <div class="col-1 mt-3">
+              <a href="https://api.whatsapp.com/send/?phone=%2B919326837979&text&type=phone_number&app_absent=0"
+                target="_blank">
+                <img src="images/whatsapp-icon.png" loading="lazy" alt="whatsapp" style=" width: 30px;
+    height: 30px;" />
 
-    
-            </a>
-            <div style="margin-top: 8px;">
-              <a href="https://www.facebook.com/profile.php?id=61578898121804" target="_blank">
-              <img src="images/fb-icon.png" loading="lazy" alt="facebook"  style=" width: 30px;
-    height: 30px;"/>
-            </a>
-            </div>
-             <div style="margin-top: 8px;">
-              <a href="https://www.instagram.com/vrnl_exchange/" target="_blank">
-              <img src="images/insta-icon.png" loading="lazy" alt="Instagram"  style=" width: 30px;
-    height: 30px;"/>
-            </a>
-            </div>
-             <div style="margin-top: 8px;">
-              <a href="https://t.me/vrnlnet" target="_blank">
-              <img src="images/telegram-icon.png" loading="lazy" alt="telegram"  style=" width: 30px;
-    height: 30px;"/>
-            </a>
-            </div>
-             <div style="margin-top: 8px;" target="_blank">
-              <a href="mailto:vrnlexchange.net@gmail.com">
-              <img src="images/mail-icon.png" loading="lazy" alt="mail"  style=" width: 30px;
-    height: 30px;"/>
-            </a>
-            </div>
-          
+
+              </a>
+              <div style="margin-top: 8px;">
+                <a href="https://www.facebook.com/profile.php?id=61578898121804" target="_blank">
+                  <img src="images/fb-icon.png" loading="lazy" alt="facebook" style=" width: 30px;
+    height: 30px;" />
+                </a>
+              </div>
+              <div style="margin-top: 8px;">
+                <a href="https://www.instagram.com/vrnl_exchange/" target="_blank">
+                  <img src="images/insta-icon.png" loading="lazy" alt="Instagram" style=" width: 30px;
+    height: 30px;" />
+                </a>
+              </div>
+              <div style="margin-top: 8px;">
+                <a href="https://t.me/vrnlnet" target="_blank">
+                  <img src="images/telegram-icon.png" loading="lazy" alt="telegram" style=" width: 30px;
+    height: 30px;" />
+                </a>
+              </div>
+              <div style="margin-top: 8px;" target="_blank">
+                <a href="mailto:vrnlexchange.net@gmail.com">
+                  <img src="images/mail-icon.png" loading="lazy" alt="mail" style=" width: 30px;
+    height: 30px;" />
+                </a>
+              </div>
+
 
             </div>
           </div>
@@ -472,6 +1174,12 @@
       </div> -->
     </div>
   </footer>
+  <!-- i18next via CDN -->
+  <script src="https://unpkg.com/i18next@21.6.3/i18next.min.js"></script>
+  <script src="https://unpkg.com/i18next-http-backend@1.4.1/i18nextHttpBackend.min.js"></script>
+
+  <!-- Your script -->
+  <script src="/js/translation.js"></script>
   <link rel="stylesheet" id="block_tabs_slider-stylesheet-css" href="css/block_tabs_slider.css" media="all">
   <script src="js/swiper-bundle.min.js" id="swiper-js"></script>
   <script src="js/gsap.min.js" id="gsap-js"></script>
@@ -533,5 +1241,7 @@
       <div class="moove-clearfix"></div>
     </div>
   </div>
+
 </body>
+
 </html>

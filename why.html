@@ -157,16 +157,18 @@
     max-width: 700px;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
     position: relative;
+    line-height: 1 !important;
   }
 
   /* ===== CLOSE BUTTON ===== */
   .close-btn {
     position: absolute;
-    top: 16px;
-    right: 16px;
-    width: 40px;
-    height: 40px;
-    font-size: 48px;
+    top: 10px;
+    right: 10px;
+    width: 48px;
+    height: 48px;
+    font-size: 36px;
+    /* Lower for better centering */
     z-index: 3;
     color: #666;
     background: transparent;
@@ -174,18 +176,20 @@
     cursor: pointer;
     border-radius: 50%;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
     box-sizing: border-box;
     transition: background 0.3s ease, color 0.3s ease;
     padding: 0;
-    line-height: 1;
+    line-height: normal;
+    /* Remove or change to 'normal' for consistency */
   }
 
   .close-btn:hover {
     color: #fff;
     background: rgba(255, 255, 255, 0.1);
   }
+
 
   /* ===== FORM LAYOUT ===== */
   .form-title {
@@ -194,6 +198,7 @@
     font-size: 32px;
     text-align: center;
     margin-bottom: 20px;
+    margin-top: 0 !important;
     z-index: 2;
     position: relative;
   }
@@ -247,12 +252,12 @@
     background: #222;
     border: 1px solid #555;
     border-radius: 6px;
+    font-family: inherit;
     padding: 10px;
     color: #fff;
     font-size: 14px;
     width: 100%;
   }
-
 
   .form-group input:focus,
   .form-group textarea:focus,
@@ -312,15 +317,25 @@
     text-decoration: underline;
   }
 
-  .form-group .error-msg {
-    display: block;
-    width: 100%;
-    color: #ffa07a;
-    font-size: 0.9em;
-    margin-top: 4px;
-    /* min-height: 18px; */
-    line-height: 1.2;
+  .form-group>div {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    flex-wrap: wrap;
+    /* allow wrapping */
   }
+
+  .error-msg {
+    flex-basis: 100%;
+    /* take full width */
+    margin-top: 4px;
+    color: #f87171;
+    font-size: 0.9em;
+    display: none;
+    /* hidden by default */
+  }
+
+
 
   /* Responsive tweaks for smaller devices */
   @media (max-width: 767px) {
@@ -335,6 +350,8 @@
 
     .form-title {
       font-size: 22px;
+      padding-left: 20px;
+      padding-right: 20px;
     }
 
     /* Adjust grid to single column */
@@ -368,10 +385,12 @@
     .close-btn {
       top: 10px;
       right: 10px;
-      font-size: 36px;
-      width: 36px;
-      height: 36px;
+      width: 44px;
+      height: 44px;
+      font-size: 40px;
+      line-height: 1;
     }
+
 
     .flag-preview {
       top: 50%;
@@ -451,6 +470,235 @@
     margin-left: auto;
     cursor: pointer;
   }
+
+  /* Dropdown Styles for Dropdown 1 */
+  .custom-dropdown1 {
+    position: relative;
+    display: none;
+  }
+
+  .dropdown-selected1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    font-family: inherit;
+    font-size: inherit;
+    gap: 8px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    /* Light gray border */
+    border-radius: 6px;
+    /* Rounded corners for better look */
+    padding: 6px 8px;
+    /* Add space inside so border isn’t too tight */
+  }
+
+  .dropdown-selected1:hover {
+    border-color: #888;
+    /* Darker gray when hovered */
+  }
+
+
+  .dropdown-selected1 img {
+    width: 14px;
+    height: 14px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .arrow-down1 {
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+  }
+
+  .dropdown-options1 {
+    display: none;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    max-height: 300px;
+    overflow-y: scroll;
+    z-index: 1000;
+    top: 200%;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    scrollbar-width: none;
+    min-width: 150px;
+    max-width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+
+  .dropdown-options1.dropdown-open1 {
+    display: block;
+  }
+
+  .dropdown-option1 {
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    color: white;
+  }
+
+  .dropdown-options1 .dropdown-option1 img {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .dropdown-options1 .dropdown-option1:hover {
+    background-color: rgba(240, 240, 240, 0.6);
+  }
+
+  @media (max-width: 768px) {
+    .custom-dropdown1 {
+      display: block;
+      /* or flex depending on layout */
+    }
+
+    .menu-wrapper-test {
+      position: absolute;
+      top: 18px;
+      margin-right: 60px;
+      /* margin-left: auto; */
+    }
+
+    .dropdown-options1 {
+      /* min-width: 40%; */
+      max-width: 100%;
+      top: 100%;
+      margin-top: 8px;
+    }
+
+    .dropdown-selected1 {
+      justify-content: start;
+      font-size: 18px;
+      gap: 6px;
+      position: relative;
+    }
+
+    .dropdown-selected1 img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .arrow-down1 {
+      padding: 2px;
+    }
+
+    .dropdown-options1 .dropdown-option1 {
+      padding: 10px 12px;
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .dropdown-selected1 img {
+      width: 18px;
+      height: 18px;
+    }
+
+    .dropdown-options1 .dropdown-option1 {
+      padding: 8px 10px;
+      font-size: 18px;
+    }
+
+    .dropdown-selected1 {
+      justify-content: start;
+      font-size: 18px;
+    }
+  }
+
+  /* Dropdown Styles */
+  .custom-dropdown {
+    position: relative;
+    display: none;
+  }
+
+  .dropdown-selected {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+    font-size: inherit;
+    gap: 8px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    /* Light gray border */
+    border-radius: 6px;
+    /* Rounded corners for better look */
+    padding: 6px 8px;
+    /* Add space inside so border isn’t too tight */
+  }
+
+  .dropdown-selected:hover {
+    border-color: #888;
+    /* Darker gray when hovered */
+  }
+
+  .dropdown-selected img {
+    width: 14px;
+    height: 14px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .arrow-down {
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+  }
+
+  .dropdown-options {
+    display: none;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    max-height: 300px;
+    overflow-y: scroll;
+    z-index: 1000;
+    top: 150%;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    scrollbar-width: none;
+    min-width: 150px;
+    max-width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+
+  .dropdown-options.dropdown-open {
+    display: block;
+  }
+
+  .dropdown-option {
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    color: white;
+  }
+
+  .dropdown-options .dropdown-option img {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .dropdown-options .dropdown-option:hover {
+    background-color: rgba(240, 240, 240, 0.6);
+  }
 </style>
 
 <link rel="stylesheet" id="wp-block-library-css" href="css/style.min.css" media="all">
@@ -472,6 +720,156 @@
         </div>
         <div class="nav-wrapper">
           <nav>
+            <div class="menu-wrapper-test">
+              <div class="custom-dropdown1" id="customDropdown1">
+                <div class="dropdown-selected1" id="dropdownSelected1">
+                  <img id="selectedFlag1" src="/images/En.webp" alt="Selected Flag" />
+                  <span id="selectedLanguage1" style="color: white;">English</span>
+                  <i class="arrow-down1"></i>
+                </div>
+                <div class="dropdown-options1" id="dropdownOptions1">
+                  <div class="dropdown-option1" data-value="en" data-flag="/images/En.webp">
+                    <img src="/images/En.webp" alt="English Flag" /> English
+                  </div>
+                  <div class="dropdown-option1" data-value="ar" data-flag="/images/arabic.webp">
+                    <img src="/images/arabic.webp" style="border-radius: 50%;" alt="Arabic Flag" /> Arabic
+                  </div>
+                  <div class="dropdown-option1" data-value="zu" data-flag="/images/zulu.webp">
+                    <img src="/images/zulu.webp" style="border-radius: 50%;" alt="Zulu Flag" /> Zulu
+                  </div>
+                  <div class="dropdown-option1" data-value="es" data-flag="/images/spanish.webp">
+                    <img src="/images/spanish.webp" style="border-radius: 50%;" alt="Spanish Flag" />
+                    Spanish
+                  </div>
+                  <div class="dropdown-option1" data-value="pt" data-flag="/images/Portuguese.webp">
+                    <img src="/images/Portuguese.webp" style="border-radius: 50%;" alt="Portuguese Flag" />
+                    Portuguese
+                  </div>
+                  <div class="dropdown-option1" data-value="id" data-flag="/images/Indonesian.webp">
+                    <img src="/images/Indonesian.webp" style="border-radius: 50%;" alt="Indonesian Flag" />
+                    Indonesian
+                  </div>
+                  <div class="dropdown-option1" data-value="ms" data-flag="/images/Malay.webp">
+                    <img src="/images/Malay.webp" style="border-radius: 50%;" alt="Malay Flag" /> Malaysian
+                  </div>
+                  <div class="dropdown-option1" data-value="fil" data-flag="/images/Filipino.webp">
+                    <img src="/images/Filipino.webp" style="border-radius: 50%;" alt="Filipino Flag" />
+                    Filipino
+                  </div>
+                  <div class="dropdown-option1" data-value="ko" data-flag="/images/Korean.webp">
+                    <img src="/images/Korean.webp" style="border-radius: 50%;" alt="Korean Flag" /> Korean
+                  </div>
+                  <div class="dropdown-option1" data-value="zh" data-flag="/images/Mandarin.webp">
+                    <img src="/images/Mandarin.webp" style="border-radius: 50%;" alt="Mandarin Flag" />
+                    Mandarin
+                  </div>
+                  <div class="dropdown-option1" data-value="th" data-flag="/images/Thai.webp">
+                    <img src="/images/Thai.webp" style="border-radius: 50%;" alt="Thai Flag" /> Thai
+                  </div>
+                  <div class="dropdown-option1" data-value="ga" data-flag="/images/Irish-Gaelic.webp">
+                    <img src="/images/Irish-Gaelic.webp" style="border-radius: 50%;" alt="Irish Flag" />
+                    Irish
+                  </div>
+                  <div class="dropdown-option1" data-value="nl" data-flag="/images/Dutch.webp">
+                    <img src="/images/Dutch.webp" style="border-radius: 50%;" alt="Dutch Flag" /> Dutch
+                  </div>
+                  <div class="dropdown-option1" data-value="bs" data-flag="/images/Bosnian.webp">
+                    <img src="/images/Bosnian.webp" style="border-radius: 50%;" alt="Bosnian Flag" />
+                    Bosnian
+                  </div>
+                  <div class="dropdown-option1" data-value="bg" data-flag="/images/Bulgarian.webp">
+                    <img src="/images/Bulgarian.webp" style="border-radius: 50%;" alt="Bulgarian Flag" />
+                    Bulgarian
+                  </div>
+                  <div class="dropdown-option1" data-value="hr" data-flag="/images/Croatian.webp">
+                    <img src="/images/Croatian.webp" style="border-radius: 50%;" alt="Croatian Flag" />
+                    Croatian
+                  </div>
+                  <div class="dropdown-option1" data-value="cs" data-flag="/images/Czech.webp">
+                    <img src="/images/Czech.webp" style="border-radius: 50%;" alt="Czech Flag" /> Czech
+                  </div>
+                  <div class="dropdown-option1" data-value="da" data-flag="/images/Danish.webp">
+                    <img src="/images/Danish.webp" style="border-radius: 50%;" alt="Danish Flag" /> Danish
+                  </div>
+                  <div class="dropdown-option1" data-value="et" data-flag="/images/Estonian.webp">
+                    <img src="/images/Estonian.webp" style="border-radius: 50%;" alt="Estonian Flag" />
+                    Estonian
+                  </div>
+                  <div class="dropdown-option1" data-value="fi" data-flag="/images/Finnish.webp">
+                    <img src="/images/Finnish.webp" style="border-radius: 50%;" alt="Finnish Flag" />
+                    Finnish
+                  </div>
+                  <div class="dropdown-option1" data-value="de" data-flag="/images/German.webp">
+                    <img src="/images/German.webp" style="border-radius: 50%;" alt="German Flag" /> German
+                  </div>
+                  <div class="dropdown-option1" data-value="hu" data-flag="/images/Hungarian.webp">
+                    <img src="/images/Hungarian.webp" style="border-radius: 50%;" alt="Hungarian Flag" />
+                    Hungarian
+                  </div>
+                  <div class="dropdown-option1" data-value="is" data-flag="/images/Icelandic.webp">
+                    <img src="/images/Icelandic.webp" style="border-radius: 50%;" alt="Icelandic Flag" />
+                    Icelandic
+                  </div>
+                  <div class="dropdown-option1" data-value="it" data-flag="/images/Italian.webp">
+                    <img src="/images/Italian.webp" style="border-radius: 50%;" alt="Italian Flag" />
+                    Italian
+                  </div>
+                  <div class="dropdown-option1" data-value="lv" data-flag="/images/Latvian.webp">
+                    <img src="/images/Latvian.webp" style="border-radius: 50%;" alt="Latvian Flag" />
+                    Latvian
+                  </div>
+                  <div class="dropdown-option1" data-value="lt" data-flag="/images/Lithuanian.webp">
+                    <img src="/images/Lithuanian.webp" style="border-radius: 50%;" alt="Lithuanian Flag" />
+                    Lithuanian
+                  </div>
+                  <div class="dropdown-option1" data-value="lb" data-flag="/images/Luxembourgish.webp">
+                    <img src="/images/Luxembourgish.webp" style="border-radius: 50%;" alt="Luxembourgish Flag" />
+                    Luxembourgish
+                  </div>
+                  <div class="dropdown-option1" data-value="mk" data-flag="/images/Macedonian.webp">
+                    <img src="/images/Macedonian.webp" style="border-radius: 50%;" alt="Macedonian Flag" />
+                    Macedonian
+                  </div>
+                  <div class="dropdown-option1" data-value="mt" data-flag="/images/Maltese.webp">
+                    <img src="/images/Maltese.webp" style="border-radius: 50%;" alt="Maltese Flag" />
+                    Maltese
+                  </div>
+                  <div class="dropdown-option1" data-value="ro" data-flag="/images/Romanian.webp">
+                    <img src="/images/Romanian.webp" style="border-radius: 50%;" alt="Romanian Flag" />
+                    Romanian
+                  </div>
+                  <div class="dropdown-option1" data-value="sr" data-flag="/images/Montenegrin.webp">
+                    <img src="/images/Montenegrin.webp" style="border-radius: 50%;" alt="Montenegrin Flag" />
+                    Montenegrin
+                  </div>
+                  <div class="dropdown-option1" data-value="no" data-flag="/images/Norwegian.webp">
+                    <img src="/images/Norwegian.webp" style="border-radius: 50%;" alt="Norwegian Flag" />
+                    Norwegian
+                  </div>
+                  <div class="dropdown-option1" data-value="pl" data-flag="/images/Polish.webp">
+                    <img src="/images/Polish.webp" style="border-radius: 50%;" alt="Polish Flag" /> Polish
+                  </div>
+                  <div class="dropdown-option1" data-value="sk" data-flag="/images/Slovak.webp">
+                    <img src="/images/Slovak.webp" style="border-radius: 50%;" alt="Slovak Flag" /> Slovak
+                  </div>
+                  <div class="dropdown-option1" data-value="sv" data-flag="/images/Swedish.webp">
+                    <img src="/images/Swedish.webp" style="border-radius: 50%;" alt="Swedish Flag" />
+                    Swedish
+                  </div>
+                  <div class="dropdown-option1" data-value="uk" data-flag="/images/Ukrainian.webp">
+                    <img src="/images/Ukrainian.webp" style="border-radius: 50%;" alt="Ukrainian Flag" />
+                    Ukrainian
+                  </div>
+                  <div class="dropdown-option1" data-value="fr" data-flag="/images/French.webp">
+                    <img src="/images/French.webp" style="border-radius: 50%;" alt="French Flag" /> French
+                  </div>
+                  <div class="dropdown-option1" data-value="ru" data-flag="/images/Russian.webp">
+                    <img src="/images/Russian.webp" style="border-radius: 50%;" alt="Russian Flag" />
+                    Russian
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="nav-toggler">
               <h3 class="visually-hidden">Site Main Navigation</h3>
               <span></span>
@@ -482,14 +880,164 @@
               <div class="menu">
                 <ul id="primary-menu" class="menu">
                   <li id="menu-item-20" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20"><a
-                      href="index.html">Home</a></li>
+                      href="index.html" data-i18n="home">Home</a></li>
                   <li id="menu-item-20" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20"><a
-                      href="about.html">About Us</a></li>
+                      href="about.html" data-i18n="about_us">About Us</a></li>
                   <li id="menu-item-519" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-519">
-                    <a href="why.html">Why VRNL Exchange</a>
+                    <a href="why.html" data-title="why_vrnl">Why VRNL Exchange</a>
                   </li>
                   <li id="menu-item-19" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19"><a
-                      href="serv.html">Services</a></li>
+                      href="serv.html" data-i18n="services">Services</a></li>
+                  <li id="menu-item-19" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19">
+                    <div class="custom-dropdown" id="customDropdown">
+                      <div class="dropdown-selected" id="dropdownSelected">
+                        <img id="selectedFlag" src="/images/En.webp" alt="Selected Flag" />
+                        <span id="selectedLanguage" style="color: white;">English</span>
+                        <i class="arrow-down"></i>
+                      </div>
+                      <div class="dropdown-options" id="dropdownOptions">
+                        <div class="dropdown-option" data-value="en" data-flag="/images/En.webp">
+                          <img src="/images/En.webp" alt="English Flag" /> English
+                        </div>
+                        <div class="dropdown-option" data-value="ar" data-flag="/images/arabic.webp">
+                          <img src="/images/arabic.webp" style="border-radius: 50%;" alt="Arabic Flag" /> Arabic
+                        </div>
+                        <div class="dropdown-option" data-value="zu" data-flag="/images/zulu.webp">
+                          <img src="/images/zulu.webp" style="border-radius: 50%;" alt="Zulu Flag" /> Zulu
+                        </div>
+                        <div class="dropdown-option" data-value="es" data-flag="/images/spanish.webp">
+                          <img src="/images/spanish.webp" style="border-radius: 50%;" alt="Spanish Flag" />
+                          Spanish
+                        </div>
+                        <div class="dropdown-option" data-value="pt" data-flag="/images/Portuguese.webp">
+                          <img src="/images/Portuguese.webp" style="border-radius: 50%;" alt="Portuguese Flag" />
+                          Portuguese
+                        </div>
+                        <div class="dropdown-option" data-value="id" data-flag="/images/Indonesian.webp">
+                          <img src="/images/Indonesian.webp" style="border-radius: 50%;" alt="Indonesian Flag" />
+                          Indonesian
+                        </div>
+                        <div class="dropdown-option" data-value="ms" data-flag="/images/Malay.webp">
+                          <img src="/images/Malay.webp" style="border-radius: 50%;" alt="Malay Flag" /> Malaysian
+                        </div>
+                        <div class="dropdown-option" data-value="fil" data-flag="/images/Filipino.webp">
+                          <img src="/images/Filipino.webp" style="border-radius: 50%;" alt="Filipino Flag" />
+                          Filipino
+                        </div>
+                        <div class="dropdown-option" data-value="ko" data-flag="/images/Korean.webp">
+                          <img src="/images/Korean.webp" style="border-radius: 50%;" alt="Korean Flag" /> Korean
+                        </div>
+                        <div class="dropdown-option" data-value="zh" data-flag="/images/Mandarin.webp">
+                          <img src="/images/Mandarin.webp" style="border-radius: 50%;" alt="Mandarin Flag" />
+                          Mandarin
+                        </div>
+                        <div class="dropdown-option" data-value="th" data-flag="/images/Thai.webp">
+                          <img src="/images/Thai.webp" style="border-radius: 50%;" alt="Thai Flag" /> Thai
+                        </div>
+                        <div class="dropdown-option" data-value="ga" data-flag="/images/Irish-Gaelic.webp">
+                          <img src="/images/Irish-Gaelic.webp" style="border-radius: 50%;" alt="Irish Flag" />
+                          Irish
+                        </div>
+                        <div class="dropdown-option" data-value="nl" data-flag="/images/Dutch.webp">
+                          <img src="/images/Dutch.webp" style="border-radius: 50%;" alt="Dutch Flag" /> Dutch
+                        </div>
+                        <div class="dropdown-option" data-value="bs" data-flag="/images/Bosnian.webp">
+                          <img src="/images/Bosnian.webp" style="border-radius: 50%;" alt="Bosnian Flag" />
+                          Bosnian
+                        </div>
+                        <div class="dropdown-option" data-value="bg" data-flag="/images/Bulgarian.webp">
+                          <img src="/images/Bulgarian.webp" style="border-radius: 50%;" alt="Bulgarian Flag" />
+                          Bulgarian
+                        </div>
+                        <div class="dropdown-option" data-value="hr" data-flag="/images/Croatian.webp">
+                          <img src="/images/Croatian.webp" style="border-radius: 50%;" alt="Croatian Flag" />
+                          Croatian
+                        </div>
+                        <div class="dropdown-option" data-value="cs" data-flag="/images/Czech.webp">
+                          <img src="/images/Czech.webp" style="border-radius: 50%;" alt="Czech Flag" /> Czech
+                        </div>
+                        <div class="dropdown-option" data-value="da" data-flag="/images/Danish.webp">
+                          <img src="/images/Danish.webp" style="border-radius: 50%;" alt="Danish Flag" /> Danish
+                        </div>
+                        <div class="dropdown-option" data-value="et" data-flag="/images/Estonian.webp">
+                          <img src="/images/Estonian.webp" style="border-radius: 50%;" alt="Estonian Flag" />
+                          Estonian
+                        </div>
+                        <div class="dropdown-option" data-value="fi" data-flag="/images/Finnish.webp">
+                          <img src="/images/Finnish.webp" style="border-radius: 50%;" alt="Finnish Flag" />
+                          Finnish
+                        </div>
+                        <div class="dropdown-option" data-value="de" data-flag="/images/German.webp">
+                          <img src="/images/German.webp" style="border-radius: 50%;" alt="German Flag" /> German
+                        </div>
+                        <div class="dropdown-option" data-value="hu" data-flag="/images/Hungarian.webp">
+                          <img src="/images/Hungarian.webp" style="border-radius: 50%;" alt="Hungarian Flag" />
+                          Hungarian
+                        </div>
+                        <div class="dropdown-option" data-value="is" data-flag="/images/Icelandic.webp">
+                          <img src="/images/Icelandic.webp" style="border-radius: 50%;" alt="Icelandic Flag" />
+                          Icelandic
+                        </div>
+                        <div class="dropdown-option" data-value="it" data-flag="/images/Italian.webp">
+                          <img src="/images/Italian.webp" style="border-radius: 50%;" alt="Italian Flag" />
+                          Italian
+                        </div>
+                        <div class="dropdown-option" data-value="lv" data-flag="/images/Latvian.webp">
+                          <img src="/images/Latvian.webp" style="border-radius: 50%;" alt="Latvian Flag" />
+                          Latvian
+                        </div>
+                        <div class="dropdown-option" data-value="lt" data-flag="/images/Lithuanian.webp">
+                          <img src="/images/Lithuanian.webp" style="border-radius: 50%;" alt="Lithuanian Flag" />
+                          Lithuanian
+                        </div>
+                        <div class="dropdown-option" data-value="lb" data-flag="/images/Luxembourgish.webp">
+                          <img src="/images/Luxembourgish.webp" style="border-radius: 50%;" alt="Luxembourgish Flag" />
+                          Luxembourgish
+                        </div>
+                        <div class="dropdown-option" data-value="mk" data-flag="/images/Macedonian.webp">
+                          <img src="/images/Macedonian.webp" style="border-radius: 50%;" alt="Macedonian Flag" />
+                          Macedonian
+                        </div>
+                        <div class="dropdown-option" data-value="mt" data-flag="/images/Maltese.webp">
+                          <img src="/images/Maltese.webp" style="border-radius: 50%;" alt="Maltese Flag" />
+                          Maltese
+                        </div>
+                        <div class="dropdown-option" data-value="ro" data-flag="/images/Romanian.webp">
+                          <img src="/images/Romanian.webp" style="border-radius: 50%;" alt="Romanian Flag" />
+                          Romanian
+                        </div>
+                        <div class="dropdown-option" data-value="sr" data-flag="/images/Montenegrin.webp">
+                          <img src="/images/Montenegrin.webp" style="border-radius: 50%;" alt="Montenegrin Flag" />
+                          Montenegrin
+                        </div>
+                        <div class="dropdown-option" data-value="no" data-flag="/images/Norwegian.webp">
+                          <img src="/images/Norwegian.webp" style="border-radius: 50%;" alt="Norwegian Flag" />
+                          Norwegian
+                        </div>
+                        <div class="dropdown-option" data-value="pl" data-flag="/images/Polish.webp">
+                          <img src="/images/Polish.webp" style="border-radius: 50%;" alt="Polish Flag" /> Polish
+                        </div>
+                        <div class="dropdown-option" data-value="sk" data-flag="/images/Slovak.webp">
+                          <img src="/images/Slovak.webp" style="border-radius: 50%;" alt="Slovak Flag" /> Slovak
+                        </div>
+                        <div class="dropdown-option" data-value="sv" data-flag="/images/Swedish.webp">
+                          <img src="/images/Swedish.webp" style="border-radius: 50%;" alt="Swedish Flag" />
+                          Swedish
+                        </div>
+                        <div class="dropdown-option" data-value="uk" data-flag="/images/Ukrainian.webp">
+                          <img src="/images/Ukrainian.webp" style="border-radius: 50%;" alt="Ukrainian Flag" />
+                          Ukrainian
+                        </div>
+                        <div class="dropdown-option" data-value="fr" data-flag="/images/French.webp">
+                          <img src="/images/French.webp" style="border-radius: 50%;" alt="French Flag" /> French
+                        </div>
+                        <div class="dropdown-option" data-value="ru" data-flag="/images/Russian.webp">
+                          <img src="/images/Russian.webp" style="border-radius: 50%;" alt="Russian Flag" />
+                          Russian
+                        </div>
+                      </div>
+                    </div>
+                  </li>
                   <!-- <li id="menu-item-19" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19"><a
                       href="payment.html" target="_blank">Payment Provider</a></li> -->
                 </ul>
@@ -525,7 +1073,8 @@
         <div class="container-lg">
           <div class="block-text-layout">
             <div class="text-center mb-4 mb-lg-5 anim-zoom-out">
-              <h2>Distinguish your brand with our customizable white label solutions. VRNL Exchange provides a platform
+              <h2 data-i18n="main_title">
+                Distinguish your brand with our customizable white label solutions. VRNL Exchange provides a platform
                 for
                 success, <br>
                 <em>allowing you to launch and manage your sports betting venture with ease.</em>
@@ -535,7 +1084,7 @@
         </div>
       </section>
       <section class="block_gallery-wrapper section darker-theme ">
-        <h2 class="image-heading"> Explore Our Diverse Range of Websites</h2>
+        <h2 class="image-heading" data-i18n="image_heading"> Explore Our Diverse Range of Websites</h2>
         <div class="container-lg block_tabs_slider anim-zoom-out2">
           <div class="row justify-content-center">
             <div class="col-12 col-xl-10">
@@ -544,10 +1093,9 @@
                   <div class="swiper-slide image-hover">
                     <img alt="Skyexch" class="web-image content">
                     <div class="from-left image-back">
-                      <div class="hover_text"> <a href="#" class="a_parnter visit-link"
-                          data-url="https://skyexch.vrnlexch.com/#/dash" data-i18n="visit_website"
-                          aria-label="skyexch"><button class="btn-slide"> Get Demo ID
-                          </button></a>
+                      <div class="hover_text"> <a href="#" class="a_parnter visit-link btn-slide"
+                          data-url="https://skyexch.vrnlexch.com/#/dash" data-i18n="get_demo" aria-label="skyexch"> Get
+                          Demo ID</a>
                       </div>
                       <!-- <h3>
                         Username : <span id="vrnldemo1">vrnldemo</span>
@@ -570,10 +1118,9 @@
                   <div class="swiper-slide image-hover">
                     <img alt="Velki" class="web-image1 content">
                     <div class="from-right image-back">
-                      <div class="hover_text"> <a href="#" class="a_parnter visit-link"
-                          data-url="https://velki.vrnlexch.com/#/home" data-i18n="visit_website"
-                          aria-label="skyexch"><button class="btn-slide"> Get Demo ID
-                          </button></a>
+                      <div class="hover_text"> <a href="#" class="a_parnter visit-link btn-slide"
+                          data-url="https://velki.vrnlexch.com/#/home" data-i18n="get_demo" aria-label="skyexch">Get
+                          Demo ID</a>
                       </div>
                       <!-- <h3>
                         Username : <span id="vrnldemo2">vrnldemo</span>
@@ -599,9 +1146,9 @@
                   <div class="swiper-slide image-hover">
                     <img class="web-image4" alt="Babu365">
                     <div class="from-right image-back">
-                      <div class="hover_text"> <a href="#" class="a_parnter visit-link" data-url="https://babu365.com/"
-                          data-i18n="visit_website" aria-label="skyexch"><button class="btn-slide"> Get Demo ID
-                          </button></a>
+                      <div class="hover_text"> <a href="#" class="a_parnter visit-link btn-slide"
+                          data-url="https://babu365.com/" data-i18n="get_demo" aria-label="skyexch">Get Demo ID
+                        </a>
                       </div>
                       <!-- <h3>
                         Username : <span id="vrnldemo5">vrnldemo</span>
@@ -627,10 +1174,9 @@
                   <div class="swiper-slide image-hover">
                     <img class="web-image8" alt="Lcexch">
                     <div class="from-left image-back">
-                      <div class="hover_text"> <a href="#" class="a_parnter visit-link"
-                          data-url="https://lcexch.vrnlexch.com/#/" data-i18n="visit_website"
-                          aria-label="skyexch"><button class="btn-slide"> Get Demo ID
-                          </button></a>
+                      <div class="hover_text"> <a href="#" class="a_parnter visit-link btn-slide"
+                          data-url="https://lcexch.vrnlexch.com/#/" data-i18n="get_demo" aria-label="skyexch">Get Demo
+                          ID</a>
                       </div>
                       <!-- <h3>
                         Username : <span id="vrnldemo10">vrnldemo</span>
@@ -657,7 +1203,7 @@
                     <img class="web-image3 content" alt="Gullybet">
                     <div class="from-left image-back">
                       <div class="hover_text"> <a href="#" class="a_parnter visit-link"
-                          data-url="https://gullybet.vrnlexch.com/#/home/hot" data-i18n="visit_website"
+                          data-url="https://gullybet.vrnlexch.com/#/home/hot" data-i18n="get_demo"
                           aria-label="skyexch"><button class="btn-slide"> Get Demo ID
                           </button></a>
                       </div>
@@ -667,10 +1213,9 @@
                   <div class="swiper-slide image-hover">
                     <img alt="9bazi" class="web-image2 content">
                     <div class="from-bottom image-back">
-                      <div class="hover_text"> <a href="#" class="a_parnter visit-link"
-                          data-url="https://9bazi.vrnlexch.com/#/dash" data-i18n="visit_website"
-                          aria-label="skyexch"><button class="btn-slide"> Get Demo ID
-                          </button></a>
+                      <div class="hover_text"> <a href="#" class="a_parnter visit-link btn-slide"
+                          data-url="https://9bazi.vrnlexch.com/#/dash" data-i18n="get_demo" aria-label="skyexch">Get
+                          Demo ID</a>
                       </div>
                       <!-- <h3>
                         Username : <span id="vrnldemo3">vrnldemo</span>
@@ -696,10 +1241,9 @@
                   <div class="swiper-slide image-hover">
                     <img class="web-image5" alt="Aura444">
                     <div class="from-bottom image-back">
-                      <div class="hover_text"> <a href="#" class="a_parnter visit-link"
-                          data-url="https://aura.vrnlexch.com/#/home" data-i18n="visit_website"
-                          aria-label="skyexch"><button class="btn-slide"> Get Demo ID
-                          </button></a>
+                      <div class="hover_text"> <a href="#" class="a_parnter visit-link btn-slide"
+                          data-url="https://aura.vrnlexch.com/#/home" data-i18n="get_demo" aria-label="skyexch">Get Demo
+                          ID</a>
                       </div>
                       <!-- <h3>
                         Username : <span id="vrnldemo6">vrnldemo</span>
@@ -725,10 +1269,10 @@
                   <div class="swiper-slide image-hover">
                     <img class="web-image6" alt="Diamond">
                     <div class="from-left image-back">
-                      <div class="hover_text"> <a href="#" class="a_parnter visit-link"
-                          data-url="https://diamond.vrnlexch.com/#/home" data-i18n="visit_website"
-                          aria-label="skyexch"><button class="btn-slide"> Get Demo ID
-                          </button></a>
+                      <div class="hover_text"> <a href="#" class="a_parnter visit-link btn-slide"
+                          data-url="https://diamond.vrnlexch.com/#/home" data-i18n="get_demo" aria-label="skyexch">Get
+                          Demo ID
+                        </a>
                       </div>
                       <!-- <h3>
                         Username : <span id="vrnldemo7">vrnldemo</span>
@@ -754,10 +1298,9 @@
                   <div class="swiper-slide image-hover">
                     <img class="web-image7" alt="Lotus">
                     <div class="from-right image-back">
-                      <div class="hover_text"> <a href="#" class="a_parnter visit-link"
-                          data-url="https://lotus.vrnlexch.com/#/" data-i18n="visit_website"
-                          aria-label="skyexch"><button class="btn-slide"> Get Demo ID
-                          </button></a>
+                      <div class="hover_text"> <a href="#" class="a_parnter visit-link btn-slide"
+                          data-url="https://lotus.vrnlexch.com/#/" data-i18n="get_demo" aria-label="skyexch">Get Demo ID
+                        </a>
                       </div>
                       <!-- <h3>
                         Username : <span id="vrnldemo8">vrnldemo</span>
@@ -783,10 +1326,10 @@
                   <div class="swiper-slide image-hover">
                     <img alt="World777" class="web-image9">
                     <div class="from-bottom image-back">
-                      <div class="hover_text"> <a href="#" class="a_parnter visit-link"
-                          data-url="https://world777.vrnlexch.com/#/" data-i18n="visit_website"
-                          aria-label="skyexch"><button class="btn-slide"> Get Demo ID
-                          </button></a>
+                      <div class="hover_text"> <a href="#" class="a_parnter visit-link btn-slide"
+                          data-url="https://world777.vrnlexch.com/#/" data-i18n="get_demo" aria-label="skyexch">Get Demo
+                          ID
+                        </a>
                       </div>
                       <!-- <h3>
                         Username : <span id="vrnldemo9">vrnldemo</span>
@@ -813,10 +1356,10 @@
                   <div class="swiper-slide image-hover">
                     <img alt="mostvipgame" class="web-image10">
                     <div class="from-bottom image-back">
-                      <div class="hover_text"> <a href="#" class="a_parnter visit-link"
-                          data-url="https://mostvipgame.vrnlexch.com/#/" data-i18n="visit_website"
-                          aria-label="skyexch"><button class="btn-slide"> Get Demo ID
-                          </button></a>
+                      <div class="hover_text"> <a href="#" class="a_parnter visit-link btn-slide"
+                          data-url="https://mostvipgame.vrnlexch.com/#/" data-i18n="get_demo" aria-label="skyexch">Get
+                          Demo ID
+                        </a>
                       </div>
                       <!-- <h3>
                         Username : <span id="vrnldemo10">vrnldemo</span>
@@ -862,10 +1405,10 @@
         <div class="container-lg">
           <div class="block-text-layout">
             <div class="text-center mb-4 mb-lg-5 custom-exclamation-mark anim-zoom-out">
-              <h2>Start your journey today with VRNL Exchange</h2>
+              <h2 data-i18n="start_para">Start your journey today with VRNL Exchange</h2>
             </div>
             <div class="text-center mb-4 mb-lg-5 custom-wiggled-arrow">
-              <a class="btn-secondary btn" href="contact-us.html" target="_blank">START HERE</a>
+              <a class="btn-secondary btn" href="contact-us.html" target="_blank" data-i18n="start_here">START HERE</a>
             </div>
           </div>
         </div>
@@ -873,9 +1416,8 @@
       <section class="block_widget_cards-wrapper section ">
         <div class="container-lg">
           <div class="block_header text-center mb-5">
-            <h2 class="display-3 mb-0" id="">Experience excellence with VRNL Exchange as we provide superior services to
-              our
-              customers</h2>
+            <h2 class="display-3 mb-0" id="" data-i18n="experience">Experience excellence with VRNL Exchange as we
+              provide superior services to our customers</h2>
           </div>
           <div class="row justify-content-center">
             <div class="col-12 col-lg-12 col-xl-10 col-xxl-9">
@@ -886,9 +1428,10 @@
                       <img src="images\icons8-24-7-support-66.webp " alt="corporate social responsibility"
                         class="card-image card-image1 w-100 py-5" loading="lazy">
                     </div>
-                    <h3 class="mb-0">24/7 SUPPORT</h3>
+                    <h3 class="mb-0" data-i18n="support">24/7 SUPPORT</h3>
                     <div class="py-4">
-                      <p>At VRNL Exchange, we provide 24/7 support, ensuring assistance is always available, no matter
+                      <p data-i18n="support_desp">At VRNL Exchange, we provide 24/7 support, ensuring assistance is
+                        always available, no matter
                         the time
                         zone.</p>
                     </div>
@@ -899,9 +1442,10 @@
                     <div class="image-wrapper text-center">
                       <img src="images/icon5.webp" alt="" class="card-image w-100 py-5 card-image1" loading="lazy">
                     </div>
-                    <h3 class="mb-0">100% TRUSTED SERVICE</h3>
+                    <h3 class="mb-0" data-i18n="trusted">100% TRUSTED SERVICE</h3>
                     <div class="py-4">
-                      <p>We prioritize transparent and accurate business dealings for the benefit of both us and our
+                      <p data-i18n="trusted_desp">We prioritize transparent and accurate business dealings for the
+                        benefit of both us and our
                         customers.</p>
                     </div>
                   </div>
@@ -911,9 +1455,10 @@
                     <div class="image-wrapper text-center">
                       <img src="images/icon1.webp" alt="" class="card-image card-image1 w-100 py-5" loading="lazy">
                     </div>
-                    <h3 class="mb-0">Advanced Designs</h3>
+                    <h3 class="mb-0" data-i18n="advanced_designs">Advanced Designs</h3>
                     <div class="py-4">
-                      <p>High-quality designs made by our creative team, giving your project a standout touch of
+                      <p data-i18n="advanced_designs_desp">High-quality designs made by our creative team, giving your
+                        project a standout touch of
                         excellence.</p>
                     </div>
                   </div>
@@ -923,9 +1468,10 @@
                     <div class="image-wrapper text-center">
                       <img src="images/icon3.webp" alt="" class="card-image card-image1 w-100 py-5" loading="lazy">
                     </div>
-                    <h3 class="mb-0">Quality Assurance</h3>
+                    <h3 class="mb-0" data-i18n="QA">Quality Assurance</h3>
                     <div class="py-4">
-                      <p>We make sure everything is top-notch and meets the highest standards to give you the best
+                      <p data-i18n="QA_desp">We make sure everything is top-notch and meets the highest standards to
+                        give you the best
                         quality service.</p>
                     </div>
                   </div>
@@ -935,9 +1481,10 @@
                     <div class="image-wrapper text-center">
                       <img src="images/icon2.webp" alt="" class="card-image card-image1 w-100 py-5" loading="lazy">
                     </div>
-                    <h3 class="mb-0">HIGH SECURITY</h3>
+                    <h3 class="mb-0" data-i18n="high_security">HIGH SECURITY</h3>
                     <div class="py-4">
-                      <p>Security is our top priority. Your data and information are kept safe and not shared at any
+                      <p data-i18n="high_security_desp">Security is our top priority. Your data and information are kept
+                        safe and not shared at any
                         point..</p>
                     </div>
                   </div>
@@ -947,9 +1494,10 @@
                     <div class="image-wrapper text-center">
                       <img src="images/icon4.webp" alt="" class="card-image card-image1  w-100 py-5" loading="lazy">
                     </div>
-                    <h3 class="mb-0">PAYMENT METHODS</h3>
+                    <h3 class="mb-0" data-i18n="payment_met">PAYMENT METHODS</h3>
                     <div class="py-4">
-                      <p>Various payment options are offered, including Net Banking, Bank Transfer, Paytm, Google Pay,
+                      <p data-i18n="payment_met_desp">Various payment options are offered, including Net Banking, Bank
+                        Transfer, Paytm, Google Pay,
                         and more for customer convenience.</p>
                     </div>
                   </div>
@@ -962,8 +1510,9 @@
       <section class="block_core_values_cards_slider-wrapper section  ">
         <div class="container-lg">
           <div class="block_header text-center mb-5">
-            <h2 class="display-3 mb-0" id="">Discover Exclusive Benefits with VRNL Exchange</h2>
-            <h3 class="h2 fw-normal mt-4 mb-0" style="text-align: center;">Join VRNL Exchange for an exclusive world
+            <h2 class="display-3 mb-0" id="" data-i18n="discover">Discover Exclusive Benefits with VRNL Exchange</h2>
+            <h3 class="h2 fw-normal mt-4 mb-0" style="text-align: center;" data-i18n="join_vrnl">Join VRNL Exchange for
+              an exclusive world
               designed
               just for you.</h3>
           </div>
@@ -983,12 +1532,13 @@
                             <div class="col-12 card-content d-flex align-content-between flex-wrap">
                               <div class="card-text">
                                 <div class="col-12 col-lg-10">
-                                  <h3 class="h2 mb-1 mb-xl-2 card-title">
+                                  <h3 class="h2 mb-1 mb-xl-2 card-title" data-i18n="customization">
                                     CUSTOMIZATION
                                   </h3>
                                 </div>
                                 <div class="col-12 col-lg-10 card-copy">
-                                  <p>VRNL Exchange specializes in custom white-label betting platforms, casinos, and
+                                  <p data-i18n="customization_desp">VRNL Exchange specializes in custom white-label
+                                    betting platforms, casinos, and
                                     tailored
                                     solutions to elevate your brand. Our expert team ensures every detail, from visually
                                     stunning interfaces to logo integration, aligns with your vision. Embark on your
@@ -1048,7 +1598,7 @@
                                     </g>
                                   </svg>
                                 </div>
-                                <h4 class="subheading" style="background:#072c51">Be unique</h4>
+                                <h4 class="subheading" style="background:#072c51" data-i18n="be_unique">Be unique</h4>
                               </div>
                             </div>
                           </div>
@@ -1064,10 +1614,12 @@
                             <div class="col-12 card-content d-flex align-content-between flex-wrap">
                               <div class="card-text">
                                 <div class="col-12 col-lg-10">
-                                  <h3 class="h2 mb-1 mb-xl-2 card-title">INTEGRATION SUPPORT</h3>
+                                  <h3 class="h2 mb-1 mb-xl-2 card-title" data-i18n="integration">INTEGRATION SUPPORT
+                                  </h3>
                                 </div>
                                 <div class="col-12 col-lg-10 card-copy">
-                                  <p>At VRNL Exchange, we transform your connections and operations with seamless
+                                  <p data-i18n="integration_desp">At VRNL Exchange, we transform your connections and
+                                    operations with seamless
                                     Integration
                                     Support. Our dedicated team ensures cohesive and streamlined system linking for
                                     efficient business advancement. Choose VRNL Exchange for integrated solutions
@@ -1142,7 +1694,7 @@
                                       y2="314.13"></line>
                                   </svg>
                                 </div>
-                                <h4 class="subheading" style="background:#e894f9d6">
+                                <h4 class="subheading" style="background:#e894f9d6" data-i18n="synchronization">
                                   Synchronization</h4>
                               </div>
                             </div>
@@ -1159,12 +1711,13 @@
                             <div class="col-12 card-content d-flex align-content-between flex-wrap">
                               <div class="card-text">
                                 <div class="col-12 col-lg-10">
-                                  <h3 class="h2 mb-1 mb-xl-2 card-title">
+                                  <h3 class="h2 mb-1 mb-xl-2 card-title" data-i18n="maintenance">
                                     MAINTENANCE
                                   </h3>
                                 </div>
                                 <div class="col-12 col-lg-10 card-copy">
-                                  <p>At VRNL Exchange, we're not just a solution; we're your partner in seamless
+                                  <p data-i18n="maintenance_desp">At VRNL Exchange, we're not just a solution; we're
+                                    your partner in seamless
                                     integration. Our
                                     dedicated Integration Support ensures a fluid connection of your systems, enhancing
                                     operational efficiency. Choose VRNL Exchange to propel your business forward with
@@ -1263,7 +1816,7 @@
                                     </circle>
                                   </svg>
                                 </div>
-                                <h4 class="subheading" style="background:#3c24ca">
+                                <h4 class="subheading" style="background:#3c24ca" data-i18n="upkeep">
                                   Upkeep</h4>
                               </div>
                             </div>
@@ -1280,11 +1833,11 @@
                             <div class="col-12 card-content d-flex align-content-between flex-wrap">
                               <div class="card-text">
                                 <div class="col-12 col-lg-10">
-                                  <h3 class="h2 mb-1 mb-xl-2 card-title">
+                                  <h3 class="h2 mb-1 mb-xl-2 card-title" data-i18n="ifd">
                                     Innovative Features Development
                                   </h3>
                                 </div>
-                                <div class="col-12 col-lg-10 card-copy">
+                                <div class="col-12 col-lg-10 card-copy" data-i18n="ifd_desp">
                                   <p>At VRNL, we specialize in crafting advanced solutions to elevate your betting
                                     site's user experience. From virtual reality enhancements to cutting-edge analytics,
                                     we redefine the landscape of online sports betting</p>
@@ -1342,7 +1895,8 @@
                                       d="M430.73,158a161.09,161.09,0,0,0-59.36-53.66"></path>
                                   </svg>
                                 </div>
-                                <h4 class="subheading" style="background:#8cdd83">Feature Evolution</h4>
+                                <h4 class="subheading" style="background:#8cdd83" data-i18n="feature_evo">Feature
+                                  Evolution</h4>
                               </div>
                             </div>
                           </div>
@@ -1377,10 +1931,10 @@
       <section class="block_talent_cards_slider-wrapper section darker-theme">
         <div class="container-lg">
           <div class="block_header text-center mb-5">
-            <h2 class="display-3 mb-0" id="">
+            <h2 class="display-3 mb-0" id="" data-i18n="explore_vrnl">
               Explore VRNL: Building the Future, Today and Beyond.
             </h2>
-            <h3 class="h2 fw-normal mt-4 mb-0">
+            <h3 class="h2 fw-normal mt-4 mb-0" data-i18n="explore_vrnl_desp">
               At VRNL, we are more than a company; we are your partners in
               redefining service excellence. Our commitment goes beyond
               transactions — it's about crafting an immersive experience
@@ -1404,12 +1958,12 @@
                           <div class="col-12">
                           </div>
                           <div class="col-12">
-                            <h4 class="mb-2 mb-xl-3 fw-normal card-subheading">
+                            <h4 class="mb-2 mb-xl-3 fw-normal card-subheading" data-i18n="v_heading">
                               Venturing into the World of Sports Betting
                             </h4>
                           </div>
                           <div class="col-12 card-copy">
-                            <p>
+                            <p data-i18n="v_heading_desp">
                               “For ten years, our dynamic company has been
                               dedicated to sports betting. We started this
                               journey a decade ago to bring together the
@@ -1434,12 +1988,12 @@
                           <div class="col-12">
                           </div>
                           <div class="col-12">
-                            <h4 class="mb-2 mb-xl-3 fw-normal card-subheading">
+                            <h4 class="mb-2 mb-xl-3 fw-normal card-subheading" data-i18n="r_heading">
                               Revolutionizing the Betting Experience
                             </h4>
                           </div>
                           <div class="col-12 card-copy">
-                            <p>
+                            <p data-i18n="r_heading_desp">
                               “ Driven by a love for sports and innovation,
                               our journey began with a simple goal: create a
                               secure and exciting platform for enthusiasts.
@@ -1465,12 +2019,12 @@
                           <div class="col-12">
                           </div>
                           <div class="col-12">
-                            <h4 class="mb-2 mb-xl-3 fw-normal card-subheading">
+                            <h4 class="mb-2 mb-xl-3 fw-normal card-subheading" data-i18n="n_heading">
                               Networked through API
                             </h4>
                           </div>
                           <div class="col-12 card-copy">
-                            <p>
+                            <p data-i18n="n_heading_desp">
                               “We enhance our services through smooth API
                               integration. This customization effortlessly
                               connects your chosen platform to your business
@@ -1493,12 +2047,12 @@
                         <div class="col-12 card-content">
                           <div class="col-12"></div>
                           <div class="col-12">
-                            <h4 class="mb-2 mb-xl-3 fw-normal card-subheading">
+                            <h4 class="mb-2 mb-xl-3 fw-normal card-subheading" data-i18n="l_heading">
                               Leveraging We are more than an organization
                             </h4>
                           </div>
                           <div class="col-12 card-copy">
-                            <p>
+                            <p data-i18n="l_heading_desp">
                               “We operate as a close-knit family, placing
                               significance on expertise and
                               relationship-building. Each member's thoughts
@@ -1547,7 +2101,7 @@
     <div class="container-lg">
       <div class="row justify-content-between">
         <div class="col-12 col-lg-4 d-none d-lg-block lead">
-          <p>
+          <p data-i18n="footer_title">
             At VRNL, we redefine the gaming experience. As your trusted
             partner, we deliver cutting-edge solutions, from sports betting
             white-label platforms to seamless APIs and captivating casinos.
@@ -1559,7 +2113,7 @@
             <div class="footer-mb-nav col-12 col-lg-5 mb-3">
               <div class="d-lg-none pb-2">
                 <a class="h3 text-white" data-bs-toggle="collapse" href="#collapseMenu1" role="button"
-                  aria-expanded="false" aria-controls="collapseMenu1">
+                  aria-expanded="false" aria-controls="collapseMenu1" data-i18n="company">
                   Company
                 </a>
               </div>
@@ -1569,15 +2123,15 @@
                   <ul id="footer-menu-1" class="menu list-unstyled mb-0">
                     <li id="menu-item-407"
                       class="menu-item menu-item-type-post_type menu-item-object-page menu-item-407">
-                      <a href="about.html">About</a>
+                      <a href="about.html" data-i18n="about_us">About</a>
                     </li>
                     <li id="menu-item-152"
                       class="menu-item menu-item-type-post_type menu-item-object-page menu-item-152">
-                      <a href="why.html">Why VRNL Exchange</a>
+                      <a href="why.html" data-i18n="why_vrnl">Why VRNL Exchange</a>
                     </li>
                     <li id="menu-item-1133"
                       class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1133">
-                      <a target="_blank" rel="noopener" href="serv.html">Services</a>
+                      <a target="_blank" rel="noopener" href="serv.html" data-i18n="services">Services</a>
                     </li>
                   </ul>
                 </div>
@@ -1586,21 +2140,21 @@
             <div class="footer-mb-nav col-12 col-lg-5 mb-3">
               <div class="d-lg-none pb-2">
                 <a class="h3 text-white" data-bs-toggle="collapse" href="#collapseMenu2" role="button"
-                  aria-expanded="false" aria-controls="collapseMenu2">
+                  aria-expanded="false" aria-controls="collapseMenu2" data-i18n="t&c">
                   Terms and Policies
                 </a>
               </div>
               <div class="collapse d-lg-block pb-3" id="collapseMenu2">
-                <h4 class="h5 d-none d-lg-block">Terms and Policies</h4>
+                <h4 class="h5 d-none d-lg-block" data-i18n="t&c">Terms and Policies</h4>
                 <div class="menu-terms-and-policies-container">
                   <ul id="footer-menu-2" class="menu list-unstyled mb-0">
                     <li id="menu-item-170"
                       class="menu-item menu-item-type-post_type menu-item-object-page menu-item-170">
-                      <a href="privacy.html" target="_blank">Privacy Policy</a>
+                      <a href="privacy.html" target="_blank" data-i18n="pp">Privacy Policy</a>
                     </li>
                     <li id="menu-item-171"
                       class="menu-item menu-item-type-post_type menu-item-object-page menu-item-171">
-                      <a href="contact-us.html">Contact Us</a>
+                      <a href="contact-us.html" data-i18n="contact_us">Contact Us</a>
                     </li>
                   </ul>
                 </div>
@@ -1658,282 +2212,283 @@
   <div id="demoModal" class="modal">
     <div class="modal-content">
       <span class="close-btn">&times;</span>
-      <h2 class="form-title">Request a Demo ID</h2>
+      <h2 class="form-title" data-i18n="request_demo_id">Request a Demo ID</h2>
       <form id="demoForm" class="styled-form" novalidate>
         <div class="form-grid">
           <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" placeholder="Enter your name" minlength="3" id="name" name="name" required />
-            <div class="error-msg"></div>
+            <label for="name" data-i18n="name">Name</label>
+            <input type="text" placeholder="Enter your name" data-i18n-placeholder="name_placeholder" minlength="3"
+              id="name" name="name" required />
+            <div class="error-msg" data-i18n="name_error"></div>
           </div>
 
           <div class="form-group">
-            <label for="email">Email ID</label>
-            <input type="email" placeholder="Enter your Email" id="email" name="email" required />
+            <label for="email" data-i18n="email_id">Email ID</label>
+            <input type="email" placeholder="Enter your Email" data-i18n-placeholder="email_placeholder" id="email"
+              name="email" required />
+            <div class="error-msg" data-i18n="email_error"></div>
           </div>
 
           <div class="form-group">
-            <label for="country">Country</label>
+            <label for="country" data-i18n="country">Country</label>
             <div class="custom-select-wrapper">
-              <div>
-                <select id="country" name="country" required>
-                  <option value="" disabled selected>Select your country</option>
-                  <option value="Afghanistan" data-flag="af">Afghanistan</option>
-                  <option value="Åland Islands" data-flag="ax">Åland Islands</option>
-                  <option value="Albania" data-flag="al">Albania</option>
-                  <option value="Algeria" data-flag="dz">Algeria</option>
-                  <option value="American Samoa" data-flag="as">American Samoa</option>
-                  <option value="Andorra" data-flag="ad">Andorra</option>
-                  <option value="Angola" data-flag="ao">Angola</option>
-                  <option value="Anguilla" data-flag="ai">Anguilla</option>
-                  <option value="Antarctica" data-flag="aq">Antarctica</option>
-                  <option value="Antigua and Barbuda" data-flag="ag">Antigua and Barbuda</option>
-                  <option value="Argentina" data-flag="ar">Argentina</option>
-                  <option value="Armenia" data-flag="am">Armenia</option>
-                  <option value="Aruba" data-flag="aw">Aruba</option>
-                  <option value="Australia" data-flag="au">Australia</option>
-                  <option value="Austria" data-flag="at">Austria</option>
-                  <option value="Azerbaijan" data-flag="az">Azerbaijan</option>
-                  <option value="Bahamas" data-flag="bs">Bahamas</option>
-                  <option value="Bahrain" data-flag="bh">Bahrain</option>
-                  <option value="Bangladesh" data-flag="bd">Bangladesh</option>
-                  <option value="Barbados" data-flag="bb">Barbados</option>
-                  <option value="Belarus" data-flag="by">Belarus</option>
-                  <option value="Belgium" data-flag="be">Belgium</option>
-                  <option value="Belize" data-flag="bz">Belize</option>
-                  <option value="Benin" data-flag="bj">Benin</option>
-                  <option value="Bermuda" data-flag="bm">Bermuda</option>
-                  <option value="Bhutan" data-flag="bt">Bhutan</option>
-                  <option value="Bolivia" data-flag="bo">Bolivia</option>
-                  <option value="Bosnia and Herzegovina" data-flag="ba">Bosnia and Herzegovina</option>
-                  <option value="Botswana" data-flag="bw">Botswana</option>
-                  <option value="Bouvet Island" data-flag="bv">Bouvet Island</option>
-                  <option value="Brazil" data-flag="br">Brazil</option>
-                  <option value="British Indian Ocean Territory" data-flag="io">British Indian Ocean
-                    Territory</option>
-                  <option value="Brunei Darussalam" data-flag="bn">Brunei</option>
-                  <option value="Bulgaria" data-flag="bg">Bulgaria</option>
-                  <option value="Burkina Faso" data-flag="bf">Burkina Faso</option>
-                  <option value="Burundi" data-flag="bi">Burundi</option>
-                  <option value="Cabo Verde" data-flag="cv">Cabo Verde</option>
-                  <option value="Cambodia" data-flag="kh">Cambodia</option>
-                  <option value="Cameroon" data-flag="cm">Cameroon</option>
-                  <option value="Canada" data-flag="ca">Canada</option>
-                  <option value="Cayman Islands" data-flag="ky">Cayman Islands</option>
-                  <option value="Central African Republic" data-flag="cf">Central African Republic
-                  </option>
-                  <option value="Chad" data-flag="td">Chad</option>
-                  <option value="Chile" data-flag="cl">Chile</option>
-                  <option value="China" data-flag="cn">China</option>
-                  <option value="Christmas Island" data-flag="cx">Christmas Island</option>
-                  <option value="Cocos (Keeling) Islands" data-flag="cc">Cocos (Keeling) Islands</option>
-                  <option value="Colombia" data-flag="co">Colombia</option>
-                  <option value="Comoros" data-flag="km">Comoros</option>
-                  <option value="Congo" data-flag="cg">Congo</option>
-                  <option value="Democratic Republic of the Congo" data-flag="cd">Democratic Republic of
-                    the Congo</option>
-                  <option value="Cook Islands" data-flag="ck">Cook Islands</option>
-                  <option value="Costa Rica" data-flag="cr">Costa Rica</option>
-                  <option value="Croatia" data-flag="hr">Croatia</option>
-                  <option value="Cuba" data-flag="cu">Cuba</option>
-                  <option value="Curaçao" data-flag="cw">Curaçao</option>
-                  <option value="Cyprus" data-flag="cy">Cyprus</option>
-                  <option value="Czechia" data-flag="cz">Czechia</option>
-                  <option value="Denmark" data-flag="dk">Denmark</option>
-                  <option value="Djibouti" data-flag="dj">Djibouti</option>
-                  <option value="Dominica" data-flag="dm">Dominica</option>
-                  <option value="Dominican Republic" data-flag="do">Dominican Republic</option>
-                  <option value="Ecuador" data-flag="ec">Ecuador</option>
-                  <option value="Egypt" data-flag="eg">Egypt</option>
-                  <option value="El Salvador" data-flag="sv">El Salvador</option>
-                  <option value="Equatorial Guinea" data-flag="gq">Equatorial Guinea</option>
-                  <option value="Eritrea" data-flag="er">Eritrea</option>
-                  <option value="Estonia" data-flag="ee">Estonia</option>
-                  <option value="Eswatini" data-flag="sz">Eswatini</option>
-                  <option value="Ethiopia" data-flag="et">Ethiopia</option>
-                  <option value="Falkland Islands" data-flag="fk">Falkland Islands</option>
-                  <option value="Faroe Islands" data-flag="fo">Faroe Islands</option>
-                  <option value="Fiji" data-flag="fj">Fiji</option>
-                  <option value="Finland" data-flag="fi">Finland</option>
-                  <option value="France" data-flag="fr">France</option>
-                  <option value="French Guiana" data-flag="gf">French Guiana</option>
-                  <option value="French Polynesia" data-flag="pf">French Polynesia</option>
-                  <option value="French Southern Territories" data-flag="tf">French Southern Territories
-                  </option>
-                  <option value="Gabon" data-flag="ga">Gabon</option>
-                  <option value="Gambia" data-flag="gm">Gambia</option>
-                  <option value="Georgia" data-flag="ge">Georgia</option>
-                  <option value="Germany" data-flag="de">Germany</option>
-                  <option value="Ghana" data-flag="gh">Ghana</option>
-                  <option value="Gibraltar" data-flag="gi">Gibraltar</option>
-                  <option value="Greece" data-flag="gr">Greece</option>
-                  <option value="Greenland" data-flag="gl">Greenland</option>
-                  <option value="Grenada" data-flag="gd">Grenada</option>
-                  <option value="Guadeloupe" data-flag="gp">Guadeloupe</option>
-                  <option value="Guam" data-flag="gu">Guam</option>
-                  <option value="Guatemala" data-flag="gt">Guatemala</option>
-                  <option value="Guernsey" data-flag="gg">Guernsey</option>
-                  <option value="Guinea" data-flag="gn">Guinea</option>
-                  <option value="Guinea-Bissau" data-flag="gw">Guinea-Bissau</option>
-                  <option value="Guyana" data-flag="gy">Guyana</option>
-                  <option value="Haiti" data-flag="ht">Haiti</option>
-                  <option value="Heard Island and McDonald Islands" data-flag="hm">Heard Island and
-                    McDonald Islands</option>
-                  <option value="Holy See" data-flag="va">Holy See</option>
-                  <option value="Honduras" data-flag="hn">Honduras</option>
-                  <option value="Hong Kong" data-flag="hk">Hong Kong</option>
-                  <option value="Hungary" data-flag="hu">Hungary</option>
-                  <option value="Iceland" data-flag="is">Iceland</option>
-                  <option value="India" data-flag="in">India</option>
-                  <option value="Indonesia" data-flag="id">Indonesia</option>
-                  <option value="Iran" data-flag="ir">Iran</option>
-                  <option value="Iraq" data-flag="iq">Iraq</option>
-                  <option value="Ireland" data-flag="ie">Ireland</option>
-                  <option value="Isle of Man" data-flag="im">Isle of Man</option>
-                  <option value="Israel" data-flag="il">Israel</option>
-                  <option value="Italy" data-flag="it">Italy</option>
-                  <option value="Jamaica" data-flag="jm">Jamaica</option>
-                  <option value="Japan" data-flag="jp">Japan</option>
-                  <option value="Jersey" data-flag="je">Jersey</option>
-                  <option value="Jordan" data-flag="jo">Jordan</option>
-                  <option value="Kazakhstan" data-flag="kz">Kazakhstan</option>
-                  <option value="Kenya" data-flag="ke">Kenya</option>
-                  <option value="Kiribati" data-flag="ki">Kiribati</option>
-                  <option value="North Korea" data-flag="kp">North Korea</option>
-                  <option value="South Korea" data-flag="kr">South Korea</option>
-                  <option value="Kuwait" data-flag="kw">Kuwait</option>
-                  <option value="Kyrgyzstan" data-flag="kg">Kyrgyzstan</option>
-                  <option value="Laos" data-flag="la">Laos</option>
-                  <option value="Latvia" data-flag="lv">Latvia</option>
-                  <option value="Lebanon" data-flag="lb">Lebanon</option>
-                  <option value="Lesotho" data-flag="ls">Lesotho</option>
-                  <option value="Liberia" data-flag="lr">Liberia</option>
-                  <option value="Libya" data-flag="ly">Libya</option>
-                  <option value="Liechtenstein" data-flag="li">Liechtenstein</option>
-                  <option value="Lithuania" data-flag="lt">Lithuania</option>
-                  <option value="Luxembourg" data-flag="lu">Luxembourg</option>
-                  <option value="Macau" data-flag="mo">Macau</option>
-                  <option value="Madagascar" data-flag="mg">Madagascar</option>
-                  <option value="Malawi" data-flag="mw">Malawi</option>
-                  <option value="Malaysia" data-flag="my">Malaysia</option>
-                  <option value="Maldives" data-flag="mv">Maldives</option>
-                  <option value="Mali" data-flag="ml">Mali</option>
-                  <option value="Malta" data-flag="mt">Malta</option>
-                  <option value="Marshall Islands" data-flag="mh">Marshall Islands</option>
-                  <option value="Martinique" data-flag="mq">Martinique</option>
-                  <option value="Mauritania" data-flag="mr">Mauritania</option>
-                  <option value="Mauritius" data-flag="mu">Mauritius</option>
-                  <option value="Mayotte" data-flag="yt">Mayotte</option>
-                  <option value="Mexico" data-flag="mx">Mexico</option>
-                  <option value="Micronesia" data-flag="fm">Micronesia</option>
-                  <option value="Moldova" data-flag="md">Moldova</option>
-                  <option value="Monaco" data-flag="mc">Monaco</option>
-                  <option value="Mongolia" data-flag="mn">Mongolia</option>
-                  <option value="Montenegro" data-flag="me">Montenegro</option>
-                  <option value="Montserrat" data-flag="ms">Montserrat</option>
-                  <option value="Morocco" data-flag="ma">Morocco</option>
-                  <option value="Mozambique" data-flag="mz">Mozambique</option>
-                  <option value="Myanmar" data-flag="mm">Myanmar</option>
-                  <option value="Namibia" data-flag="na">Namibia</option>
-                  <option value="Nauru" data-flag="nr">Nauru</option>
-                  <option value="Nepal" data-flag="np">Nepal</option>
-                  <option value="Netherlands" data-flag="nl">Netherlands</option>
-                  <option value="New Caledonia" data-flag="nc">New Caledonia</option>
-                  <option value="New Zealand" data-flag="nz">New Zealand</option>
-                  <option value="Nicaragua" data-flag="ni">Nicaragua</option>
-                  <option value="Niger" data-flag="ne">Niger</option>
-                  <option value="Nigeria" data-flag="ng">Nigeria</option>
-                  <option value="Niue" data-flag="nu">Niue</option>
-                  <option value="Norfolk Island" data-flag="nf">Norfolk Island</option>
-                  <option value="North Macedonia" data-flag="mk">North Macedonia</option>
-                  <option value="Northern Mariana Islands" data-flag="mp">Northern Mariana Islands
-                  </option>
-                  <option value="Norway" data-flag="no">Norway</option>
-                  <option value="Oman" data-flag="om">Oman</option>
-                  <option value="Pakistan" data-flag="pk">Pakistan</option>
-                  <option value="Palau" data-flag="pw">Palau</option>
-                  <option value="Palestine State" data-flag="ps">Palestine State</option>
-                  <option value="Panama" data-flag="pa">Panama</option>
-                  <option value="Papua New Guinea" data-flag="pg">Papua New Guinea</option>
-                  <option value="Paraguay" data-flag="py">Paraguay</option>
-                  <option value="Peru" data-flag="pe">Peru</option>
-                  <option value="Philippines" data-flag="ph">Philippines</option>
-                  <option value="Pitcairn" data-flag="pn">Pitcairn</option>
-                  <option value="Poland" data-flag="pl">Poland</option>
-                  <option value="Portugal" data-flag="pt">Portugal</option>
-                  <option value="Puerto Rico" data-flag="pr">Puerto Rico</option>
-                  <option value="Qatar" data-flag="qa">Qatar</option>
-                  <option value="Réunion" data-flag="re">Réunion</option>
-                  <option value="Romania" data-flag="ro">Romania</option>
-                  <option value="Russia" data-flag="ru">Russia</option>
-                  <option value="Rwanda" data-flag="rw">Rwanda</option>
-                  <option value="Saint Barthélemy" data-flag="bl">Saint Barthélemy</option>
-                  <option value="Saint Helena" data-flag="sh">Saint Helena</option>
-                  <option value="Saint Kitts and Nevis" data-flag="kn">Saint Kitts and Nevis</option>
-                  <option value="Saint Lucia" data-flag="lc">Saint Lucia</option>
-                  <option value="Saint Martin (French part)" data-flag="mf">Saint Martin (French part)
-                  </option>
-                  <option value="Saint Pierre and Miquelon" data-flag="pm">Saint Pierre and Miquelon
-                  </option>
-                  <option value="Saint Vincent and the Grenadines" data-flag="vc">Saint Vincent and the
-                    Grenadines</option>
-                  <option value="Samoa" data-flag="ws">Samoa</option>
-                  <option value="San Marino" data-flag="sm">San Marino</option>
-                  <option value="Sao Tome and Principe" data-flag="st">Sao Tome and Principe</option>
-                  <option value="Saudi Arabia" data-flag="sa">Saudi Arabia</option>
-                  <option value="Senegal" data-flag="sn">Senegal</option>
-                  <option value="Serbia" data-flag="rs">Serbia</option>
-                  <option value="Seychelles" data-flag="sc">Seychelles</option>
-                  <option value="Sierra Leone" data-flag="sl">Sierra Leone</option>
-                  <option value="Singapore" data-flag="sg">Singapore</option>
-                  <option value="Sint Maarten (Dutch part)" data-flag="sx">Sint Maarten (Dutch part)
-                  </option>
-                  <option value="Slovakia" data-flag="sk">Slovakia</option>
-                  <option value="Slovenia" data-flag="si">Slovenia</option>
-                  <option value="Solomon Islands" data-flag="sb">Solomon Islands</option>
-                  <option value="Somalia" data-flag="so">Somalia</option>
-                  <option value="South Africa" data-flag="za">South Africa</option>
-                  <option value="South Georgia and the South Sandwich Islands" data-flag="gs">South
-                    Georgia and the South Sandwich Islands</option>
-                  <option value="South Sudan" data-flag="ss">South Sudan</option>
-                  <option value="Spain" data-flag="es">Spain</option>
-                  <option value="Sri Lanka" data-flag="lk">Sri Lanka</option>
-                  <option value="Sudan" data-flag="sd">Sudan</option>
-                  <option value="Suriname" data-flag="sr">Suriname</option>
-                  <option value="Svalbard and Jan Mayen" data-flag="sj">Svalbard and Jan Mayen</option>
-                  <option value="Sweden" data-flag="se">Sweden</option>
-                  <option value="Switzerland" data-flag="ch">Switzerland</option>
-                  <option value="Syrian Arab Republic" data-flag="sy">Syria</option>
-                  <option value="Taiwan" data-flag="tw">Taiwan</option>
-                  <option value="Tajikistan" data-flag="tj">Tajikistan</option>
-                  <option value="Tanzania" data-flag="tz">Tanzania</option>
-                  <option value="Thailand" data-flag="th">Thailand</option>
-                  <option value="Timor-Leste" data-flag="tl">Timor-Leste</option>
-                  <option value="Togo" data-flag="tg">Togo</option>
-                  <option value="Tokelau" data-flag="tk">Tokelau</option>
-                  <option value="Tonga" data-flag="to">Tonga</option>
-                  <option value="Trinidad and Tobago" data-flag="tt">Trinidad and Tobago</option>
-                  <option value="Tunisia" data-flag="tn">Tunisia</option>
-                  <option value="Turkey" data-flag="tr">Turkey</option>
-                  <option value="Turkmenistan" data-flag="tm">Turkmenistan</option>
-                  <option value="Tuvalu" data-flag="tv">Tuvalu</option>
-                  <option value="Uganda" data-flag="ug">Uganda</option>
-                  <option value="Ukraine" data-flag="ua">Ukraine</option>
-                  <option value="United Arab Emirates" data-flag="ae">United Arab Emirates</option>
-                  <option value="United Kingdom" data-flag="gb">United Kingdom</option>
-                  <option value="United States" data-flag="us">United States</option>
-                  <option value="Uruguay" data-flag="uy">Uruguay</option>
-                  <option value="Uzbekistan" data-flag="uz">Uzbekistan</option>
-                  <option value="Vanuatu" data-flag="vu">Vanuatu</option>
-                  <option value="Venezuela" data-flag="ve">Venezuela</option>
-                  <option value="Vietnam" data-flag="vn">Vietnam</option>
-                  <option value="Western Sahara" data-flag="eh">Western Sahara</option>
-                  <option value="Yemen" data-flag="ye">Yemen</option>
-                  <option value="Zambia" data-flag="zm">Zambia</option>
-                  <option value="Zimbabwe" data-flag="zw">Zimbabwe</option>
-                </select>
-              </div>
-              <div class="error-msg"></div>
+              <select id="country" name="country" required>
+                <option value="" disabled selected>Select your country</option>
+                <option value="Afghanistan" data-flag="af">Afghanistan</option>
+                <option value="Åland Islands" data-flag="ax">Åland Islands</option>
+                <option value="Albania" data-flag="al">Albania</option>
+                <option value="Algeria" data-flag="dz">Algeria</option>
+                <option value="American Samoa" data-flag="as">American Samoa</option>
+                <option value="Andorra" data-flag="ad">Andorra</option>
+                <option value="Angola" data-flag="ao">Angola</option>
+                <option value="Anguilla" data-flag="ai">Anguilla</option>
+                <option value="Antarctica" data-flag="aq">Antarctica</option>
+                <option value="Antigua and Barbuda" data-flag="ag">Antigua and Barbuda</option>
+                <option value="Argentina" data-flag="ar">Argentina</option>
+                <option value="Armenia" data-flag="am">Armenia</option>
+                <option value="Aruba" data-flag="aw">Aruba</option>
+                <option value="Australia" data-flag="au">Australia</option>
+                <option value="Austria" data-flag="at">Austria</option>
+                <option value="Azerbaijan" data-flag="az">Azerbaijan</option>
+                <option value="Bahamas" data-flag="bs">Bahamas</option>
+                <option value="Bahrain" data-flag="bh">Bahrain</option>
+                <option value="Bangladesh" data-flag="bd">Bangladesh</option>
+                <option value="Barbados" data-flag="bb">Barbados</option>
+                <option value="Belarus" data-flag="by">Belarus</option>
+                <option value="Belgium" data-flag="be">Belgium</option>
+                <option value="Belize" data-flag="bz">Belize</option>
+                <option value="Benin" data-flag="bj">Benin</option>
+                <option value="Bermuda" data-flag="bm">Bermuda</option>
+                <option value="Bhutan" data-flag="bt">Bhutan</option>
+                <option value="Bolivia" data-flag="bo">Bolivia</option>
+                <option value="Bosnia and Herzegovina" data-flag="ba">Bosnia and Herzegovina</option>
+                <option value="Botswana" data-flag="bw">Botswana</option>
+                <option value="Bouvet Island" data-flag="bv">Bouvet Island</option>
+                <option value="Brazil" data-flag="br">Brazil</option>
+                <option value="British Indian Ocean Territory" data-flag="io">British Indian Ocean
+                  Territory</option>
+                <option value="Brunei Darussalam" data-flag="bn">Brunei</option>
+                <option value="Bulgaria" data-flag="bg">Bulgaria</option>
+                <option value="Burkina Faso" data-flag="bf">Burkina Faso</option>
+                <option value="Burundi" data-flag="bi">Burundi</option>
+                <option value="Cabo Verde" data-flag="cv">Cabo Verde</option>
+                <option value="Cambodia" data-flag="kh">Cambodia</option>
+                <option value="Cameroon" data-flag="cm">Cameroon</option>
+                <option value="Canada" data-flag="ca">Canada</option>
+                <option value="Cayman Islands" data-flag="ky">Cayman Islands</option>
+                <option value="Central African Republic" data-flag="cf">Central African Republic
+                </option>
+                <option value="Chad" data-flag="td">Chad</option>
+                <option value="Chile" data-flag="cl">Chile</option>
+                <option value="China" data-flag="cn">China</option>
+                <option value="Christmas Island" data-flag="cx">Christmas Island</option>
+                <option value="Cocos (Keeling) Islands" data-flag="cc">Cocos (Keeling) Islands</option>
+                <option value="Colombia" data-flag="co">Colombia</option>
+                <option value="Comoros" data-flag="km">Comoros</option>
+                <option value="Congo" data-flag="cg">Congo</option>
+                <option value="Democratic Republic of the Congo" data-flag="cd">Democratic Republic of
+                  the Congo</option>
+                <option value="Cook Islands" data-flag="ck">Cook Islands</option>
+                <option value="Costa Rica" data-flag="cr">Costa Rica</option>
+                <option value="Croatia" data-flag="hr">Croatia</option>
+                <option value="Cuba" data-flag="cu">Cuba</option>
+                <option value="Curaçao" data-flag="cw">Curaçao</option>
+                <option value="Cyprus" data-flag="cy">Cyprus</option>
+                <option value="Czechia" data-flag="cz">Czechia</option>
+                <option value="Denmark" data-flag="dk">Denmark</option>
+                <option value="Djibouti" data-flag="dj">Djibouti</option>
+                <option value="Dominica" data-flag="dm">Dominica</option>
+                <option value="Dominican Republic" data-flag="do">Dominican Republic</option>
+                <option value="Ecuador" data-flag="ec">Ecuador</option>
+                <option value="Egypt" data-flag="eg">Egypt</option>
+                <option value="El Salvador" data-flag="sv">El Salvador</option>
+                <option value="Equatorial Guinea" data-flag="gq">Equatorial Guinea</option>
+                <option value="Eritrea" data-flag="er">Eritrea</option>
+                <option value="Estonia" data-flag="ee">Estonia</option>
+                <option value="Eswatini" data-flag="sz">Eswatini</option>
+                <option value="Ethiopia" data-flag="et">Ethiopia</option>
+                <option value="Falkland Islands" data-flag="fk">Falkland Islands</option>
+                <option value="Faroe Islands" data-flag="fo">Faroe Islands</option>
+                <option value="Fiji" data-flag="fj">Fiji</option>
+                <option value="Finland" data-flag="fi">Finland</option>
+                <option value="France" data-flag="fr">France</option>
+                <option value="French Guiana" data-flag="gf">French Guiana</option>
+                <option value="French Polynesia" data-flag="pf">French Polynesia</option>
+                <option value="French Southern Territories" data-flag="tf">French Southern Territories
+                </option>
+                <option value="Gabon" data-flag="ga">Gabon</option>
+                <option value="Gambia" data-flag="gm">Gambia</option>
+                <option value="Georgia" data-flag="ge">Georgia</option>
+                <option value="Germany" data-flag="de">Germany</option>
+                <option value="Ghana" data-flag="gh">Ghana</option>
+                <option value="Gibraltar" data-flag="gi">Gibraltar</option>
+                <option value="Greece" data-flag="gr">Greece</option>
+                <option value="Greenland" data-flag="gl">Greenland</option>
+                <option value="Grenada" data-flag="gd">Grenada</option>
+                <option value="Guadeloupe" data-flag="gp">Guadeloupe</option>
+                <option value="Guam" data-flag="gu">Guam</option>
+                <option value="Guatemala" data-flag="gt">Guatemala</option>
+                <option value="Guernsey" data-flag="gg">Guernsey</option>
+                <option value="Guinea" data-flag="gn">Guinea</option>
+                <option value="Guinea-Bissau" data-flag="gw">Guinea-Bissau</option>
+                <option value="Guyana" data-flag="gy">Guyana</option>
+                <option value="Haiti" data-flag="ht">Haiti</option>
+                <option value="Heard Island and McDonald Islands" data-flag="hm">Heard Island and
+                  McDonald Islands</option>
+                <option value="Holy See" data-flag="va">Holy See</option>
+                <option value="Honduras" data-flag="hn">Honduras</option>
+                <option value="Hong Kong" data-flag="hk">Hong Kong</option>
+                <option value="Hungary" data-flag="hu">Hungary</option>
+                <option value="Iceland" data-flag="is">Iceland</option>
+                <option value="India" data-flag="in">India</option>
+                <option value="Indonesia" data-flag="id">Indonesia</option>
+                <option value="Iran" data-flag="ir">Iran</option>
+                <option value="Iraq" data-flag="iq">Iraq</option>
+                <option value="Ireland" data-flag="ie">Ireland</option>
+                <option value="Isle of Man" data-flag="im">Isle of Man</option>
+                <option value="Israel" data-flag="il">Israel</option>
+                <option value="Italy" data-flag="it">Italy</option>
+                <option value="Jamaica" data-flag="jm">Jamaica</option>
+                <option value="Japan" data-flag="jp">Japan</option>
+                <option value="Jersey" data-flag="je">Jersey</option>
+                <option value="Jordan" data-flag="jo">Jordan</option>
+                <option value="Kazakhstan" data-flag="kz">Kazakhstan</option>
+                <option value="Kenya" data-flag="ke">Kenya</option>
+                <option value="Kiribati" data-flag="ki">Kiribati</option>
+                <option value="North Korea" data-flag="kp">North Korea</option>
+                <option value="South Korea" data-flag="kr">South Korea</option>
+                <option value="Kuwait" data-flag="kw">Kuwait</option>
+                <option value="Kyrgyzstan" data-flag="kg">Kyrgyzstan</option>
+                <option value="Laos" data-flag="la">Laos</option>
+                <option value="Latvia" data-flag="lv">Latvia</option>
+                <option value="Lebanon" data-flag="lb">Lebanon</option>
+                <option value="Lesotho" data-flag="ls">Lesotho</option>
+                <option value="Liberia" data-flag="lr">Liberia</option>
+                <option value="Libya" data-flag="ly">Libya</option>
+                <option value="Liechtenstein" data-flag="li">Liechtenstein</option>
+                <option value="Lithuania" data-flag="lt">Lithuania</option>
+                <option value="Luxembourg" data-flag="lu">Luxembourg</option>
+                <option value="Macau" data-flag="mo">Macau</option>
+                <option value="Madagascar" data-flag="mg">Madagascar</option>
+                <option value="Malawi" data-flag="mw">Malawi</option>
+                <option value="Malaysia" data-flag="my">Malaysia</option>
+                <option value="Maldives" data-flag="mv">Maldives</option>
+                <option value="Mali" data-flag="ml">Mali</option>
+                <option value="Malta" data-flag="mt">Malta</option>
+                <option value="Marshall Islands" data-flag="mh">Marshall Islands</option>
+                <option value="Martinique" data-flag="mq">Martinique</option>
+                <option value="Mauritania" data-flag="mr">Mauritania</option>
+                <option value="Mauritius" data-flag="mu">Mauritius</option>
+                <option value="Mayotte" data-flag="yt">Mayotte</option>
+                <option value="Mexico" data-flag="mx">Mexico</option>
+                <option value="Micronesia" data-flag="fm">Micronesia</option>
+                <option value="Moldova" data-flag="md">Moldova</option>
+                <option value="Monaco" data-flag="mc">Monaco</option>
+                <option value="Mongolia" data-flag="mn">Mongolia</option>
+                <option value="Montenegro" data-flag="me">Montenegro</option>
+                <option value="Montserrat" data-flag="ms">Montserrat</option>
+                <option value="Morocco" data-flag="ma">Morocco</option>
+                <option value="Mozambique" data-flag="mz">Mozambique</option>
+                <option value="Myanmar" data-flag="mm">Myanmar</option>
+                <option value="Namibia" data-flag="na">Namibia</option>
+                <option value="Nauru" data-flag="nr">Nauru</option>
+                <option value="Nepal" data-flag="np">Nepal</option>
+                <option value="Netherlands" data-flag="nl">Netherlands</option>
+                <option value="New Caledonia" data-flag="nc">New Caledonia</option>
+                <option value="New Zealand" data-flag="nz">New Zealand</option>
+                <option value="Nicaragua" data-flag="ni">Nicaragua</option>
+                <option value="Niger" data-flag="ne">Niger</option>
+                <option value="Nigeria" data-flag="ng">Nigeria</option>
+                <option value="Niue" data-flag="nu">Niue</option>
+                <option value="Norfolk Island" data-flag="nf">Norfolk Island</option>
+                <option value="North Macedonia" data-flag="mk">North Macedonia</option>
+                <option value="Northern Mariana Islands" data-flag="mp">Northern Mariana Islands
+                </option>
+                <option value="Norway" data-flag="no">Norway</option>
+                <option value="Oman" data-flag="om">Oman</option>
+                <option value="Pakistan" data-flag="pk">Pakistan</option>
+                <option value="Palau" data-flag="pw">Palau</option>
+                <option value="Palestine State" data-flag="ps">Palestine State</option>
+                <option value="Panama" data-flag="pa">Panama</option>
+                <option value="Papua New Guinea" data-flag="pg">Papua New Guinea</option>
+                <option value="Paraguay" data-flag="py">Paraguay</option>
+                <option value="Peru" data-flag="pe">Peru</option>
+                <option value="Philippines" data-flag="ph">Philippines</option>
+                <option value="Pitcairn" data-flag="pn">Pitcairn</option>
+                <option value="Poland" data-flag="pl">Poland</option>
+                <option value="Portugal" data-flag="pt">Portugal</option>
+                <option value="Puerto Rico" data-flag="pr">Puerto Rico</option>
+                <option value="Qatar" data-flag="qa">Qatar</option>
+                <option value="Réunion" data-flag="re">Réunion</option>
+                <option value="Romania" data-flag="ro">Romania</option>
+                <option value="Russia" data-flag="ru">Russia</option>
+                <option value="Rwanda" data-flag="rw">Rwanda</option>
+                <option value="Saint Barthélemy" data-flag="bl">Saint Barthélemy</option>
+                <option value="Saint Helena" data-flag="sh">Saint Helena</option>
+                <option value="Saint Kitts and Nevis" data-flag="kn">Saint Kitts and Nevis</option>
+                <option value="Saint Lucia" data-flag="lc">Saint Lucia</option>
+                <option value="Saint Martin (French part)" data-flag="mf">Saint Martin (French part)
+                </option>
+                <option value="Saint Pierre and Miquelon" data-flag="pm">Saint Pierre and Miquelon
+                </option>
+                <option value="Saint Vincent and the Grenadines" data-flag="vc">Saint Vincent and the
+                  Grenadines</option>
+                <option value="Samoa" data-flag="ws">Samoa</option>
+                <option value="San Marino" data-flag="sm">San Marino</option>
+                <option value="Sao Tome and Principe" data-flag="st">Sao Tome and Principe</option>
+                <option value="Saudi Arabia" data-flag="sa">Saudi Arabia</option>
+                <option value="Senegal" data-flag="sn">Senegal</option>
+                <option value="Serbia" data-flag="rs">Serbia</option>
+                <option value="Seychelles" data-flag="sc">Seychelles</option>
+                <option value="Sierra Leone" data-flag="sl">Sierra Leone</option>
+                <option value="Singapore" data-flag="sg">Singapore</option>
+                <option value="Sint Maarten (Dutch part)" data-flag="sx">Sint Maarten (Dutch part)
+                </option>
+                <option value="Slovakia" data-flag="sk">Slovakia</option>
+                <option value="Slovenia" data-flag="si">Slovenia</option>
+                <option value="Solomon Islands" data-flag="sb">Solomon Islands</option>
+                <option value="Somalia" data-flag="so">Somalia</option>
+                <option value="South Africa" data-flag="za">South Africa</option>
+                <option value="South Georgia and the South Sandwich Islands" data-flag="gs">South
+                  Georgia and the South Sandwich Islands</option>
+                <option value="South Sudan" data-flag="ss">South Sudan</option>
+                <option value="Spain" data-flag="es">Spain</option>
+                <option value="Sri Lanka" data-flag="lk">Sri Lanka</option>
+                <option value="Sudan" data-flag="sd">Sudan</option>
+                <option value="Suriname" data-flag="sr">Suriname</option>
+                <option value="Svalbard and Jan Mayen" data-flag="sj">Svalbard and Jan Mayen</option>
+                <option value="Sweden" data-flag="se">Sweden</option>
+                <option value="Switzerland" data-flag="ch">Switzerland</option>
+                <option value="Syrian Arab Republic" data-flag="sy">Syria</option>
+                <option value="Taiwan" data-flag="tw">Taiwan</option>
+                <option value="Tajikistan" data-flag="tj">Tajikistan</option>
+                <option value="Tanzania" data-flag="tz">Tanzania</option>
+                <option value="Thailand" data-flag="th">Thailand</option>
+                <option value="Timor-Leste" data-flag="tl">Timor-Leste</option>
+                <option value="Togo" data-flag="tg">Togo</option>
+                <option value="Tokelau" data-flag="tk">Tokelau</option>
+                <option value="Tonga" data-flag="to">Tonga</option>
+                <option value="Trinidad and Tobago" data-flag="tt">Trinidad and Tobago</option>
+                <option value="Tunisia" data-flag="tn">Tunisia</option>
+                <option value="Turkey" data-flag="tr">Turkey</option>
+                <option value="Turkmenistan" data-flag="tm">Turkmenistan</option>
+                <option value="Tuvalu" data-flag="tv">Tuvalu</option>
+                <option value="Uganda" data-flag="ug">Uganda</option>
+                <option value="Ukraine" data-flag="ua">Ukraine</option>
+                <option value="United Arab Emirates" data-flag="ae">United Arab Emirates</option>
+                <option value="United Kingdom" data-flag="gb">United Kingdom</option>
+                <option value="United States" data-flag="us">United States</option>
+                <option value="Uruguay" data-flag="uy">Uruguay</option>
+                <option value="Uzbekistan" data-flag="uz">Uzbekistan</option>
+                <option value="Vanuatu" data-flag="vu">Vanuatu</option>
+                <option value="Venezuela" data-flag="ve">Venezuela</option>
+                <option value="Vietnam" data-flag="vn">Vietnam</option>
+                <option value="Western Sahara" data-flag="eh">Western Sahara</option>
+                <option value="Yemen" data-flag="ye">Yemen</option>
+                <option value="Zambia" data-flag="zm">Zambia</option>
+                <option value="Zimbabwe" data-flag="zw">Zimbabwe</option>
+              </select>
+              <div class="error-msg" data-i18n="country_error"></div>
 
               <div id="flag-preview" class="flag-preview">
                 <img src="" alt="Flag" id="flag-img" />
@@ -1942,78 +2497,82 @@
           </div>
 
           <div class="form-group">
-            <label for="district">District</label>
-            <input type="text" placeholder="Enter your district" id="district" name="district" required />
-            <div class="error-msg"></div>
+            <label for="district" data-i18n="district">District</label>
+            <input type="text" placeholder="Enter your district" data-i18n-placeholder="district_placeholder"
+              id="district" name="district" required />
+            <div class="error-msg" data-i18n="district_error"></div>
           </div>
 
-          <div class="form-group full">
-            <label for="whatsappNumber">WhatsApp Number</label>
+          <div class="form-group ">
+            <label for="whatsappNumber" data-i18n="whatsapp_number">WhatsApp Number</label>
             <div style="display: flex; gap: 6px; align-items: center;">
               <input type="text" id="dialCode" readonly
                 style="width: 60px; background: #333; border: 1px solid #555; color: #ccc; text-align: center; border-radius: 6px; padding: 10px;"
                 aria-label="Country Dial Code" />
               <input type="tel" id="whatsappNumber" name="whatsapp" placeholder="Enter WhatsApp number"
-                style="flex: 1; width: auto;" required />
+                data-i18n-placeholder="whatsapp_placeholder" style="flex: 1; width: auto;" required />
+              <div class="error-msg" data-i18n="whatsappNumber_error"></div>
             </div>
-            <div class="error-msg"></div>
           </div>
 
           <div class="form-group">
-            <label for="turnover">Monthly Turnover</label>
-            <input type="text" placeholder="Enter your monthly turnover" id="turnover" name="turnover" />
-            <div class="error-msg"></div>
+            <label for="turnover" data-i18n="turnover">Monthly Turnover</label>
+            <input type="text" placeholder="Enter your monthly turnover" data-i18n-placeholder="turnover_placeholder"
+              id="turnover" name="turnover" />
+            <div class="error-msg" data-i18n="turnover_error"></div>
           </div>
 
           <div class="form-group">
-            <label for="users">How Many Users</label>
-            <input type="number" placeholder="Enter the number of users" id="users" name="users" />
-            <div class="error-msg"></div>
+            <label for="users" data-i18n="users">How Many Users</label>
+            <input type="number" placeholder="Enter the number of users" data-i18n-placeholder="users_placeholder"
+              id="users" name="users" />
+            <div class="error-msg" data-i18n="users_error"></div>
           </div>
 
           <div class="form-group">
-            <label for="platform">Current Platform Using</label>
-            <input type="text" placeholder="Enter current platform" id="platform" name="platform" />
-            <div class="error-msg"></div>
+            <label for="platform" data-i18n="platform">Current Platform Using</label>
+            <input type="text" placeholder="Enter current platform" data-i18n-placeholder="platform_placeholder"
+              id="platform" name="platform" />
+            <div class="error-msg" data-i18n="platform_error"></div>
           </div>
 
           <div class="form-group full">
-            <label for="issues">Issues With Current Platform</label>
-            <textarea id="issues" placeholder="Enter the issues with current platform" name="issues"
-              rows="3"></textarea>
-            <div class="error-msg"></div>
+            <label for="issues" data-i18n="issues">Issues With Current Platform</label>
+            <textarea id="issues" placeholder="Enter the issues with current platform"
+              data-i18n-placeholder="issues_placeholder" name="issues" rows="3"></textarea>
+            <div class="error-msg" data-i18n="issues_error"></div>
           </div>
 
           <!-- Telegram Yes/No Dropdown -->
           <div class="form-group full">
-            <label for="telegramStatus">Are you on Telegram?</label>
+            <label for="telegramStatus" data-i18n="telegram_status">Are you on Telegram?</label>
             <select id="telegramStatus" name="telegramStatus">
-              <option value="" disabled selected>-- Select --</option>
-              <option value="Yes">Yes</option>
-              <option value="No">No</option>
+              <option value="" disabled selected data-i18n="select_placeholder">-- Select --</option>
+              <option value="Yes" data-i18n="yes">Yes</option>
+              <option value="No" data-i18n="no">No</option>
             </select>
-            <div class="error-msg"></div>
+            <div class="error-msg" data-i18n="telegramStatus_error"></div>
           </div>
 
           <!-- Telegram Handle Input (initially hidden) -->
           <div class="form-group full" id="telegramHandleWrapper" style="display: none;">
-            <label for="telegramHandle">Telegram Handle</label>
-            <input type="text" placeholder="Enter your Telegram Handle" id="telegramHandle" name="telegramHandle" />
-            <div class="error-msg"></div>
+            <label for="telegramHandle" data-i18n="telegram_handle">Telegram Handle</label>
+            <input type="text" placeholder="Enter your Telegram Handle"
+              data-i18n-placeholder="telegram_handle_placeholder" id="telegramHandle" name="telegramHandle" />
+            <div class="error-msg" data-i18n="telegramHandle_error"></div>
           </div>
 
           <div class="form-group full">
-            <label for="demo_url">Demo URL</label>
+            <label for="demo_url" data-i18n="demo_url">Demo URL</label>
             <a id="demo_url" href="#" target="_blank" style="color: #4eaaff; word-break: break-all;"></a>
             <!-- <input type="hidden" name="demo_url" id="demo_url_input"> -->
           </div>
 
         </div>
-        <button type="submit" class="submit-btn">Submit</button>
+        <button type="submit" class="submit-btn" data-i18n="submit">Submit</button>
       </form>
     </div>
   </div>
-
 
   <div id="toast">
     <span id="toast-spinner"></span>
@@ -2244,19 +2803,26 @@
 
       (async function setDefaultCountryFromIP() {
         try {
-          const res = await fetch('https://geolocation-db.com/json/');
-          const data = await res.json();
+          let userCountry = localStorage.getItem("userCountry");
+          if (!userCountry) {
+            const res = await fetch("https://ipapi.co/json");
+            const data = await res.json();
+            userCountry = data.country_name;
+            localStorage.setItem("userCountry", userCountry);
+          }
+          // const res = await fetch("https://ipapi.co/json");
+          // const data = await res.json();
 
-          const userCountry = data.country_name;
+          // const userCountry = data.country_name;
 
           // Try to select the matching country in the dropdown
           for (let option of countrySelect.options) {
             if (option.value === userCountry) {
               countrySelect.value = userCountry;
-              countrySelect.dispatchEvent(new Event('change'));
               break;
             }
           }
+         updateFlagAndDialCode();
         } catch (error) {
           console.warn("Could not set default country from IP", error);
         }
@@ -2273,9 +2839,8 @@
         }
       });
 
-      // Update flag preview and dial code on country change
-      countrySelect.addEventListener("change", function () {
-        const selected = this.options[this.selectedIndex];
+      function updateFlagAndDialCode() {
+        const selected = countrySelect.options[countrySelect.selectedIndex];
         const flagCode = selected.getAttribute('data-flag');
         if (flagCode) {
           flagImg.src = `https://flagcdn.com/w80/${flagCode}.png`;
@@ -2286,13 +2851,10 @@
           flagImg.style.visibility = 'hidden';
         }
 
-        // Set dial code readonly input
         const dialCode = countryDialCodes[selected.value] || "";
         dialCodeInput.value = dialCode;
-
-        // Optional: clear WhatsApp number input on country change
-        // whatsappNumberInput.value = "";
-      });
+      }
+      countrySelect.addEventListener("change", updateFlagAndDialCode);
 
       document.querySelectorAll(".visit-link").forEach(link => {
         link.addEventListener("click", function (e) {
@@ -2329,6 +2891,16 @@
               }
             }
           }
+          // Clear error messages and restore border styles BEFORE showing modal
+          const form = document.getElementById("demoForm");
+          form.querySelectorAll(".error-msg").forEach(msg => {
+            msg.textContent = "";
+            msg.style.display = "none";
+            msg.removeAttribute("data-error-key");
+          });
+          form.querySelectorAll("input, select, textarea").forEach(el => {
+            el.style.borderColor = "#555";
+          });
           modal.style.display = "block";
         });
       });
@@ -2368,7 +2940,11 @@
         countrySelect.dispatchEvent(new Event('change')); // Update flag and dial code
 
         // Clear error messages and restore borders
-        form.querySelectorAll(".error-msg").forEach(msg => msg.remove());
+        form.querySelectorAll(".error-msg").forEach(msg => {
+          msg.textContent = "";
+          msg.removeAttribute("data-error-key");
+          msg.style.display = "none";
+        });
         form.querySelectorAll("input, select, textarea").forEach(el => el.style.borderColor = "#555");
 
         // Hide Telegram handle field if not needed
@@ -2380,6 +2956,27 @@
         }
       }
 
+      function showError(el, errorKey) {
+        el.style.borderColor = "#ff6b6b";
+        const errorEl = el.parentElement.querySelector(".error-msg");
+        if (errorEl) {
+          errorEl.setAttribute("data-i18n", errorKey); // enables future re-translation
+          errorEl.textContent = i18next.t(errorKey);   // translates immediately
+          errorEl.style.display = "block";
+        }
+      }
+
+
+      function clearError(el) {
+        el.style.borderColor = "#555";
+        const errorEl = el.parentElement.querySelector(".error-msg");
+        if (errorEl) {
+          errorEl.textContent = "";
+          errorEl.removeAttribute("data-error-key");
+          errorEl.style.display = "none";
+        }
+      }
+
 
       // Form submission + validation
       form.addEventListener("submit", async function (e) {
@@ -2387,12 +2984,15 @@
         const demoUrlAnchor = document.getElementById("demo_url");
 
         // Reset styles and messages
-        form.querySelectorAll(".error-msg").forEach(msg => msg.remove());
+        form.querySelectorAll(".error-msg").forEach(msg => {
+          msg.textContent = "";
+          msg.style.display = "none";
+        });
         form.querySelectorAll("input, textarea, select").forEach(el => el.style.borderColor = "#555");
 
         let isValid = true;
         const isEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-        const isPhone = (value) => /^\+?[0-9\s\-()]{7,20}$/.test(value);
+        const isPhone = (value) => /^\+?[1-9]\d{6,14}$/.test(value); // E.164 basic pattern
 
         // Attach real-time validation
         form.querySelectorAll("input, select, textarea").forEach(input => {
@@ -2428,35 +3028,23 @@
 
             // If field is now valid, clean up error
             if (valid) {
-              input.style.borderColor = "#555";
-              const existingError = input.parentElement.querySelector(".error-msg");
-              if (existingError) {
-                existingError.remove();
-              }
+              clearError(input);
             }
           });
         });
 
-        // function showError(id, message) {
-        //   const el = document.getElementById(id);
-        //   const msg = el.parentElement.querySelector(".error-msg");
-        //   if (msg) msg.textContent = message;
-        //   el.style.borderColor = "red";
-        //   isValid = false;
-        // }
-
         const fields = [
-          { id: "country", msg: "Please select your country." },
-          { id: "district", msg: "Please enter your district." },
-          { id: "name", msg: "Please enter your name (at least 3 characters).", validate: v => v.trim().length >= 3 },
-          { id: "email", msg: "Please enter a valid email.", validate: isEmail },
-          { id: "turnover", msg: "Please enter your monthly turnover." },
-          { id: "platform", msg: "Please enter your current platform." },
-          { id: "issues", msg: "Please describe the issues (at least 10 characters).", validate: v => v.trim().length >= 10 },
-          { id: "users", msg: "Please enter a valid number of users.", validate: v => !isNaN(v) && Number(v) > 0 },
+          { id: "country", errorKey: "country_error" },
+          { id: "district", errorKey: "district_error" },
+          { id: "name", errorKey: "name_error", validate: v => v.length >= 3 },
+          { id: "email", errorKey: "email_error", validate: isEmail },
+          { id: "turnover", errorKey: "turnover_error" },
+          { id: "platform", errorKey: "platform_error" },
+          { id: "issues", errorKey: "issues_error", validate: v => v.length >= 10 },
+          { id: "users", errorKey: "users_error", validate: v => !isNaN(v) && Number(v) > 0 },
           {
             id: "whatsappNumber",
-            msg: "Please enter a valid WhatsApp number.",
+            errorKey: "whatsappNumber_error",
             validate: () => {
               const number = whatsappNumberInput.value.trim();
               const fullNumber = dialCodeInput.value + number;
@@ -2465,46 +3053,40 @@
           },
           {
             id: "telegramStatus",
-            msg: "Please select if you have a Telegram handle.",
+            errorKey: "telegramStatus_error",
             validate: v => v === "Yes" || v === "No"
           },
-          // Conditionally add Telegram field:
           ...(telegramStatus && telegramStatus.value === "Yes"
             ? [{
               id: "telegramHandle",
-              msg: "Please enter a valid Telegram handle starting with @",
+              errorKey: "telegramHandle_error",
               validate: v => v.trim().startsWith("@")
             }]
             : [])
         ];
 
         // Validate fields and show error messages
-        fields.forEach(({ id, msg, validate }) => {
+        fields.forEach(({ id, errorKey, validate }) => {
           const el = document.getElementById(id);
+          if (!el) return;
           const value = el ? el.value.trim() : "";
-
           const valid = value && (!validate || validate(value));
+
           if (!valid) {
+            showError(el, errorKey);
             isValid = false;
-            el.style.borderColor = "#f87171";
-
-            // Create error message below the input
-            const error = document.createElement("div");
-            error.className = "error-msg";
-            error.style.color = "#ff6b6b";
-            error.style.fontSize = "0.9em";
-            error.style.marginTop = "4px";
-            error.textContent = msg;
-
-            // Insert after the element (if there's already an error message, it's removed above)
-            el.parentNode.insertBefore(error, el.nextSibling);
+          } else {
+            clearError(el);
           }
         });
 
-        if (!isValid) return;
+        if (!isValid) {
+          showToast('toast_invalid', 'error');  // Optional message
+          return;
+        }
 
         // Show processing toast
-        showToast('Processing...', 'info');
+        showToast('toast_processing', 'info');
 
         // Prepare formData
         const formData = new FormData(form);
@@ -2539,7 +3121,7 @@
           }
 
           // alert("Form submitted successfully!");
-          showToast('Success! Your action was completed.');
+          showToast('toast_success', 'success');
 
           const selectedCountry = countrySelect.value; // preserve selected country
           form.reset();
@@ -2549,15 +3131,14 @@
 
         } catch (err) {
           // alert("Error submitting form.");
-          showToast('Oops, something went wrong.', 'error');
-          console.error(err);
+          showToast('toast_error', 'error');
         }
       });
     });
   </script>
 
   <script>
-    function showToast(message, type = 'success') {
+    function showToast(messageKey, type = 'success') {
       const toast = document.getElementById('toast');
       const spinner = document.getElementById('toast-spinner');
       const messageSpan = document.getElementById('toast-message');
@@ -2565,7 +3146,7 @@
       // Reset styles
       toast.classList.remove('success', 'error', 'info');
       toast.classList.add(type);
-      messageSpan.textContent = message;
+      messageSpan.textContent = i18next.t(messageKey);;
 
       // Spinner only for info type
       spinner.style.display = type === 'info' ? 'inline-block' : 'none';
@@ -2586,6 +3167,13 @@
     }
 
   </script>
+
+  <!-- i18next via CDN -->
+  <script src="https://unpkg.com/i18next@21.6.3/i18next.min.js"></script>
+  <script src="https://unpkg.com/i18next-http-backend@1.4.1/i18nextHttpBackend.min.js"></script>
+
+  <!-- Your script -->
+  <script src="/js/translation.js"></script>
   <!-- <link rel="stylesheet" id="block_hero_video-stylesheet-css" href="css/block_hero_video.css" media="all"> -->
   <!-- <link rel="stylesheet" id="block_text-stylesheet-css" href="css/block_text.css" media="all"> -->
   <!-- <link rel="stylesheet" id="block_talent_cards_slider-stylesheet-css" href="css/block_talent_cards_slider.css"

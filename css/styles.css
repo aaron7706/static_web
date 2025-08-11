@@ -187,7 +187,10 @@ ul {
   margin-top: 0
 }
 
-.home a {
+.home  .custom-dropdown {
+  font-size: 18px
+}
+.home a  {
   font-size: 18px
 }
 
@@ -10636,6 +10639,7 @@ nav .nav-dropdown ul.menu li {
   font-size: 1.75rem;
 }
 
+
 @media (min-width: 992px) {
   nav .nav-dropdown ul.menu li {
     font-size: clamp(0.875rem, calc(0.2069rem + 1.07759vw), 1.5rem);
@@ -10654,6 +10658,9 @@ nav .nav-dropdown ul.menu li {
   nav .nav-dropdown ul.menu li+li a {
     margin-left: clamp(0.875rem, calc(-0.86207rem + 2.80172vw), 2.5rem);
   }
+  nav .nav-dropdown ul.menu li .custom-dropdown {
+    margin-left: clamp(0.875rem, calc(-0.86207rem + 2.80172vw), 2.5rem);
+  }
 }
 
 @media (max-width: 991.98px) {
@@ -10664,6 +10671,10 @@ nav .nav-dropdown ul.menu li {
 
 @media (min-width: 992px) {
   nav .nav-dropdown ul.menu li a {
+    display: inline-block;
+    position: relative;
+  }
+  nav .nav-dropdown ul.menu li .custom-dropdown  {
     display: inline-block;
     position: relative;
   }
