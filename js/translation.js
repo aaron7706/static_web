@@ -17,8 +17,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }, function () {
         updateContent();
-        initDropdown();
-        initDropdown1();
+        handleDropdownsInit();
+        window.addEventListener("resize", handleDropdownsInit);
+
+
       });
   }
 
